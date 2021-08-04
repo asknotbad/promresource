@@ -1,0 +1,24 @@
+{
+  "name": "promresource",
+  "version": "0.0.1",
+  "description": "Promresource LLC App",
+  "author": "Den Kochetkov <d@asknotbad.com> (https://asknotbad.com)",
+  "private": true,
+  "license": "Apache-2.0",
+  "scripts": {
+    "start": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up --build -d",
+    "stop": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml down",
+    "stop:rmi": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml down --rmi all -v",
+    "start:dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build -d",
+    "dev": "npm run start:dev",
+    "stop:dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml down",
+    "stop:dev-rmi": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml down --rmi all -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asknotbad/promresource.git"
+  },
+  "bugs": {
+    "url": "https://github.com/asknotbad/promresource/issues"
+  }
+}
