@@ -141,6 +141,36 @@ select {
 }
 /* end of Modern Reset CSS */
 
+/* Grid styles */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 708px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1160px;
+  }
+}
+/* end of Grid styles */
+
 /* Main styles */
 body {
   font-family: 'Roboto', sans-serif;
@@ -192,5 +222,9 @@ h3 {
   -ms-overflow-style: none;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+button {
+  cursor: pointer;
+  transition: .25s ease-in-out;
 }
 /* end of Main styles */
