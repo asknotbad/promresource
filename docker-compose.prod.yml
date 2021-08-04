@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  api:
+    environment:
+      # NODE_ENV: production
+      JWT_SECRET: ${JWT_SECRET}
+      DATABASE_CLIENT: ${API_DATABASE_CLIENT}
+      DATABASE_NAME: ${POSTGRES_DB}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: ${POSTGRES_USER}
+      DATABASE_PASSWORD: ${POSTGRES_PASSWORD}
+    # command: 'strapi start'
+
+  web:
+    build:
+      dockerfile: Dockerfile

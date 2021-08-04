@@ -1,0 +1,24 @@
+{
+  "name": "promresource-web",
+  "version": "0.0.1",
+  "description": "Promresource LLC App Web Service",
+  "author": "Den Kochetkov <d@asknotbad.com> (https://asknotbad.com)",
+  "license": "Apache-2.0",
+  "scripts": {
+    "dev": "svelte-kit dev  --host web",
+    "build": "svelte-kit build",
+    "preview": "svelte-kit preview"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-node": "^1.0.0-next.36",
+    "@sveltejs/kit": "next",
+    "atob": "^2.1.2",
+    "svelte": "^3.34.0",
+    "tiny-slider": "^2.9.3"
+  },
+  "type": "module",
+  "dependencies": {
+    "cookie": "^0.4.1",
+    "dotenv": "^10.0.0"
+  }
+}

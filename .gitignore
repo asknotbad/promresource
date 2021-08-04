@@ -1,0 +1,28 @@
+# App data
+/mongo-service/data/
+/postgres-service/data/
+/redis-service/data/
+/api-service/app/public/uploads/*.*
+
+# Dependencies
+**/node_modules
+
+# System files
+.DS_Store
+Thumbs.db
+
+# misc
+*.log
+
+# IDE
+/.idea
+/.awcache
+/.vscode
+*.code-workspace
+
+# Nest
+**/dist/
+**/packages/**/*.d.ts
+**/packages/**/*.js
+
+.env
