@@ -1,0 +1,196 @@
+/* Grid @media-queries template */
+@media (min-width: 576px) {
+
+}
+@media (min-width: 768px) {
+
+}
+@media (min-width: 992px) {
+
+}
+@media (min-width: 1200px) {
+
+}
+/* end of Grid @media-queries template */
+
+/* Fonts */
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/Roboto/Roboto-Regular.woff2') format('woff2'),
+    url('/fonts/Roboto/Roboto-Regular.woff') format('woff');
+}
+/* @font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/Roboto/Roboto-Italic.woff2') format('woff2'),
+    url('../fonts/Roboto/Roboto-Italic.woff') format('woff');
+} */
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+	src: url('/fonts/Roboto/Roboto-Medium.woff2') format('woff2'),
+		url('/fonts/Roboto/Roboto-Medium.woff') format('woff');
+}
+/* @font-face {
+	font-family: 'Roboto';
+  font-display: swap;
+  font-style: italic;
+  font-weight: 500;
+	src: url('../fonts/Roboto/Roboto-MediumItalic.woff2') format('woff2'),
+		url('../fonts/Roboto/Roboto-MediumItalic.woff') format('woff');
+} */
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/Roboto/Roboto-Bold.woff2') format('woff2'),
+    url('f/onts/Roboto/Roboto-Bold.woff') format('woff');
+}
+/* @font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  font-style: italic;
+  font-weight: 700;
+  src: url('../fonts/Roboto/Roboto-BoldItalic.woff2') format('woff2'),
+    url('../fonts/Roboto/Roboto-BoldItalic.woff') format('woff');
+} */
+/* @font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 900;
+  src: url('../fonts/Roboto/Roboto-Black.woff2') format('woff2'),
+    url('../fonts/Roboto/Roboto-Black.woff') format('woff');
+} */
+/* @font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  font-style: italic;
+  font-weight: 900;
+  src: url('../fonts/Roboto/Roboto-BlackItalic.woff2') format('woff2'),
+    url('../fonts/Roboto/Roboto-BlackItalic.woff') format('woff');
+} */
+/* end of Fonts */
+
+/* Modern Reset CSS */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+ul,
+ol {
+  padding: 0;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+body {
+  min-width: 320px;
+  min-height: 100vh;
+	margin: 0;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration-skip-ink: auto;
+}
+img {
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* end of Modern Reset CSS */
+
+/* Main styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 19px;
+  color: #424242;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 47px;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 35px;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+#svelte {
+  min-height: 100vh;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+/* end of Main styles */
