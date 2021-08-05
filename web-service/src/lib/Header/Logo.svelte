@@ -1,5 +1,5 @@
 <script>
-
+  export let logo;
 </script>
 
 <div class="logo">

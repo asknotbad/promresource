@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_components_logos",
+  "info": {
+    "name": "logo",
+    "icon": "award"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "img": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}
