@@ -1,5 +1,6 @@
 <script>
   export let navIsOpen;
+  export let links;
 </script>
 
 <nav class:open={navIsOpen}>

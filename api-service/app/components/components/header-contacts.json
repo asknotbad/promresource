@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_components_header_contacts",
+  "info": {
+    "name": "headerContacts",
+    "icon": "phone-alt"
+  },
+  "options": {},
+  "attributes": {
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "icon": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

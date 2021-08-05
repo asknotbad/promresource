@@ -1,5 +1,6 @@
 <script>
   export let navIsOpen;
+  export let contacts;
 </script>
 
 <div class="contacts" class:open={navIsOpen}>
