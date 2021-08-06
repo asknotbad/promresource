@@ -83,4 +83,22 @@
     bottom: 50%;
     transform: translateY(50%) rotate(-45deg);
   }
+
+  @media (min-width: 576px) {
+    .burger {
+      display: flex;
+      grid-column: 6 / 7;
+      grid-row: 1 / 2;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .burger {
+      display: none;
+    }
+  }
+
 </style>
