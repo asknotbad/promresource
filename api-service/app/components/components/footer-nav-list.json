@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_components_footer_nav_lists",
+  "info": {
+    "name": "footerNavList",
+    "icon": "list-ol"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.link"
+    }
+  }
+}

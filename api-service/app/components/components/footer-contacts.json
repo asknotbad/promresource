@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_components_footer_contacts",
+  "info": {
+    "name": "footerContacts",
+    "icon": "phone"
+  },
+  "options": {},
+  "attributes": {
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    }
+  }
+}
