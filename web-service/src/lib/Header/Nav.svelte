@@ -60,6 +60,8 @@
   @media (min-width: 1200px) {
     nav {
       grid-column: 2 / 3;
+      align-self: center;
+      max-height: none;
     }
     ul {
       justify-content: space-between;
