@@ -9,11 +9,13 @@
   {#if links && links.length > 0}
     <ul>
       {#each links as link}
-        <li>
-          <a class:active={$page.path === link.url} href={link.url} sveltekit:prefetch>
-            {link.text}
-          </a>
-        </li>
+        {#if links.isActive === true}
+          <li>
+            <a class:active={$page.path === link.url} href={link.url} sveltekit:prefetch>
+              {link.text}
+            </a>
+          </li>
+        {/if}
       {/each}
     </ul>
   {/if}
