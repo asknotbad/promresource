@@ -3,13 +3,15 @@
 
   export let navIsOpen;
   export let links;
+  console.log(links);
+
 </script>
 
 <nav class:open={navIsOpen === true}>
   {#if links && links.length > 0}
     <ul>
       {#each links as link}
-        {#if links.isActive === true}
+        {#if link.isActive === true}
           <li>
             <a class:active={$page.path === link.url} href={link.url} sveltekit:prefetch>
               {link.text}
