@@ -3,8 +3,6 @@
 
   export let navIsOpen;
   export let links;
-  console.log(links);
-
 </script>
 
 <nav class:open={navIsOpen === true}>
