@@ -5,33 +5,7 @@
   import Burger from './Burger.svelte';
 
   export let transparent = false;
-  export let headerData = {
-    logo: {
-      text: 'Logo',
-      img: {
-        url: '',
-      },
-    },
-    links: [
-      {
-        order: 1,
-        icon: {
-          url: '',
-        },
-        url: '/',
-        text: 'text',
-        isExternal: false,
-        isActive: true,
-      }
-    ],
-    contacts: {
-      icon: {
-        url: '',
-      },
-      phone: '8 8422 36-05-10',
-      email: 'info@promresurs-ul.ru',
-    }
-  };
+  export let headerData;
 
   let navIsOpen;
 </script>
@@ -58,4 +32,22 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 30px;
   }
+
+  @media (min-width: 576px) {
+    header {
+      padding: 0;
+    }
+    .container {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr min-content;
+      column-gap: 45px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .container {
+      grid-template-columns: min-content 1fr min-content;
+      column-gap: 40px;
+    }
+  }
+
 </style>

@@ -10,15 +10,14 @@
     "preview": "svelte-kit preview"
   },
   "devDependencies": {
-    "@sveltejs/adapter-node": "^1.0.0-next.36",
+    "@sveltejs/adapter-node": "^1.0.0-next.39",
     "@sveltejs/kit": "next",
-    "atob": "^2.1.2",
-    "svelte": "^3.34.0",
-    "tiny-slider": "^2.9.3"
+    "svelte": "^3.34.0"
   },
   "type": "module",
   "dependencies": {
-    "cookie": "^0.4.1",
-    "dotenv": "^10.0.0"
+    "@fontsource/fira-mono": "^4.2.2",
+    "@lukeed/uuid": "^2.0.0",
+    "cookie": "^0.4.1"
   }
 }
