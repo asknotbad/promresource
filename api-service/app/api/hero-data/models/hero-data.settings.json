@@ -2,7 +2,8 @@
   "kind": "singleType",
   "collectionName": "hero_data",
   "info": {
-    "name": "heroData"
+    "name": "heroData",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -41,20 +42,6 @@
       },
       "component": "components.button"
     },
-    "cover": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images"
-      ],
-      "plugin": "upload",
-      "required": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "overlayBg": {
       "pluginOptions": {
         "i18n": {
@@ -62,6 +49,16 @@
         }
       },
       "type": "string"
+    },
+    "cover": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "components.img"
     }
   }
 }
