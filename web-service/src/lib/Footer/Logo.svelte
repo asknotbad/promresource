@@ -28,10 +28,42 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 50%;
   }
   img {
-    max-width: 50%;
     object-fit: contain;
     object-position: center;
+  }
+
+  @media (min-width: 576px) {
+    .logo {
+      justify-content: flex-start;
+      align-items: start;
+      margin-bottom: 0;
+    }
+    a {
+      justify-content: flex-start;
+      align-items: start;
+      max-width: 100%;
+    }
+    img {
+      object-position: left top;
+    }
+  }
+
+  @media (min-width: 768px) {
+    a {
+      max-width: 50%;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .logo {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+    a {
+      max-width: 100%;
+    }
   }
 </style>
