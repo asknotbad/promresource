@@ -69,6 +69,7 @@
     background: #fff;
     padding: 60px 0;
     overflow-x: hidden;
+    z-index: 1;
   }
   .container {
     display: grid;
@@ -243,11 +244,10 @@
     .counters {
       grid-column: span 2;
     }
-
-  }
-  .counter {
-    width: calc(100% / 3);
-    padding: 24px 30px 20px 30px;
+    .counter {
+      width: calc(100% / 3);
+      padding: 24px 30px 20px 30px;
+    }
   }
 
   @media (min-width: 992px) {
