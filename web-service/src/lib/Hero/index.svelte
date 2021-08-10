@@ -33,6 +33,18 @@ import { bubble } from 'svelte/internal';
     padding-top: 170px;
     padding-bottom: 60px;
   }
+  section::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background: rgba(54, 52, 51, 1);
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    pointer-events: none;
+    z-index: -1;
+  }
   img {
     width: 100%;
     height: 100%;
