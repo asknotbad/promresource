@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_components_about_company_accent_list_items",
+  "info": {
+    "name": "aboutCompanyAccentListItem",
+    "icon": "list-alt"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

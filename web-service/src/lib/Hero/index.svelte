@@ -7,7 +7,9 @@ import { bubble } from 'svelte/internal';
 
 <section style="color: {heroData.textColor};">
   <img src={heroData.cover.file.url} alt={heroData.cover.alt}>
-  <div class="overlay" style="background: {heroData.overlayBg};"></div>
+  {#if heroData.cover.overlay && heroData.cover.overlay !== ''}
+    <div class="overlay" style="background: {heroData.cover.overlay};"></div>
+  {/if}
   <div class="container">
     <h1>
       {heroData.header}
