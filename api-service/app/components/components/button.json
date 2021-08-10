@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_components_buttons",
+  "info": {
+    "name": "button",
+    "icon": "compress-arrows-alt"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "red",
+        "blue"
+      ]
+    },
+    "size": {
+      "type": "enumeration",
+      "enum": [
+        "small",
+        "normal",
+        "big"
+      ],
+      "default": "normal"
+    },
+    "action": {
+      "type": "enumeration",
+      "enum": [
+        "openModal"
+      ]
+    },
+    "disabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isExternalLink": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

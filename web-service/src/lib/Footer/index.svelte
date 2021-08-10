@@ -61,5 +61,4 @@
       grid-template-columns: min-content min-content min-content 1fr min-content;
     }
   }
-
 </style>
