@@ -59,6 +59,14 @@
         }
       },
       "component": "components.img"
+    },
+    "textColor": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }
