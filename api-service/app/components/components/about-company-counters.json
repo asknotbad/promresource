@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_components_about_company_counters",
+  "info": {
+    "name": "aboutCompanyCounters",
+    "icon": "clipboard-list"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.about-company-counter-item"
+    }
+  }
+}

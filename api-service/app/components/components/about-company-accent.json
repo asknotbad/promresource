@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_components_about_company_accents",
+  "info": {
+    "name": "aboutCompanyAccent",
+    "icon": "th-list"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    },
+    "listItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.about-company-accent-list-item"
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_components_about_company_counter_items",
+  "info": {
+    "name": "aboutCompanyCounterItem",
+    "icon": "monument"
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

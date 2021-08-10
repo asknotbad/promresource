@@ -1,9 +1,8 @@
 {
   "kind": "singleType",
-  "collectionName": "hero_data",
+  "collectionName": "about_company_data",
   "info": {
-    "name": "heroData",
-    "description": ""
+    "name": "aboutCompanyData"
   },
   "options": {
     "increments": true,
@@ -24,24 +23,6 @@
       },
       "type": "string"
     },
-    "content": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "richtext"
-    },
-    "buttons": {
-      "type": "component",
-      "repeatable": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "components.button"
-    },
     "cover": {
       "type": "component",
       "repeatable": false,
@@ -52,13 +33,33 @@
       },
       "component": "components.img"
     },
-    "textColor": {
+    "content": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string"
+      "type": "richtext"
+    },
+    "accent": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "components.about-company-accent"
+    },
+    "counters": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "components.about-company-counter-item"
     }
   }
 }
