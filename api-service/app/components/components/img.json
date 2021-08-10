@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_components_imgs",
+  "info": {
+    "name": "img",
+    "icon": "file-image"
+  },
+  "options": {},
+  "attributes": {
+    "alt": {
+      "type": "string"
+    },
+    "file": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}
