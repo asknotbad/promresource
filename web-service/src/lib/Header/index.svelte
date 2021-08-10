@@ -7,7 +7,7 @@
 
   export let headerData;
 
-  let navIsOpen;
+  let navIsOpen = false;
   let scrollY;
 </script>
 
