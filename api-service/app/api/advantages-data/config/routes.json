@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/advantages-data",
+      "handler": "advantages-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/advantages-data",
+      "handler": "advantages-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/advantages-data",
+      "handler": "advantages-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
