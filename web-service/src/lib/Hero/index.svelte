@@ -74,9 +74,6 @@ import { bubble } from 'svelte/internal';
   }
   h1 {
     max-width: 700px;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 47px;
   }
   .content {
     display: none;
@@ -100,10 +97,6 @@ import { bubble } from 'svelte/internal';
     }
     .container {
       gap: 40px;
-    }
-    h1 {
-      font-size: 60px;
-      line-height: 70px;
     }
   }
 
