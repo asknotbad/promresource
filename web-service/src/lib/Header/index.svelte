@@ -8,9 +8,15 @@
   export let headerData;
 
   let navIsOpen;
+  let scrollY;
 </script>
 
+<svelte:window bind:scrollY />
 <header class:open={navIsOpen} class:transparent={$page.path === '/'}>
+  {#if $page.path === '/'}
+    <div class="bg" style="opacity: {scrollY}%;"></div>
+    <div class="line" style="opacity: {100 - scrollY}%;"></div>
+  {/if}
   <div class="container">
     <Logo bind:logo={headerData.logo} />
     <Burger bind:navIsOpen />
@@ -28,9 +34,28 @@
     color: #fff;
     z-index: 100;
   }
+  .bg {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(54, 52, 51, 1);
+    pointer-events: none;
+    transition: .25s ease-in-out;
+  }
+  .line {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 1px;
+    background: rgba(196, 196, 196, 0.3);
+  }
   .transparent {
     background: rgba(54, 52, 51, 0);
-    border-bottom: 1px solid rgba(196, 196, 196, 0.3);
   }
   .open {
     background: rgba(54, 52, 51, 1);
