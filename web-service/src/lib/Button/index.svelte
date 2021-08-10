@@ -45,4 +45,12 @@
     line-height: 21px;
     padding: 0 30px;
   }
+
+  @media (min-width: 768px) {
+    .big {
+      font-size: 20px;
+      line-height: 23px;
+    }
+  }
+
 </style>

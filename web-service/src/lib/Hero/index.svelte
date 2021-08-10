@@ -59,6 +59,7 @@ import { bubble } from 'svelte/internal';
     gap: 30px;
   }
   h1 {
+    max-width: 700px;
     font-weight: 700;
     font-size: 40px;
     line-height: 47px;
@@ -74,5 +75,43 @@ import { bubble } from 'svelte/internal';
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
+    max-width: 466px;
+    margin-right: auto;
   }
+
+  @media (min-width: 768px) {
+    section {
+      padding-top: 165px;
+      padding-bottom: 100px;
+    }
+    .container {
+      gap: 40px;
+    }
+    h1 {
+      font-size: 60px;
+      line-height: 70px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    section {
+      padding-top: 180px;
+      padding-bottom: 156px;
+    }
+    .content {
+      display: grid;
+      max-width: 500px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .buttons {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 30px;
+      row-gap: 20px;
+      max-width: 100%;
+      margin-right: auto;
+    }
+  }
+
 </style>
