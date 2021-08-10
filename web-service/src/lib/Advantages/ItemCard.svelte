@@ -62,4 +62,33 @@
     grid-template-columns: 1fr;
     gap: 18px;
   }
+
+  @media (min-width: 768px) {
+    article {
+      grid-template-columns: 70px 1fr;
+      column-gap: 60px;
+      row-gap: 20px;
+      padding: 30px 35px;
+    }
+    .icon {
+      align-self: center;
+      width: 70px;
+      height: 70px;
+    }
+    h3 {
+      align-self: center;
+    }
+    .content {
+      grid-column: span 2;
+      font-size: 16px;
+      line-height: 19px;
+      gap: 19px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    article {
+      padding: 40px 35px;
+    }
+  }
 </style>

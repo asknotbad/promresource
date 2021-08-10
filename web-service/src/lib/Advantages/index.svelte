@@ -56,4 +56,23 @@
     grid-template-columns: 1fr;
     gap: 30px;
   }
+
+  @media (min-width: 768px) {
+    section {
+      padding: 80px 0;
+    }
+  }
+
+  @media (min-width: 992px) {
+    section {
+      padding: 100px 0;
+    }
+    .container {
+      grid-template-columns: 1fr 1fr;
+    }
+    h2 {
+      margin-bottom: 30px;
+      grid-column: span 2;
+    }
+  }
 </style>
