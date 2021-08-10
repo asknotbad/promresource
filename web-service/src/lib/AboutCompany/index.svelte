@@ -68,6 +68,7 @@
   section {
     background: #fff;
     padding: 60px 0;
+    overflow-x: hidden;
   }
   .container {
     display: grid;
@@ -109,6 +110,10 @@
   }
   .accent::after {
     left: 100%;
+  }
+  .accent__content {
+    max-width: 200px;
+    margin-right: auto;
   }
   .accent__content :global(b) {
     font-weight: 700;
@@ -192,4 +197,73 @@
     font-size: 16px;
     line-height: 19px;
   }
+
+  @media (min-width: 576px) {
+    .link {
+      justify-content: flex-start;
+    }
+    .cover {
+      margin: 0;
+    }
+    .counters__list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .counter {
+      width: 50%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      grid-template-columns: 7fr 5fr;
+    }
+    h2 {
+      grid-column: span 2;
+    }
+    .content {
+      grid-column: span 2;
+    }
+    .accent {
+      grid-column: 2 / 3;
+    }
+    .accent::before {
+      width: 30px;
+    }
+    .cover {
+      grid-column: 1 / 2;
+      grid-row: 3 / 5;
+    }
+    .cover img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .counters {
+      grid-column: span 2;
+    }
+
+  }
+  .counter {
+    width: calc(100% / 3);
+    padding: 24px 30px 20px 30px;
+  }
+
+  @media (min-width: 992px) {
+    .container {
+      grid-template-columns: 1fr 1fr;
+    }
+    .content {
+      grid-column: 2 / 3;
+    }
+    .cover {
+      grid-column: 1 / 2;
+      grid-row: 2 / 5;
+    }
+    .counter {
+      width: calc(100% / 5);
+    }
+  }
+
 </style>
