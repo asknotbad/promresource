@@ -197,6 +197,17 @@ h3 {
   line-height: 21px;
 }
 
+@media (min-width: 768px) {
+  h1 {
+    font-size: 60px;
+    line-height: 70px;
+  }
+  h2 {
+    font-size: 35px;
+    line-height: 41px;
+  }
+}
+
 #svelte {
   min-height: 100vh;
 }

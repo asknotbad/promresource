@@ -3,6 +3,10 @@
 
   export let navIsOpen;
   export let links;
+
+  function closeNav () {
+    navIsOpen = false;
+  };
 </script>
 
 <nav class:open={navIsOpen === true}>
@@ -11,7 +15,7 @@
       {#each links as link}
         {#if link.isActive === true}
           <li>
-            <a class:active={$page.path === link.url} href={link.url} sveltekit:prefetch>
+            <a class:active={$page.path === link.url} href={link.url} sveltekit:prefetch on:click={closeNav}>
               {link.text}
             </a>
           </li>
