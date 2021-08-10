@@ -1,15 +1,18 @@
 <script>
+  import { onMount } from 'svelte';
   import Header from '$lib/Header/index.svelte';
   import Footer from '$lib/Footer/index.svelte';
 	import '../app.css';
 
-  import { onMount } from 'svelte';
-
   let headerData;
+  let footerData;
 
   onMount(async () => {
-		const res = await fetch(`/api/header-data`);
-		headerData = await res.json();
+		const headerDataRes = await fetch(`/api/header-data`);
+		headerData = await headerDataRes.json();
+
+    const footerDataRes = await fetch(`/api/footer-data`);
+		footerData = await footerDataRes.json();
 	});
 </script>
 
@@ -21,7 +24,9 @@
 	<slot />
 </main>
 
-<Footer />
+{#if footerData}
+  <Footer bind:footerData />
+{/if}
 
 <style>
   main {

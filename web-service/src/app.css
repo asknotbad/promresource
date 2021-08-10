@@ -62,14 +62,14 @@
   src: url('../fonts/Roboto/Roboto-BoldItalic.woff2') format('woff2'),
     url('../fonts/Roboto/Roboto-BoldItalic.woff') format('woff');
 } */
-/* @font-face {
+@font-face {
   font-family: 'Roboto';
   font-display: swap;
   font-style: normal;
   font-weight: 900;
   src: url('../fonts/Roboto/Roboto-Black.woff2') format('woff2'),
     url('../fonts/Roboto/Roboto-Black.woff') format('woff');
-} */
+}
 /* @font-face {
   font-family: 'Roboto';
   font-display: swap;
