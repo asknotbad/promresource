@@ -26,6 +26,7 @@
     background: #363433;
     padding: 30px 0;
     color: #fff;
+    z-index: 100;
   }
   .container {
     display: grid;
