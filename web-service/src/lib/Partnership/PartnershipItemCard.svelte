@@ -55,6 +55,10 @@
     grid-template-columns: min-content 32px;
     gap: 8px;
     align-items: center;
+    color: #E52B32;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
   }
   .link-icon {
     width: 100%;
