@@ -3,10 +3,12 @@
   import Hero from '$lib/Hero/index.svelte';
   import AboutCompany from '$lib/AboutCompany/index.svelte';
   import Advantages from '$lib/Advantages/index.svelte';
+  import Partnership from '$lib/Partnership/index.svelte';
 
   let heroData;
   let aboutCompanyData;
   let advantagesData;
+  let partnershipData;
 
   onMount(async () => {
 		const heroDataRes = await fetch(`/api/hero-data`);
@@ -17,6 +19,9 @@
 
     const advantagesDataRes = await fetch(`/api/advantages-data`);
 		advantagesData = await advantagesDataRes.json();
+
+    const partnershipDataRes = await fetch(`/api/partnership-data`);
+		partnershipData = await partnershipDataRes.json();
 	});
 
 </script>
@@ -35,4 +40,8 @@
 
 {#if advantagesData}
   <Advantages bind:advantagesData />
+{/if}
+
+{#if partnershipData}
+  <Partnership bind:partnershipData />
 {/if}
