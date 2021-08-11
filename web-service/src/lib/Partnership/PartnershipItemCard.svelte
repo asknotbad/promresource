@@ -61,4 +61,56 @@
     object-fit: contain;
     object-position: left center;
   }
+
+  @media (min-width: 576px) {
+    .cover {
+      height: 200px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    article {
+      grid-template-columns: 1fr 2fr;
+      column-gap: 30px;
+      padding: 25px 30px 25px 0;
+    }
+    .cover {
+      margin: 0;
+      width: calc((100% / 3) - 15px);
+      max-width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .announce {
+      font-size: 16px;
+      line-height: 19px;
+    }
+    article > *:not(.cover) {
+      grid-column: 2 / 3;
+    }
+    article > :global(a:not(.link)),
+    article > :global(button) {
+      grid-column: 2 / 3;
+      min-width: 239px;
+      width: auto;
+      margin-right: auto;
+    }
+    article:nth-of-type(even) {
+      grid-template-columns: 2fr 1fr;
+      padding: 25px 0 25px 30px;
+    }
+    article:nth-of-type(even) .cover {
+      left: auto;
+      right: 0;
+    }
+    article:nth-of-type(even) > *:not(.cover) {
+      grid-column: 1 / 2;
+    }
+    article:nth-of-type(even) > :global(a:not(.link)),
+    article:nth-of-type(even) > :global(button) {
+      grid-column: 1 / 2;
+    }
+  }
 </style>

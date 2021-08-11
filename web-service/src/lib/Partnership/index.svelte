@@ -31,4 +31,14 @@
     grid-template-columns: 1fr;
     gap: 30px;
   }
+
+  @media (min-width: 768px) {
+    section {
+      padding: 80px 0;
+    }
+    h2 {
+      margin-bottom: 10px;
+      max-width: 525px;
+    }
+  }
 </style>
