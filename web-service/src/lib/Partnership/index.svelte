@@ -41,4 +41,15 @@
       max-width: 525px;
     }
   }
+
+  @media (min-width: 1200px) {
+    section {
+      padding: 100px 0;
+    }
+    h2 {
+      margin-bottom: 30px;
+      max-width: none;
+    }
+  }
+
 </style>

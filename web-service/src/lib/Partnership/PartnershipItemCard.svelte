@@ -83,6 +83,10 @@
       left: 0;
       top: 0;
     }
+    h3 {
+      font-size: 22px;
+      line-height: 26px;
+    }
     .announce {
       font-size: 16px;
       line-height: 19px;
