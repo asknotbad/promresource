@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_components_carousel_img_slides",
+  "info": {
+    "name": "carouselImgSlide",
+    "icon": "image",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "img": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.img"
+    }
+  }
+}
