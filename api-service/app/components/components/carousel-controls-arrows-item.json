@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_components_carousel_controls_arrows_items",
+  "info": {
+    "name": "carouselControlsArrowsItem",
+    "icon": "angle-double-right"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "img": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.img"
+    },
+    "bg": {
+      "type": "string"
+    }
+  }
+}

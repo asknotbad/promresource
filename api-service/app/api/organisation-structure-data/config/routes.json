@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/organisation-structure-data",
+      "handler": "organisation-structure-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/organisation-structure-data",
+      "handler": "organisation-structure-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/organisation-structure-data",
+      "handler": "organisation-structure-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_components_carousel_controls",
+  "info": {
+    "name": "carouselControls",
+    "icon": "arrows-alt-h",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "arrows": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.carousel-controls-arrows"
+    }
+  }
+}
