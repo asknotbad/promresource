@@ -9,7 +9,7 @@
     "slides": {
       "type": "component",
       "repeatable": true,
-      "component": "components.img"
+      "component": "components.carousel-img-slide"
     },
     "controls": {
       "type": "component",
