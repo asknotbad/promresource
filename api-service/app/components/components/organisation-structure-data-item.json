@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_components_organisation_structure_data_items",
+  "info": {
+    "name": "organisationStructureDataItem",
+    "icon": "sitemap"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "carousel": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.carousel-images"
+    }
+  }
+}

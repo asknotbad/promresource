@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_components_carousel_controls_arrows",
+  "info": {
+    "name": "carouselControlsArrows",
+    "icon": "long-arrow-alt-right"
+  },
+  "options": {},
+  "attributes": {
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    },
+    "prev": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.carousel-controls-arrows-item"
+    },
+    "next": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.carousel-controls-arrows-item"
+    }
+  }
+}
