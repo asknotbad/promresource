@@ -4,11 +4,13 @@
   import AboutCompany from '$lib/AboutCompany/index.svelte';
   import Advantages from '$lib/Advantages/index.svelte';
   import Partnership from '$lib/Partnership/index.svelte';
+  import OrganisationStructure from '$lib/OrganisationStructure/index.svelte';
 
   let heroData;
   let aboutCompanyData;
   let advantagesData;
   let partnershipData;
+  let organisationStructureData;
 
   onMount(async () => {
 		const heroDataRes = await fetch(`/api/hero-data`);
@@ -22,6 +24,9 @@
 
     const partnershipDataRes = await fetch(`/api/partnership-data`);
 		partnershipData = await partnershipDataRes.json();
+
+    const organisationStructureDataRes = await fetch(`/api/organisation-structure-data`);
+		organisationStructureData = await organisationStructureDataRes.json();
 	});
 
 </script>
@@ -44,4 +49,8 @@
 
 {#if partnershipData}
   <Partnership bind:partnershipData />
+{/if}
+
+{#if organisationStructureData}
+  <OrganisationStructure bind:organisationStructureData noPadding />
 {/if}
