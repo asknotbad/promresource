@@ -81,13 +81,26 @@
       grid-template-columns: 5fr 7fr;
       column-gap: 30px;
       row-gap: 25px;
+      min-height: 300px;
+      align-content: start;
     }
     h3,
     .content {
       grid-column: 2 / 3;
     }
     h3::before {
-      width: 30px;
+      width: 40px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    article {
+      grid-template-columns: 1fr 2fr;
+    }
+    .content {
+      font-size: 16px;
+      line-height: 19px;
+      gap: 19px;
     }
   }
 </style>

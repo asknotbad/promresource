@@ -133,8 +133,15 @@
 
   @media (min-width: 768px) {
     .wrapper {
-      margin-bottom: 0;
-      grid-row: 1 / 3;
+      position: absolute;
+      height: 100%;
+      width: calc((100% / 12) * 5 - 15px);
+    }
+  }
+
+  @media (min-width: 992px) {
+    .wrapper {
+      width: calc((100% / 12) * 4 - 15px);
     }
   }
 </style>
