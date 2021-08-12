@@ -50,6 +50,7 @@
     height: 100%;
     z-index: -1;
     background: #363433;
+    pointer-events: none;
   }
   h3::before {
     right: 100%;
@@ -96,6 +97,12 @@
   @media (min-width: 992px) {
     article {
       grid-template-columns: 1fr 2fr;
+    }
+    h3 {
+      padding-right: 15px;
+    }
+    h3::after {
+      display: none;
     }
     .content {
       font-size: 16px;
