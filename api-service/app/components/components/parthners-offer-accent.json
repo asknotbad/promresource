@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_components_parthners_offer_accents",
+  "info": {
+    "name": "parthnersOfferAccent",
+    "icon": "thumbtack"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    },
+    "listItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.about-company-accent-list-item"
+    }
+  }
+}
