@@ -84,6 +84,7 @@
   }
   .slide {
     height: 100%;
+    cursor: pointer;
   }
   .slide img {
     width: 100%;
@@ -128,5 +129,12 @@
   button img {
     width: 100%;
     height: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .wrapper {
+      margin-bottom: 0;
+      grid-row: 1 / 3;
+    }
   }
 </style>

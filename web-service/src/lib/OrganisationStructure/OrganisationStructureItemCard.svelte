@@ -31,8 +31,6 @@
     grid-template-columns: 1fr;
   }
   h3 {
-    margin: 0 -15px;
-    padding: 0 15px;
     color: #fff;
     position: relative;
     background: #363433;
@@ -40,6 +38,24 @@
     display: flex;
     align-items: center;
     padding-top: 16px;
+    z-index: 1;
+  }
+  h3::before,
+  h3::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 50vW;
+    height: 100%;
+    z-index: -1;
+    background: #363433;
+  }
+  h3::before {
+    right: 100%;
+  }
+  h3::after {
+    left: 100%;
   }
   h3 span {
     position: absolute;
@@ -58,5 +74,20 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  @media (min-width: 768px) {
+    article {
+      grid-template-columns: 5fr 7fr;
+      column-gap: 30px;
+      row-gap: 25px;
+    }
+    h3,
+    .content {
+      grid-column: 2 / 3;
+    }
+    h3::before {
+      width: 30px;
+    }
   }
 </style>

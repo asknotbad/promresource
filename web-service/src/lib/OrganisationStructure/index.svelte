@@ -25,6 +25,7 @@
     position: relative;
     z-index: 1;
     padding: 60px 0;
+    overflow-x: hidden;
   }
   section.no-padding {
     padding: 0;
