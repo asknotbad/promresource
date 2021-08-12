@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/parthners-offer-data",
+      "handler": "parthners-offer-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/parthners-offer-data",
+      "handler": "parthners-offer-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/parthners-offer-data",
+      "handler": "parthners-offer-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

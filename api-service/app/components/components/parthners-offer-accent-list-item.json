@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_components_parthners_offer_accent_list_items",
+  "info": {
+    "name": "parthnersOfferAccentListItem",
+    "icon": "ellipsis-h"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
