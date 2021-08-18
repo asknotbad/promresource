@@ -2,7 +2,8 @@
   "kind": "singleType",
   "collectionName": "company_history_data",
   "info": {
-    "name": "companyHistoryData"
+    "name": "companyHistoryData",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -32,6 +33,16 @@
         }
       },
       "component": "components.company-history-data-item"
+    },
+    "controls": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "components.carousel-controls"
     }
   }
 }
