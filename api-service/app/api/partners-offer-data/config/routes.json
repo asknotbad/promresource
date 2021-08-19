@@ -2,24 +2,24 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/parthners-offer-data",
-      "handler": "parthners-offer-data.find",
+      "path": "/partners-offer-data",
+      "handler": "partners-offer-data.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/parthners-offer-data",
-      "handler": "parthners-offer-data.update",
+      "path": "/partners-offer-data",
+      "handler": "partners-offer-data.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/parthners-offer-data",
-      "handler": "parthners-offer-data.delete",
+      "path": "/partners-offer-data",
+      "handler": "partners-offer-data.delete",
       "config": {
         "policies": []
       }

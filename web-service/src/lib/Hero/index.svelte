@@ -1,6 +1,5 @@
 <script>
   import Button from '$lib/Button/index.svelte';
-import { bubble } from 'svelte/internal';
 
   export let heroData;
 </script>
