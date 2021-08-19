@@ -6,6 +6,8 @@
   import Partnership from '$lib/Partnership/index.svelte';
   import OrganisationStructure from '$lib/OrganisationStructure/index.svelte';
   import ParthnersOffer from '$lib/ParthnersOffer/index.svelte';
+  import NewsList from '$lib/NewsList/index.svelte';
+
 
   let heroData;
   let aboutCompanyData;
@@ -13,6 +15,8 @@
   let partnershipData;
   let organisationStructureData;
   let parthnersOfferData;
+  let newsListData;
+  let news;
 
   onMount(async () => {
 		const heroDataRes = await fetch(`/api/hero-data`);
@@ -32,6 +36,12 @@
 
     const parthnersOfferDataRes = await fetch(`/api/partners-offer-data`);
 		parthnersOfferData = await parthnersOfferDataRes.json();
+
+    const newsRes = await fetch(`/api/news?_sort=published_at:DESC&_limit=3`);
+		news = await newsRes.json();
+
+    const newsListDataRes = await fetch(`/api/news-list-data`);
+		newsListData = await newsListDataRes.json();
 	});
 
 </script>
@@ -62,4 +72,8 @@
 
 {#if parthnersOfferData}
   <ParthnersOffer bind:parthnersOfferData />
+{/if}
+
+{#if newsListData && news}
+  <NewsList bind:newsListData bind:news noPadding isLastOnPage />
 {/if}
