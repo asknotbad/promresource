@@ -41,4 +41,29 @@
     grid-template-columns: 1fr;
     gap: 30px;
   }
+
+  @media (min-width: 768px) {
+    section {
+      padding: 80px 0;
+    }
+    section.last {
+      padding-bottom: 80px;
+    }
+  .cards {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 992px) {
+    section {
+      padding: 100px 0;
+    }
+    section.last {
+      padding-bottom: 100px;
+    }
+  .cards {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
 </style>
