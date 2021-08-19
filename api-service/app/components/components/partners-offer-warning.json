@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_components_parthners_offer_warnings",
+  "collectionName": "components_components_partners_offer_warnings",
   "info": {
-    "name": "parthnersOfferWarning",
+    "name": "partnersOfferWarning",
     "icon": "exclamation-circle"
   },
   "options": {},

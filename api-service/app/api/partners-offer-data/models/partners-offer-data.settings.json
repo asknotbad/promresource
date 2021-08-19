@@ -1,8 +1,8 @@
 {
   "kind": "singleType",
-  "collectionName": "parthners_offer_data",
+  "collectionName": "partners_offer_data",
   "info": {
-    "name": "parthnersOfferData",
+    "name": "partnersOfferData",
     "description": ""
   },
   "options": {
@@ -50,7 +50,7 @@
           "localized": true
         }
       },
-      "component": "components.parthners-offer-accent"
+      "component": "components.partners-offer-accent"
     },
     "warning": {
       "type": "component",
@@ -60,7 +60,7 @@
           "localized": true
         }
       },
-      "component": "components.parthners-offer-warning"
+      "component": "components.partners-offer-warning"
     },
     "buttons": {
       "type": "component",
