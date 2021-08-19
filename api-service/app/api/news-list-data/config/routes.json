@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/news-list-data",
+      "handler": "news-list-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/news-list-data",
+      "handler": "news-list-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/news-list-data",
+      "handler": "news-list-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
