@@ -13,7 +13,9 @@
       <div class="content">
         {@html aboutUsTextData.content}
       </div>
-      <Button bind:button={aboutUsTextData.button} />
+      <div class="button">
+        <Button bind:button={aboutUsTextData.button} />
+      </div>
       <div class="cover">
         <img src={aboutUsTextData.cover.file.url} alt={aboutUsTextData.cover.alt}>
       </div>
@@ -74,4 +76,36 @@
   img {
     width: 100%;
   }
+
+  @media (min-width: 576px) {
+    section {
+      padding: 60px 0 80px 0;
+    }
+    section::before {
+      height: calc(100% - 190px);
+    }
+    .button {
+      display: flex;
+    }
+    .button > :global(*) {
+      width: auto;
+      min-width: 284px;
+      margin-right: auto;
+    }
+    .cover {
+      margin-bottom: 50px;
+      padding-left: 30px;
+    }
+    .cover::before {
+      top: 120px;
+      left: 0;
+      width: calc(100% - 60px);
+      height: calc(100% - 70px);
+    }
+    img {
+      width: 100%;
+    }
+
+  }
+
 </style>
