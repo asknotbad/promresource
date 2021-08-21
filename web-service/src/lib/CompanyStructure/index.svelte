@@ -150,7 +150,7 @@
   }
   .photo .button {
     right: auto;
-    left: 90px;
+    left: 32%;
     top: 88px;
   }
   button {
@@ -180,4 +180,216 @@
   .photo .content {
     grid-column: span 2;
   }
+
+  @media (min-width: 576px) {
+    .photo .button {
+      top: 176px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      gap: 48px;
+    }
+    .cards {
+      gap: 30px;
+      grid-template-columns: repeat(12, 1fr );
+      width: 100%;
+      overflow-x: hidden;
+    }
+    li:nth-of-type(1) {
+      grid-column: 1 / 10;
+      margin-bottom: 40px;
+      position: relative;
+      /* overflow: visible; */
+    }
+    li:nth-of-type(1)::after {
+      content: '';
+      display: block;
+      width: 708px;
+      height: 1px;
+      position: absolute;
+      left: 0;
+      bottom: -55px;
+      background: #000;
+    }
+    li:nth-of-type(1) article::after {
+      height: 55px;
+      left: 338px;
+    }
+    li:nth-of-type(2) {
+      grid-row: 4 / 5;
+      grid-column: 1 / 5;
+    }
+    li:nth-of-type(2) article::after {
+      height: 55px;
+      left: -1px;
+      top: auto;
+      bottom: 100%;
+      transform: none;
+    }
+    li:nth-of-type(3) {
+      margin-top: 40px;
+      grid-row: 2 / 3;
+      grid-column: 1 / 5;
+      padding-left: 12px;
+      position: relative;
+    }
+    li:nth-of-type(3)::before {
+      content: '';
+      display: block;
+      width: 1px;
+      height: calc(100% + 55px);
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background: #000;
+    }
+    li:nth-of-type(3)::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: calc(100% + 55px);
+      position: absolute;
+      right: -16px;
+      bottom: 0;
+      background: #000;
+    }
+    li:nth-of-type(3) article::after{
+      height: 56px;
+      bottom: 100%;
+      top: auto;
+    }
+    li:nth-of-type(4) {
+      grid-row: 3 / 4;
+      grid-column: 3 / 7;
+      position: relative;
+    }
+    li:nth-of-type(4)::before {
+      content: '';
+      display: block;
+      width: 1px;
+      height: calc(100% + 55px);
+      position: absolute;
+      left: -118px;
+      bottom: 0;
+      background: #000;
+    }
+    li:nth-of-type(4) article::after{
+      height: 56px;
+      bottom: 100%;
+      top: auto;
+    }
+    li:nth-of-type(5) {
+      margin-top: 40px;
+      grid-row: 2 / 3;
+      grid-column: 5 / 9;
+    }
+    li:nth-of-type(5) article::after{
+      height: 56px;
+      bottom: 100%;
+      top: auto;
+    }
+    li:nth-of-type(6) {
+      grid-row: 3 / 4;
+      grid-column: 7 / 11;
+      position: relative;
+    }
+    li:nth-of-type(6)::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: calc(100% + 55px);
+      position: absolute;
+      right: -118px;
+      bottom: 0;
+      background: #000;
+    }
+    li:nth-of-type(6) article::after{
+      height: 56px;
+      bottom: 100%;
+      top: auto;
+    }
+    li:nth-of-type(7) {
+      margin-top: 40px;
+      grid-row: 2 / 3;
+      grid-column: 9 / 13;
+      padding-right: 12px;
+      position: relative;
+    }
+    li:nth-of-type(7)::before {
+      content: '';
+      display: block;
+      width: 1px;
+      height: calc(100% + 55px);
+      position: absolute;
+      left: -15px;
+      bottom: 0;
+      background: #000;
+    }
+    li:nth-of-type(7)::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: calc(100% + 55px);
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      background: #000;
+    }
+    li:nth-of-type(7) article::after{
+      height: 56px;
+      bottom: 100%;
+      top: auto;
+    }
+    li:nth-of-type(8) {
+      grid-row: 4 / 5;
+      grid-column: 9 / 13;
+      position: relative;
+    }
+    li:nth-of-type(8) article::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 1px;
+      height: 55px;
+      bottom: 100%;
+      background: #000;
+      right: -1px;
+      left: auto;
+      bottom: 100%;
+      transform: none;
+    }
+    h3 {
+      font-size: 20px;
+      line-height: 23px;
+      padding: 15px 0;
+      min-height: 94px;
+    }
+    .button {
+      top: 64px;
+      right: 8px;
+    }
+    article.photo {
+      grid-template-columns: 5fr 6fr;
+      padding: 0;
+    }
+    .photo h3 {
+      height: 217px;
+      font-size: 20px;
+      line-height: 23px;
+      padding-right: 13px;
+      padding-left: 20px;
+      text-align: left;
+    }
+    .photo .button {
+      top: 176px;
+      left: auto;
+      right: 20px;
+      top: 160px;
+      width: 38px;
+      height: 38px;
+    }
+  }
+
 </style>
