@@ -371,8 +371,12 @@
       right: 8px;
     }
     article.photo {
-      grid-template-columns: 5fr 6fr;
+      grid-template-columns: 217px 1fr;
       padding: 0;
+    }
+    .photo > img {
+      width: 100%;
+      height: 217px;
     }
     .photo h3 {
       height: 217px;
@@ -392,4 +396,18 @@
     }
   }
 
+  @media (min-width: 992px) {
+    li:nth-of-type(1)::after {
+      width: 960px;
+    }
+    li:nth-of-type(1) article::after {
+      left: 464px;
+    }
+    li:nth-of-type(4)::before {
+      left: -160px;
+    }
+    li:nth-of-type(6)::after {
+      right: -160px;
+    }
+  }
 </style>
