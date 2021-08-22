@@ -1,12 +1,17 @@
 <script>
   import { onMount } from 'svelte';
   import AboutUsText from '$lib/AboutUsText/index.svelte';
+  import CompanyStructure from '$lib/CompanyStructure/index.svelte';
 
   let aboutUsTextData;
+  let companyStructureData;
 
   onMount(async () => {
 		const aboutUsTextDataRes = await fetch(`/api/about-us-text-data`);
 		aboutUsTextData = await aboutUsTextDataRes.json();
+
+    const companyStructureDataRes = await fetch(`/api/company-structure-data`);
+		companyStructureData = await companyStructureDataRes.json();
 	});
 
 </script>
@@ -17,4 +22,8 @@
 
 {#if aboutUsTextData}
   <AboutUsText bind:aboutUsTextData />
+{/if}
+
+{#if companyStructureData}
+  <CompanyStructure bind:companyStructureData />
 {/if}
