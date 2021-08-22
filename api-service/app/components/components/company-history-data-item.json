@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_components_company_history_data_items",
+  "info": {
+    "name": "companyHistoryDataItem",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
