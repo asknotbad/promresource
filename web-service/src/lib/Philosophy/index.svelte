@@ -100,6 +100,7 @@
   }
   .content :global(ul > li::before) {
     content: '—';
+    color: #2C14B2;
   }
   .cover {
     height: 177px;
@@ -117,6 +118,31 @@
     }
   }
   @media (min-width: 768px) {
+    section {
+      padding: 80px 0;
+    }
+    .container {
+      gap: 40px;
+    }
+    h2 {
+      padding: 60px 0;
+      font-size: 35px;
+      line-height: 41px;
+      padding-right: 0;
+    }
+    .content {
+      gap: 30px;
+    }
+
+    article {
+      gap: 20px;
+    }
+    article:not(:last-of-type) {
+      padding-bottom: 30px;
+    }
+    h3 {
+      line-height: 23px;
+    }
     .cover {
       height: 378px;
     }
