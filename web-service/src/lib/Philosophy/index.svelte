@@ -130,7 +130,7 @@
       line-height: 41px;
       padding-right: 0;
     }
-    .content {
+    .cards {
       gap: 30px;
     }
 
@@ -145,6 +145,40 @@
     }
     .cover {
       height: 378px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    section {
+      padding: 80px 0;
+    }
+    .container {
+      grid-template-columns: 5fr 7fr;
+      column-gap: 30px;
+      row-gap: 60px;
+    }
+    h2::before {
+      left: auto;
+      right: -30px;
+      transform: none;
+    }
+    article,
+    article:not(:last-of-type) {
+      padding-bottom: 20px;
+      border-bottom: 1px solid #E52B32;
+    }
+    .content {
+      line-height: 19px;
+      gap: 19px;
+    }
+    .content :global(ul),
+    .content :global(ol) {
+      gap: 19px;
+    }
+    .cover {
+      height: 100%;
+      grid-column: 2 / 3;
+      grid-row: 1 / 3;
     }
   }
 
