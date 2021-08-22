@@ -2,9 +2,11 @@
   import { onMount } from 'svelte';
   import AboutUsText from '$lib/AboutUsText/index.svelte';
   import CompanyStructure from '$lib/CompanyStructure/index.svelte';
+  import Philosophy from '$lib/Philosophy/index.svelte';
 
   let aboutUsTextData;
   let companyStructureData;
+  let philosophyData;
 
   onMount(async () => {
 		const aboutUsTextDataRes = await fetch(`/api/about-us-text-data`);
@@ -12,6 +14,9 @@
 
     const companyStructureDataRes = await fetch(`/api/company-structure-data`);
 		companyStructureData = await companyStructureDataRes.json();
+
+    const philosophyDataRes = await fetch(`/api/philosophy-data`);
+		philosophyData = await philosophyDataRes.json();
 	});
 
 </script>
@@ -26,4 +31,8 @@
 
 {#if companyStructureData}
   <CompanyStructure bind:companyStructureData />
+{/if}
+
+{#if philosophyData}
+  <Philosophy bind:philosophyData noPadding />
 {/if}
