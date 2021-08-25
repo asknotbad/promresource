@@ -8,6 +8,23 @@
 
   let container = false;
   let carousel = false;
+  let items = 1;
+  let innerWidth = null;
+
+  $: items = (() => {
+    if (innerWidth >= 1200) {
+      return 7;
+    } else if (innerWidth < 1200 && innerWidth >= 992) {
+      return  5;
+    } else if (innerWidth < 992 && innerWidth >= 768) {
+      return  4;
+    } else if (innerWidth < 768 && innerWidth >= 576) {
+      return  2;
+    } else if (innerWidth < 576) {
+      return 1;
+    };
+    return 1;
+  })();
 
   function prev() {
     carousel.goTo('prev');
@@ -23,7 +40,7 @@
     const tinySlider = await import('tiny-slider/src/tiny-slider');
     carousel = tinySlider.tns({
       container,
-      items: 1,
+      items,
       mode: 'carousel',
       slideBy: 'page',
       controls: false,
@@ -33,12 +50,14 @@
       "animateIn": "jello",
       "animateOut": "jello",
       mouseDrag: true,
-      gutter: 30,
+      gutter: 0,
     });
 
   });
 
 </script>
+
+<svelte:window bind:innerWidth/>
 
 {#if companyHistoryData}
   <section class:no-padding={noPadding} class="company-history">
@@ -106,6 +125,18 @@
     overflow-x: hidden;
     width: 100%;
   }
+  .carousel-wrapper::before {
+    content: '';
+    display: block;
+    width: calc(100% - 40px);
+    height: 1px;
+    background: #fff;
+    position: absolute;
+    left: 20px;
+    top: 55px;
+    z-index: -1;
+    pointer-events: none;
+  }
   .carousel {
     width: 100%;
   }
@@ -124,19 +155,6 @@
     position: relative;
     z-index: 1;
     width: 100%;
-  }
-  .icon::before {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 1px;
-    background: #fff;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: -1;
-    pointer-events: none;
   }
   .icon img {
     width: 50px;
@@ -176,5 +194,16 @@
   }
   button img {
     width: 100%;
+  }
+
+  @media (min-width: 576px) {
+    .carousel-wrapper::before {
+      width: calc(100% - 240px);
+      left: 120px;
+      top: 55px;
+    }
+    .controls {
+      margin-left: 80px;
+    }
   }
 </style>
