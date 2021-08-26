@@ -46,7 +46,7 @@
       controls: false,
       autoplay: false,
       nav: false,
-      loop: true,
+      loop: false,
       "animateIn": "jello",
       "animateOut": "jello",
       mouseDrag: true,
