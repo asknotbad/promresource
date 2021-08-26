@@ -206,4 +206,15 @@
       margin-left: 80px;
     }
   }
+
+  @media (min-width: 768px) {
+    .carousel-wrapper::before {
+      width: calc(100% - 180px);
+      left: 90px;
+      top: 55px;
+    }
+    .controls {
+      margin-left: 32px;
+    }
+  }
 </style>
