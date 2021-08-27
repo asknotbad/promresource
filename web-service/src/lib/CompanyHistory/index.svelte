@@ -83,7 +83,7 @@
             </article>
           {/each}
         </div>
-        {#if companyHistoryData.controls && companyHistoryData.controls.arrows && companyHistoryData.controls.arrows.isActive === true}
+        {#if companyHistoryData.controls && companyHistoryData.controls.arrows && companyHistoryData.controls.arrows.isActive === true && companyHistoryData.items.length > items}
           <div class="controls">
             <button class="prev" on:click={prev}>
               <img src={companyHistoryData.controls.arrows.prev.img.file.url} alt={companyHistoryData.controls.arrows.prev.img.alt}>
