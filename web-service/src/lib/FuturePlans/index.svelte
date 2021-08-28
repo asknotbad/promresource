@@ -117,7 +117,7 @@ import ItemCard from "$lib/Advantages/ItemCard.svelte";
     grid-template-columns: 1fr;
     gap: 26px;
   }
-  .text::after {
+  .text::before {
     content: '';
     display: block;
     border: 2px solid #E52B32;
@@ -127,5 +127,42 @@ import ItemCard from "$lib/Advantages/ItemCard.svelte";
     left: -20px;
     top: 10px;
     z-index: -1;
+  }
+
+  @media (min-width: 768px) {
+    section {
+      padding: 80px 0;
+    }
+    h2 {
+      margin-bottom: 40px;
+    }
+    ul {
+      gap: 30px;
+      margin-bottom: 36px;
+    }
+    article {
+      padding: 26px 35px;
+      grid-template-columns: 4fr 6fr;
+      align-items: center;
+    }
+    h3 {
+      font-size: 50px;
+      line-height: 59px;
+    }
+    .content {
+      line-height: 23px;
+      gap: 23px;
+    }
+    .text {
+      padding: 20px 80px;
+      font-size: 25px;
+      line-height: 33px;
+      margin: 0 35px;
+    }
+    .text::before {
+      height: calc(100% + 10px);
+      left: -35px;
+      top: 15px;
+    }
   }
 </style>
