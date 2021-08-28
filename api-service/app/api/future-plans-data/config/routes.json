@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/future-plans-data",
+      "handler": "future-plans-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/future-plans-data",
+      "handler": "future-plans-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/future-plans-data",
+      "handler": "future-plans-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

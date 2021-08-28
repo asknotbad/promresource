@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_components_future_plans_data_items",
+  "info": {
+    "name": "futurePlansDataItem",
+    "icon": "list"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
