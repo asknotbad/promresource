@@ -165,4 +165,42 @@ import ItemCard from "$lib/Advantages/ItemCard.svelte";
       top: 15px;
     }
   }
+
+  @media (min-width: 992px) {
+    section {
+      padding: 100px 0;
+    }
+    h2 {
+      margin-bottom: 65px;
+    }
+    ul {
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    article {
+      padding: 26px 35px;
+      grid-template-columns: 3fr 8fr;
+      align-items: center;
+    }
+    .content {
+      font-size: 16px;
+      line-height: 19px;
+      gap: 19px;
+    }
+    .text {
+      width: auto;
+      padding: 40px 30px;
+      line-height: 29px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    article {
+      grid-template-columns: 1fr 3fr;
+      gap: 30px;
+    }
+  }
+
 </style>
