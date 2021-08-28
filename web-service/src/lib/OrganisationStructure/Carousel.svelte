@@ -57,14 +57,14 @@
         {/each}
       </div>
       {#if controls && controls.arrows && controls.arrows.isActive === true}
-      <div class="controls">
-        <button class="prev" on:click={prev}>
-          <img src={controls.arrows.prev.img.file.url} alt={controls.arrows.prev.img.alt}>
-        </button>
-        <button class="next" on:click={next}>
-          <img src={controls.arrows.next.img.file.url} alt={controls.arrows.next.img.alt}>
-        </button>
-      </div>
+        <div class="controls">
+          <button class="prev" on:click={prev}>
+            <img src={controls.arrows.prev.img.file.url} alt={controls.arrows.prev.img.alt}>
+          </button>
+          <button class="next" on:click={next}>
+            <img src={controls.arrows.next.img.file.url} alt={controls.arrows.next.img.alt}>
+          </button>
+        </div>
       {/if}
       <div class="counter">
         {currentIndex} / {slides.length}
