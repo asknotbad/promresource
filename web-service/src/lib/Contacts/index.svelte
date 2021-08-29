@@ -111,10 +111,12 @@
   h3 {
     font-size: 22px;
     line-height: 26px;
+    margin-top: auto;
   }
   .content {
     font-size: 18px;
     line-height: 20px;
+    margin-bottom: auto;
   }
   .hours {
     padding-left: 95px;
