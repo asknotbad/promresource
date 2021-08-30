@@ -132,6 +132,7 @@
     margin: 0 -15px;
     height: 210px;
   }
+
   @media (min-width: 576px) {
     h3 {
       font-size: 25px;
@@ -147,4 +148,50 @@
     }
   }
 
+  @media (min-width: 768px) {
+    section {
+      padding: 80px 0;
+    }
+    h2::after {
+      left: auto;
+      right: -30px;
+    }
+    .container {
+      grid-template-columns: 5fr 7fr;
+      row-gap: 40px;
+    }
+    h3 {
+      font-size: 18px;
+      line-height: 29px;
+    }
+    .content {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    .map {
+      grid-column: 2 / 3;
+      grid-row: 1 / 3;
+      height: 100%;
+    }
+  }
+
+  @media (min-width: 992px) {
+    section {
+      padding: 100px 0;
+    }
+    h3 {
+      font-size: 25px;
+      line-height: 29px;
+    }
+    .content {
+      font-size: 20px;
+      line-height: 23px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .container {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
 </style>
