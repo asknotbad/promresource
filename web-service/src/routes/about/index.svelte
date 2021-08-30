@@ -5,12 +5,14 @@
   import Philosophy from '$lib/Philosophy/index.svelte';
   import CompanyHistory from '$lib/CompanyHistory/index.svelte';
   import FuturePlans from '$lib/FuturePlans/index.svelte';
+  import Contacts from '$lib/Contacts/index.svelte';
 
   let aboutUsTextData;
   let companyStructureData;
   let philosophyData;
   let companyHistoryData;
   let futurePlansData;
+  let contactsData;
 
   onMount(async () => {
 		const aboutUsTextDataRes = await fetch(`/api/about-us-text-data`);
@@ -27,6 +29,9 @@
 
     const futurePlansDataRes = await fetch(`/api/future-plans-data`);
 		futurePlansData = await futurePlansDataRes.json();
+
+    const contactsDataRes = await fetch(`/api/contacts-data`);
+		contactsData = await contactsDataRes.json();
 	});
 
 </script>
@@ -53,4 +58,8 @@
 
 {#if futurePlansData}
   <FuturePlans bind:futurePlansData />
+{/if}
+
+{#if contactsData}
+  <Contacts bind:contactsData />
 {/if}
