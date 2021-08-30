@@ -132,4 +132,19 @@
     margin: 0 -15px;
     height: 210px;
   }
+  @media (min-width: 576px) {
+    h3 {
+      font-size: 25px;
+      line-height: 29px;
+    }
+    .content {
+      font-size: 20px;
+      line-height: 23px;
+    }
+    .map {
+      margin: 0;
+      height: 400px;
+    }
+  }
+
 </style>
