@@ -40,6 +40,7 @@
     z-index: 1;
     padding: 30px 0;
     color: #fff;
+    overflow-x: hidden;
   }
   img {
     position: absolute;
@@ -143,12 +144,14 @@
   .button {
     position: relative;
     z-index: 1;
+    max-width: 379px;
+    margin-right: auto;
   }
   .button::before,
   .button::after {
     content:'';
     display: block;
-    width: 50vw;
+    width: 100vw;
     height: calc(100% + 30px);
     position: absolute;
     top: 0;
@@ -160,6 +163,27 @@
   }
   .button::after {
     left: 50%;
+  }
+
+  @media (min-width: 576px) {
+    ul {
+      grid-template-columns: 1fr 1fr;
+      row-gap: 30px;
+      padding-top: 17px;
+      padding-bottom: 17px;
+    }
+    li {
+      border-bottom: none;
+    }
+    li:nth-of-type(odd) {
+      border-right: 1px solid #E52B32;
+      padding-right: 20px;
+      padding-left: 0;
+    }
+    li:nth-of-type(even) {
+      padding-left: 20px;
+      padding-right: 0;
+    }
   }
 
 </style>
