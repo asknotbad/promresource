@@ -77,7 +77,7 @@ docker-compose -f docker-compose.yml -f docker-compose.prod.yml down --rmi all -
 
 - Author: [Den Kochetkov](https://github.com/dkochetkov)
 - E-mail: <d@asknotbad.com>
-- Website: [zdp.su](https://asknotbad.com/)
+- Website: [asknotbad.com](https://asknotbad.com/)
 
 ## Лицензия
 
