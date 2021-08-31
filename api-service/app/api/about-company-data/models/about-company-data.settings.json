@@ -61,16 +61,6 @@
         }
       },
       "component": "components.about-company-counter-item"
-    },
-    "bg": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "components.img"
     }
   }
 }
