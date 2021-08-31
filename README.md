@@ -1,20 +1,12 @@
 # G-travel
 
-Приложение G-travel.
+Приложение ООО "Промресурс".
 
 ## Системные требования
 
 На сервере должен быть установлен [Docker](https://docs.docker.com/get-docker/) и [Docker Compose](https://docs.docker.com/compose/install/).
 
 ## Сервисы
-
-### mongo
-
-Сервис для хранения данных приложения.
-
-<code>21017</code> — порт сервиса внутри приложения.
-
-Для подключения к сервису внутри приложения пользователя/пароля не требуется. Данные хранятся в папке <code>./mongo-service/data</code>.
 
 ### postgres
 
@@ -24,15 +16,13 @@
 
 Данные хранятся в папке <code>./postgres-service/data</code>. Для работы сервиса необходимо задать имя пользователя, пароль и имя базы данных в файле <code>./.env</code>
 
-### redis
+### api
 
-Сервис для хранения данных приложения в виде пары ключ:значение.
+API-сервис приложения.
 
-<code>6379</code> — порт сервиса внутри приложения.
+<code>1337</code> — порт сервиса внутри приложения.
 
-<code>redis-service/redis.conf</code> — файл конфигурации Redis
-
-Для подключения к сервису внутри приложения пользователя/пароля не требуется. Данные хранятся в папке <code>./redis-service/data</code>.
+Работает на <a href="https://strapi.io" target="_blank">Strapi</a> CMS.
 
 ## web
 
@@ -43,7 +33,6 @@
 Внешний порт сервиса устанавливается с помощью переменной окружения <code>WEB_SERVICE_PORT</code> в файле <code>.env</code> в корне проекта.
 
 Работает на <a href="https://kit.svelte.dev" target="_blank">SvelteKit</a> framework.
-
 
 ## Разработка
 
@@ -82,16 +71,16 @@ docker-compose -f docker-compose.yml -f docker-compose.prod.yml down --rmi all -
 
 ## Support
 
-[Bugs](https://github.com/zdproduction/g-travel/issues)
+[Bugs](https://github.com/asknotbad/promresource/issues)
 
 ## Stay in touch
 
 - Author: [Den Kochetkov](https://github.com/dkochetkov)
-- E-mail: <d@zdp.su>
-- Website: [zdp.su](https://zdp.su/)
+- E-mail: <d@asknotbad.com>
+- Website: [zdp.su](https://asknotbad.com/)
 
 ## Лицензия
 
 [Apache-2.0](LICENSE)
 
-Copyright &copy; 2021 <a href="https://zdp.su" target="_blank">ZDP</a>
+Copyright &copy; 2021 <a href="https://asknotbad.com" target="_blank">Not Bad</a>
