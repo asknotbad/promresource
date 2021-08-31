@@ -2,7 +2,8 @@
   "kind": "singleType",
   "collectionName": "partner_types_data",
   "info": {
-    "name": "partnerTypesData"
+    "name": "partnerTypesData",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -40,6 +41,16 @@
         }
       },
       "component": "components.partner-type-item"
+    },
+    "partners": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "components.partner-logo"
     }
   }
 }
