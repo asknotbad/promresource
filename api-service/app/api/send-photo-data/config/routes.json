@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/send-photo-data",
+      "handler": "send-photo-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/send-photo-data",
+      "handler": "send-photo-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/send-photo-data",
+      "handler": "send-photo-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
