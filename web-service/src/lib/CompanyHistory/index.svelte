@@ -28,12 +28,10 @@
 
   function prev() {
     carousel.goTo('prev');
-    getCurrentIndex();
   };
 
   function next() {
     carousel.goTo('next');
-    getCurrentIndex();
   };
 
   onMount(async () => {
@@ -57,7 +55,7 @@
 
 </script>
 
-<svelte:window bind:innerWidth/>
+<svelte:window bind:innerWidth />
 
 {#if companyHistoryData}
   <section class:no-padding={noPadding} class="company-history">
