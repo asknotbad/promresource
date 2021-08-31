@@ -30,6 +30,13 @@
           {/if}
         {/each}
       </ul>
+      <div class="partners">
+        {#each partnerTypesData.partners as partner}
+          {#if partner.isActive}
+            <img src={partner.img.file.url} alt={partner.img.alt}>
+          {/if}
+        {/each}
+      </div>
     </div>
   </section>
 {/if}
@@ -88,6 +95,9 @@
     grid-template-columns: 1fr;
     gap: 18px;
   }
+  .partners {
+    display: none;
+  }
 
   @media (min-width: 576px) {
     section {
@@ -137,6 +147,18 @@
     }
     .item-content {
       grid-column: span 2;
+    }
+    .partners {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      align-items: center;
+      align-content: center;
+    }
+    .partners img {
+      width: 100%;
+      height: 90px;
+      object-fit: contain;
+      object-position: center;
     }
   }
 
