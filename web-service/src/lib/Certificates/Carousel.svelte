@@ -41,7 +41,6 @@
     });
 
     carousel.events.on('indexChanged', getCurrentIndex);
-
   });
 
   $: currentIndex = carousel ? carousel.getInfo().index : 1;
@@ -50,7 +49,7 @@
 {#if slides && slides.length > 0}
   <div class="wrapper certificates-carousel">
     <div class="carousel" bind:this={container}>
-      {#each slides as slide, i}
+      {#each slides as slide}
         <div class="slide">
           <img src={slide.img.file.url} alt={slide.img.alt}>
         </div>
