@@ -4,12 +4,14 @@
   import AcceptanceCatalog from '$lib/AcceptanceCatalog/index.svelte';
   import AcceptanceText from '$lib/AcceptanceText/index.svelte';
   import Certificates from '$lib/Certificates/index.svelte';
+  import SendPhoto from '$lib/SendPhoto/index.svelte';
 
   let acceptanceHeroData;
   let catalogData;
   let acceptanceCatalogData;
   let acceptanceTextData;
   let certificatesData;
+  let sendPhotoData;
 
   onMount(async () => {
 		const acceptanceHeroDataRes = await fetch(`/api/acceptance-hero-data`);
@@ -26,6 +28,9 @@
 
     const certificatesDataRes = await fetch(`/api/certificates-data`);
 		certificatesData = await certificatesDataRes.json();
+
+    const sendPhotoDataRes = await fetch(`/api/send-photo-data`);
+		sendPhotoData = await sendPhotoDataRes.json();
 	});
 
 </script>
@@ -48,4 +53,8 @@
 
 {#if certificatesData}
   <Certificates bind:certificatesData />
+{/if}
+
+{#if sendPhotoData}
+  <SendPhoto bind:sendPhotoData />
 {/if}
