@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/acceptance-text-data",
+      "handler": "acceptance-text-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/acceptance-text-data",
+      "handler": "acceptance-text-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/acceptance-text-data",
+      "handler": "acceptance-text-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
