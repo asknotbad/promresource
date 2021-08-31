@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/philosophy-video-data",
+      "handler": "philosophy-video-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/philosophy-video-data",
+      "handler": "philosophy-video-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/philosophy-video-data",
+      "handler": "philosophy-video-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

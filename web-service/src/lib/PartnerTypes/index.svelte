@@ -161,5 +161,4 @@
       object-position: center;
     }
   }
-
 </style>
