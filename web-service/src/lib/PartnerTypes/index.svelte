@@ -88,4 +88,56 @@
     grid-template-columns: 1fr;
     gap: 18px;
   }
+
+  @media (min-width: 576px) {
+    section {
+      padding: 80px 0;
+    }
+    .content {
+      gap: 40px;
+    }
+    article {
+      display: grid;
+      min-height: 208px;
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      align-content: center;
+      gap: 20px;
+      text-align: left;
+    }
+    .icon {
+      grid-row: span 2;
+    }
+    h3 {
+      margin: 0;
+    }
+  }
+
+  @media (min-width: 992px) {
+    section {
+      padding: 100px 0;
+    }
+    ul {
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 30px;
+    }
+    article {
+      height: 100%;
+      min-height: 302px;
+      padding: 30px;
+      align-content: start;
+    }
+    h3 {
+      font-size: 22px;
+      line-height: 26px;
+    }
+    .icon {
+      grid-row: span 1;
+    }
+    .item-content {
+      grid-column: span 2;
+    }
+  }
+
 </style>
