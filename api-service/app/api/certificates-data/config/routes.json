@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/certificates-data",
+      "handler": "certificates-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/certificates-data",
+      "handler": "certificates-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/certificates-data",
+      "handler": "certificates-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
