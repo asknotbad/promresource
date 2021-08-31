@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_components_catalog_data_item_prices",
+  "info": {
+    "name": "catalogDataItemPrice",
+    "icon": "dollar-sign"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer",
+      "default": 0
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
