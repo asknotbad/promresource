@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/partner-types-data",
+      "handler": "partner-types-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/partner-types-data",
+      "handler": "partner-types-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/partner-types-data",
+      "handler": "partner-types-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
