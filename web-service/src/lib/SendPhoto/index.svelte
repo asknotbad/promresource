@@ -1,6 +1,6 @@
 <script>
-    import Button from '$lib/Button/index.svelte';
-
+  import Button from '$lib/Button/index.svelte';
+  import iconFile from './icon-add-file.svg';
   export let sendPhotoData;
 
   let sendData = async () => {
@@ -18,7 +18,17 @@
       <form on:submit|preventDefault={sendData}>
         <input type="tel" placeholder="Ваш номер телефона">
         <input type="text" placeholder="Ваше имя">
-
+        <label>
+          <input type="file" class="visuallyhidden">
+          <div class="placeholder">
+            <div class="icon">
+              <img src={iconFile} alt="">
+            </div>
+            <div class="text">
+              Прикрепить фото или видео
+            </div>
+          </div>
+        </label>
         <Button bind:button={sendPhotoData.button} />
       </form>
     </div>
@@ -69,6 +79,37 @@
     font-size: 14px;
     line-height: 16px;
   }
+  label {
+    cursor: pointer;
+  }
+  .placeholder {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    padding: 0 20px;
+    width: 100%;
+    height: 55px;
+    background: #FFFFFF;
+    color: #363433;
+    border: 1px solid #F4F4F4;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.02);
+    border-radius: 5px;
+    gap: 5px;
+    align-items: center;
+  }
+  .text {
+    opacity: .6;
+  }
+  .icon {
+    width: 22px;
+    height: 22px;
+  }
+  .icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
 
   @media (min-width: 768px) {
     section {
@@ -76,6 +117,10 @@
     }
     .container {
       gap: 40px;
+    }
+    input,
+    .placeholder {
+      padding: 0 42px;
     }
   }
 
