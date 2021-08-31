@@ -2,7 +2,8 @@
   "kind": "singleType",
   "collectionName": "about_company_data",
   "info": {
-    "name": "aboutCompanyData"
+    "name": "aboutCompanyData",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -60,6 +61,16 @@
         }
       },
       "component": "components.about-company-counter-item"
+    },
+    "bg": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "components.img"
     }
   }
 }
