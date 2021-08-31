@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/acceptance-hero-data",
+      "handler": "acceptance-hero-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/acceptance-hero-data",
+      "handler": "acceptance-hero-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/acceptance-hero-data",
+      "handler": "acceptance-hero-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
