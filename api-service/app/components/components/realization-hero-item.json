@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_components_realization_hero_items",
+  "info": {
+    "name": "realizationHeroItem",
+    "icon": "hand-holding"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
