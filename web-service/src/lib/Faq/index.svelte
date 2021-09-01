@@ -57,4 +57,18 @@
     height: 350px;
     margin-bottom: 10px;
   }
+
+  @media (min-width: 768px) {
+    h2 {
+      margin-bottom: 20px;
+    }
+    textarea {
+      height: 233px;
+    }
+    .button {
+      width: 229px;
+      margin-right: auto;
+    }
+  }
+
 </style>

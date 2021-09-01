@@ -48,9 +48,10 @@
     background: none;
     cursor: pointer;
     transition: .25s ease-in-out;
+    transform: translateY(4px);
   }
   button.open {
-    transform: rotate(180deg);
+    transform: rotate(180deg) translateY(-16px);
   }
   img {
     width: 100%;
@@ -76,4 +77,12 @@
     pointer-events: all;
     margin-top: 20px;
   }
+
+  @media (min-width: 768px) {
+    h3 {
+      font-size: 25px;
+      line-height: 39px;
+    }
+  }
+
 </style>
