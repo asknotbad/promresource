@@ -85,4 +85,16 @@
     }
   }
 
+  @media (min-width: 992px) {
+    article {
+      padding: 50px 70px;
+    }
+    h3 {
+      font-size: 25px;
+      line-height: 39px;
+    }
+    .answer.open {
+      margin-top: 30px;
+    }
+  }
 </style>
