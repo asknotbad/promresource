@@ -9,6 +9,7 @@
   import PhilosophyVideo from '$lib/PhilosophyVideo/index.svelte';
   import Faq from '$lib/Faq/index.svelte';
   import PartnersReviews from '$lib/PartnersReviews/index.svelte';
+  import GetPrice from '$lib/GetPrice/index.svelte';
 
   let acceptanceHeroData;
   let catalogData;
@@ -20,6 +21,7 @@
   let philosophyVideoData;
   let faqData;
   let partnersReviewsData;
+  let getPriceData;
 
   onMount(async () => {
 		const acceptanceHeroDataRes = await fetch(`/api/acceptance-hero-data`);
@@ -51,6 +53,9 @@
 
     const partnersReviewsDataRes = await fetch(`/api/partners-reviews-data`);
 		partnersReviewsData = await partnersReviewsDataRes.json();
+
+    const getPriceDataRes = await fetch(`/api/get-price-data`);
+		getPriceData = await getPriceDataRes.json();
 	});
 
 </script>
@@ -94,3 +99,8 @@
 {#if partnersReviewsData}
   <PartnersReviews bind:partnersReviewsData />
 {/if}
+
+{#if getPriceData}
+  <GetPrice bind:getPriceData />
+{/if}
+
