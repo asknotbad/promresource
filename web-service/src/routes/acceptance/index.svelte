@@ -57,7 +57,6 @@
     const getPriceDataRes = await fetch(`/api/get-price-data`);
 		getPriceData = await getPriceDataRes.json();
 	});
-
 </script>
 
 <svelte:head>
@@ -103,4 +102,3 @@
 {#if getPriceData}
   <GetPrice bind:getPriceData />
 {/if}
-
