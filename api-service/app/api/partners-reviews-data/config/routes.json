@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/partners-reviews-data",
+      "handler": "partners-reviews-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/partners-reviews-data",
+      "handler": "partners-reviews-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/partners-reviews-data",
+      "handler": "partners-reviews-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
