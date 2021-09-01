@@ -1,16 +1,29 @@
 <script>
-  import ItemCard from './ItemCard.svelte';
-  import arrowLeft from './arrow-left.svg';
-  import arrowRight from './arrow-right.svg';
   import { onMount } from 'svelte';
   import './tiny-slider.css';
 
+  export let carouselData;
 
-  export let items;
-
+  let innerWidth = null;
   let container = false;
   let carousel = false;
   let currentIndex;
+  let items = 1;
+
+  $: items = (() => {
+    if (innerWidth >= 1200) {
+      return  4;
+    } else if (innerWidth < 1200 && innerWidth >= 992) {
+      return  4;
+    } else if (innerWidth < 992 && innerWidth >= 768) {
+      return  3;
+    } else if (innerWidth < 768 && innerWidth >= 576) {
+      return  2;
+    } else if (innerWidth < 576) {
+      return 1;
+    };
+    return 1;
+  })();
 
   function getCurrentIndex() {
     currentIndex = carousel.getInfo().displayIndex;
@@ -30,7 +43,7 @@
     const tinySlider = await import('tiny-slider/src/tiny-slider');
     carousel = tinySlider.tns({
       container,
-      items: 1,
+      items,
       mode: 'carousel',
       slideBy: 'page',
       controls: false,
@@ -40,34 +53,41 @@
       "animateIn": "jello",
       "animateOut": "jello",
       mouseDrag: true,
-      gutter: 0,
+      gutter: 30,
     });
 
     getCurrentIndex();
 
     carousel.events.on('indexChanged', getCurrentIndex);
   });
-
 </script>
 
-{#if items && items.length > 0}
+<svelte:window bind:innerWidth />
+
+{#if carouselData && carouselData.slides.length > 0}
   <div class="wrapper">
     <div class="carousel" bind:this={container}>
-      {#each items as item}
-        <ItemCard bind:item />
+      {#each carouselData.slides as slide}
+        {#if slide.isActive === true}
+          <div class="slide">
+            <img src={slide.img.file.url} alt={slide.img.alt}>
+          </div>
+        {/if}
       {/each}
     </div>
-    <div class="controls">
-      <button class="prev"  on:click={prev}>
-        <img src={arrowLeft} alt="">
-      </button>
-      <div class="count">
-        {currentIndex} / {items.length}
+    {#if carouselData.controls && carouselData.controls.arrows && carouselData.controls.arrows.isActive === true}
+      <div class="controls">
+        <button class="prev" on:click={prev}>
+          <img src={carouselData.controls.arrows.prev.img.file.url} alt={carouselData.controls.arrows.prev.img.alt}>
+        </button>
+        <div class="count">
+          {currentIndex} / {carouselData.slides.length}
+        </div>
+        <button class="next" on:click={next}>
+          <img src={carouselData.controls.arrows.next.img.file.url} alt={carouselData.controls.arrows.next.img.alt}>
+        </button>
       </div>
-      <button class="next" on:click={next}>
-        <img src={arrowRight} alt="">
-      </button>
-    </div>
+    {/if}
   </div>
 {/if}
 
@@ -76,6 +96,15 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+  .slide {
+    height: 100%;
+  }
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
   .controls {
     display: flex;
@@ -110,5 +139,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  @media (min-width: 992px) {
+    .wrapper {
+      grid-column: span 2;
+      margin-top: 20px;
+    }
   }
 </style>
