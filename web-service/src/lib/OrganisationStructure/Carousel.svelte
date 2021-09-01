@@ -54,21 +54,21 @@
         <div class="slide">
           <img src={slide.img.file.url} alt={slide.img.alt}>
         </div>
-        {/each}
+      {/each}
+    </div>
+    {#if controls && controls.arrows && controls.arrows.isActive === true}
+      <div class="controls">
+        <button class="prev" on:click={prev}>
+          <img src={controls.arrows.prev.img.file.url} alt={controls.arrows.prev.img.alt}>
+        </button>
+        <button class="next" on:click={next}>
+          <img src={controls.arrows.next.img.file.url} alt={controls.arrows.next.img.alt}>
+        </button>
       </div>
-      {#if controls && controls.arrows && controls.arrows.isActive === true}
-        <div class="controls">
-          <button class="prev" on:click={prev}>
-            <img src={controls.arrows.prev.img.file.url} alt={controls.arrows.prev.img.alt}>
-          </button>
-          <button class="next" on:click={next}>
-            <img src={controls.arrows.next.img.file.url} alt={controls.arrows.next.img.alt}>
-          </button>
-        </div>
-      {/if}
-      <div class="counter">
-        {currentIndex} / {slides.length}
-      </div>
+    {/if}
+    <div class="counter">
+      {currentIndex} / {slides.length}
+    </div>
   </div>
 {/if}
 

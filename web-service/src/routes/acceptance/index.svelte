@@ -6,6 +6,7 @@
   import Certificates from '$lib/Certificates/index.svelte';
   import SendPhoto from '$lib/SendPhoto/index.svelte';
   import PartnerTypes from '$lib/PartnerTypes/index.svelte';
+  import PhilosophyVideo from '$lib/PhilosophyVideo/index.svelte';
 
   let acceptanceHeroData;
   let catalogData;
@@ -14,6 +15,7 @@
   let certificatesData;
   let sendPhotoData;
   let partnerTypesData;
+  let philosophyVideoData;
 
   onMount(async () => {
 		const acceptanceHeroDataRes = await fetch(`/api/acceptance-hero-data`);
@@ -36,6 +38,9 @@
 
     const partnerTypesDataRes = await fetch(`/api/partner-types-data`);
 		partnerTypesData = await partnerTypesDataRes.json();
+
+    const philosophyVideoDataRes = await fetch(`/api/philosophy-video-data`);
+		philosophyVideoData = await philosophyVideoDataRes.json();
 	});
 
 </script>
@@ -66,4 +71,8 @@
 
 {#if partnerTypesData}
   <PartnerTypes bind:partnerTypesData />
+{/if}
+
+{#if philosophyVideoData}
+  <PhilosophyVideo bind:philosophyVideoData />
 {/if}
