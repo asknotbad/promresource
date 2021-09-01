@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_components_faq_items",
+  "info": {
+    "name": "faqItem",
+    "icon": "question"
+  },
+  "options": {},
+  "attributes": {
+    "q": {
+      "type": "string"
+    },
+    "a": {
+      "type": "richtext"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
