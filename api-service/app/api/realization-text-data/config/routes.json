@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/realization-text-data",
+      "handler": "realization-text-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/realization-text-data",
+      "handler": "realization-text-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/realization-text-data",
+      "handler": "realization-text-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
