@@ -132,4 +132,18 @@
     }
   }
 
+  @media (min-width: 992px) {
+    article:nth-of-type(odd) {
+      padding-right: 40px;
+    }
+    article:nth-of-type(even) {
+      padding-left: 40px;
+    }
+    h3 {
+      margin-top: 35px;
+    }
+    .button {
+      margin-bottom: 35px;
+    }
+  }
 </style>
