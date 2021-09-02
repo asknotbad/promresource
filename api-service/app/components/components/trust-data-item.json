@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_components_trust_data_items",
+  "info": {
+    "name": "trustDataItem",
+    "icon": "handshake"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "partner": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    }
+  }
+}
