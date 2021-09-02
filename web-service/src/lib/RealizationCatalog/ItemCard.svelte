@@ -73,4 +73,11 @@
     padding: 0 20px;
     margin-bottom: 30px;
   }
+
+  @media (min-width: 576px) {
+    .photo {
+      height: 240px;
+    }
+  }
+
 </style>
