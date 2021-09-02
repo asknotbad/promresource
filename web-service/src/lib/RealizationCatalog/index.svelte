@@ -32,4 +32,14 @@
     grid-template-columns: 1fr;
     gap: 20px;
   }
+
+  @media (min-width: 768px) {
+    section {
+      padding: 80px 0;
+    }
+    .cards {
+      gap: 30px;
+    }
+  }
+
 </style>

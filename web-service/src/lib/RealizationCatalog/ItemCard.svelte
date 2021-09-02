@@ -7,7 +7,9 @@
 
 {#if item}
   <article>
-    <img class="photo" src={item.photo.file.url} alt={item.photo.alt}>
+    <div class="photo">
+      <img src={item.photo.file.url} alt={item.photo.alt}>
+    </div>
     <h3>
       {item.header}
     </h3>
@@ -27,15 +29,18 @@
   article {
     display: grid;
     grid-template-columns: 1fr;
+    column-gap: 30px;
     border: 1px solid #363433;
     color: #424242;
   }
   .photo {
+    margin-bottom: 25px;
+  }
+  .photo img {
     width: 100%;
     height: 130px;
     object-fit: cover;
     object-position: center;
-    margin-bottom: 25px;
   }
   h3 {
     padding: 0 20px;
@@ -58,6 +63,7 @@
     line-height: 19px;
     color: #E52B32;
     margin-left: 20px;
+    margin-right: auto;
     margin-bottom: 25px;
     display: grid;
     grid-template-columns: min-content 32px;
@@ -70,13 +76,59 @@
     object-position: center;
   }
   .button {
-    padding: 0 20px;
-    margin-bottom: 30px;
+    padding: 0 20px 30px 20px;
   }
 
   @media (min-width: 576px) {
-    .photo {
+    .photo img {
       height: 240px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    article {
+      grid-template-columns: 1fr 2fr;
+    }
+    article:nth-of-type(odd) {
+      padding-right: 32px;
+    }
+    article:nth-of-type(even) {
+      grid-template-columns: 2fr 1fr;
+      padding-left: 32px;
+    }
+    .photo {
+      grid-row: span 5;
+      align-self: stretch;
+      margin-bottom: 0;
+    }
+    .photo img {
+      width: 100%;
+      height: 100%;
+    }
+    article:nth-of-type(even) .photo {
+      grid-column: 2 / 3;
+    }
+    h3 {
+      margin-bottom: 25px;
+      margin-top: 25px;
+      padding: 0;
+      font-size: 22px;
+      line-height: 26px;
+    }
+    .content {
+      padding: 0;
+      font-size: 16px;
+      line-height: 19px;
+      gap: 19px;
+    }
+    .more {
+      margin-left: 0;
+    }
+    .button {
+      padding: 0;
+      margin-bottom: 60px;
+      margin-right: auto;
+      min-width: 240px;
     }
   }
 
