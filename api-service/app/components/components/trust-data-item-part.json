@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_components_trust_data_item_parts",
+  "info": {
+    "name": "trustDataItemPart",
+    "icon": "business-time",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.trust-data-item-part-list-item"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

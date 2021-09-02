@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_components_trust_data_item_part_list_items",
+  "info": {
+    "name": "trustDataItemPartListItem",
+    "icon": "pizza-slice",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "text"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/trust-data",
+      "handler": "trust-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/trust-data",
+      "handler": "trust-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/trust-data",
+      "handler": "trust-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
