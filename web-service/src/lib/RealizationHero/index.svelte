@@ -1,22 +1,22 @@
 <script>
   import Button from '$lib/Button/index.svelte';
 
-  export let acceptanceHeroData;
+  export let realizationHeroData;
 </script>
 
-{#if acceptanceHeroData}
+{#if realizationHeroData}
   <section>
-    <img src={acceptanceHeroData.bg.file.url} alt={acceptanceHeroData.bg.alt}>
-    <div class="overlay" style="background: {acceptanceHeroData.bg.overlay};"></div>
+    <img src={realizationHeroData.bg.file.url} alt={realizationHeroData.bg.alt}>
+    <div class="overlay" style="background: {realizationHeroData.bg.overlay};"></div>
     <div class="container">
       <h2>
-        {acceptanceHeroData.header}
+        {realizationHeroData.header}
       </h2>
       <div class="content">
-        {@html acceptanceHeroData.content}
+        {@html realizationHeroData.content}
       </div>
       <ul>
-        {#each acceptanceHeroData.items as item}
+        {#each realizationHeroData.items as item}
           {#if item.isActive === true}
             <li>
               {@html item.content}
@@ -25,10 +25,10 @@
         {/each}
       </ul>
       <div class="bottom-text">
-        {@html acceptanceHeroData.bottomText}
+        {@html realizationHeroData.secondaryContent}
       </div>
       <div class="button">
-        <Button bind:button={acceptanceHeroData.button} />
+        <Button bind:button={realizationHeroData.button} />
       </div>
     </div>
   </section>
@@ -81,6 +81,9 @@
     max-width: 100%;
     width: 100%;
     margin-right: auto;
+  }
+  .content :global(span) {
+    color: #E52B32;
   }
   ul {
     display: grid;
