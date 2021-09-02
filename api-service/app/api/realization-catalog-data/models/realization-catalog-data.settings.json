@@ -2,17 +2,27 @@
   "kind": "singleType",
   "collectionName": "realization_catalog_data",
   "info": {
-    "name": "realizationCatalogData"
+    "name": "realizationCatalogData",
+    "description": ""
   },
   "options": {
     "increments": true,
     "timestamps": true,
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "header": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
