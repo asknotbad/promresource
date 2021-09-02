@@ -2,10 +2,12 @@
   import { onMount } from 'svelte';
   import RealizationHero from '$lib/RealizationHero/index.svelte';
   import RealizationCatalog from '$lib/RealizationCatalog/index.svelte';
+  import RealizationText from '$lib/RealizationText/index.svelte';
 
   let realizationHeroData;
   let catalogData;
   let realizationCatalogData;
+  let realizationTextData;
 
   onMount(async () => {
 		const realizationHeroDataRes = await fetch(`/api/realization-hero-data`);
@@ -16,6 +18,9 @@
 
     const realizationCatalogDataRes = await fetch(`/api/realization-catalog-data`);
 		realizationCatalogData = await realizationCatalogDataRes.json();
+
+    const realizationTextDataRes = await fetch(`/api/realization-text-data`);
+		realizationTextData = await realizationTextDataRes.json();
 	});
 </script>
 
@@ -29,4 +34,8 @@
 
 {#if realizationCatalogData}
   <RealizationCatalog bind:realizationCatalogData bind:catalogData />
+{/if}
+
+{#if realizationTextData}
+  <RealizationText bind:realizationTextData />
 {/if}
