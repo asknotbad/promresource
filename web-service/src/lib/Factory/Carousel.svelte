@@ -126,7 +126,8 @@
   @media (min-width: 992px) {
     .wrapper {
       grid-column: span 2;
-      margin-top: 20px;
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
     }
   }
 </style>
