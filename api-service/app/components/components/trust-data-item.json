@@ -25,6 +25,14 @@
       "type": "component",
       "repeatable": false,
       "component": "components.img"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
