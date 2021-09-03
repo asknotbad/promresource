@@ -52,7 +52,7 @@
   font-style: normal;
   font-weight: 700;
   src: url('/fonts/Roboto/Roboto-Bold.woff2') format('woff2'),
-    url('f/onts/Roboto/Roboto-Bold.woff') format('woff');
+    url('/fonts/Roboto/Roboto-Bold.woff') format('woff');
 }
 /* @font-face {
   font-family: 'Roboto';
