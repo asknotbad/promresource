@@ -105,7 +105,7 @@
 
   @media (min-width: 992px) {
     section {
-      padding: 100px 0;
+      padding: 100px 0 60px 0;
     }
   }
 
