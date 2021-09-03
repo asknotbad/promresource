@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/factory-data",
+      "handler": "factory-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/factory-data",
+      "handler": "factory-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/factory-data",
+      "handler": "factory-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
