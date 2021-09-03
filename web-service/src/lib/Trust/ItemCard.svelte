@@ -85,6 +85,7 @@
   .items {
     display: grid;
     grid-template-columns: 1fr;
+    align-content: start;
   }
   .item {
     display: grid;
@@ -127,12 +128,31 @@
       grid-column: 2 / 3;
       grid-row: 2 / 3;
       margin-top: -84px;
+      margin-bottom: 25px;
     }
     .items {
       grid-column: 1 / 2;
     }
     .item-header {
       font-weight: 500;
+    }
+  }
+  .wrapper {
+      grid-template-columns: 13fr 11fr;
+      column-gap: 45px;
+    }
+  @media (min-width: 992px) {
+    .header {
+      padding: 40px 0 60px 0;
+    }
+    .photo {
+      margin-top: -145px;
+    }
+    .item {
+      padding: 20px 0 30px 0;
+    }
+    ul {
+      gap: 19px;
     }
   }
 </style>

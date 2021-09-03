@@ -103,4 +103,10 @@
     }
   }
 
+  @media (min-width: 992px) {
+    section {
+      padding: 100px 0;
+    }
+  }
+
 </style>
