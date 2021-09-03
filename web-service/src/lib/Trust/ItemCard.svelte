@@ -142,14 +142,32 @@
       column-gap: 45px;
     }
   @media (min-width: 992px) {
+    .wrapper {
+      padding-right: 13px;
+      border-bottom: none;
+    }
+    .wrapper::after {
+      content: '';
+      position: absolute;
+      left: 100%;
+      top: 0;
+      display: block;
+      height: 100%;
+      width: 100vw;
+      background: #fff;
+      z-index: 1;
+      pointer-events: none;
+    }
     .header {
       padding: 40px 0 60px 0;
     }
     .photo {
       margin-top: -145px;
+      margin-bottom: 0;
     }
     .item {
       padding: 20px 0 30px 0;
+      border-bottom: 1px solid #E52B32;
     }
     ul {
       gap: 19px;
