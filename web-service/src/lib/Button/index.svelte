@@ -7,7 +7,7 @@
     {button.text}
   </a>
 {:else}
-  <button on:click|preventDefault>
+  <button on:click|preventDefault class="{button.size} {button.color}" disabled={button.disabled}>
     {button.text}
   </button>
 {/if}

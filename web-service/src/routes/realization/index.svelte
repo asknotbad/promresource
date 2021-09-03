@@ -4,12 +4,14 @@
   import RealizationCatalog from '$lib/RealizationCatalog/index.svelte';
   import RealizationText from '$lib/RealizationText/index.svelte';
   import Trust from '$lib/Trust/index.svelte';
+  import OrderRequest from '$lib/OrderRequest/index.svelte';
 
   let realizationHeroData;
   let catalogData;
   let realizationCatalogData;
   let realizationTextData;
   let trustData;
+  let orderRequestData;
 
   onMount(async () => {
 		const realizationHeroDataRes = await fetch(`/api/realization-hero-data`);
@@ -26,6 +28,9 @@
 
     const trustDataRes = await fetch(`/api/trust-data`);
 		trustData = await trustDataRes.json();
+
+    const orderRequestDataRes = await fetch(`/api/order-request-data`);
+		orderRequestData = await orderRequestDataRes.json();
 	});
 </script>
 
@@ -47,4 +52,8 @@
 
 {#if trustData}
   <Trust bind:trustData />
+{/if}
+
+{#if orderRequestData}
+  <OrderRequest bind:orderRequestData />
 {/if}
