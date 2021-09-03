@@ -90,4 +90,17 @@
     font-size: 20px;
     line-height: 23px;
   }
+
+  @media (min-width: 768px) {
+    section {
+      padding: 80px 0;
+    }
+    .container {
+      gap: 40px;
+    }
+    li {
+      width: auto;
+    }
+  }
+
 </style>

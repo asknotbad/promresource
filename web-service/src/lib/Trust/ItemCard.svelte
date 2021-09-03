@@ -43,6 +43,8 @@
     position: relative;
     z-index: 1;
     border-bottom: 1px solid #E52B32;
+    display: grid;
+    grid-template-columns: 1fr;
   }
   .header {
     font-size: 18px;
@@ -89,7 +91,7 @@
     grid-template-columns: 1fr;
     gap: 19px;
     font-size: 16px;
-    line-height: 21px;
+    line-height: 19px;
     padding: 20px 0;
   }
   .item:not(:last-child) {
@@ -107,5 +109,30 @@
   li::before {
     content: '—';
     margin-right: 4px;
+  }
+
+  @media (min-width: 768px) {
+    .wrapper {
+      grid-template-columns: 11fr 13fr;
+      column-gap: 25px;
+    }
+    .header {
+      padding: 40px 0;
+    }
+    .header::before,
+    .header::after {
+      height: 100%;
+    }
+    .photo {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+      margin-top: -84px;
+    }
+    .items {
+      grid-column: 1 / 2;
+    }
+    .item-header {
+      font-weight: 500;
+    }
   }
 </style>
