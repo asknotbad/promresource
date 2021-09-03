@@ -34,16 +34,6 @@
       },
       "component": "components.trust-data-item"
     },
-    "photo": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "components.img"
-    },
     "order": {
       "pluginOptions": {
         "i18n": {

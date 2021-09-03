@@ -2,7 +2,8 @@
   "collectionName": "components_components_trust_data_items",
   "info": {
     "name": "trustDataItem",
-    "icon": "handshake"
+    "icon": "handshake",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -14,6 +15,16 @@
     },
     "city": {
       "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.trust-data-item-part"
+    },
+    "photo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.img"
     }
   }
 }
