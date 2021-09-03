@@ -137,12 +137,10 @@
       font-weight: 500;
     }
   }
-  .wrapper {
-      grid-template-columns: 13fr 11fr;
-      column-gap: 45px;
-    }
   @media (min-width: 992px) {
     .wrapper {
+      grid-template-columns: 13fr 11fr;
+      column-gap: 45px;
       padding-right: 13px;
       border-bottom: none;
     }
