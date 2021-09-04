@@ -1,5 +1,5 @@
 <script>
-  import arrow from './arrow-blue.svg';
+  import arrow from './arrow-red.svg';
 
   export let realizationCompanyData;
 </script>
@@ -88,7 +88,7 @@
     font-weight: bold;
     font-size: 16px;
     line-height: 19px;
-    color: #2C14B2;
+    color: #E52B32;
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-start;
