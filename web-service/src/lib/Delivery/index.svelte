@@ -16,6 +16,9 @@
       </div>
       <Carousel bind:carouselData={deliveryData.carousel} />
       <div class="documents">
+        <h3>
+          {deliveryData.documentsHeader}
+        </h3>
         <Documents bind:carouselData={deliveryData.documents} />
       </div>
     </div>
@@ -37,6 +40,9 @@
   }
   h2 {
     margin-bottom: 10px;
+  }
+  h3 {
+    display: none;
   }
   .content {
     font-size: 16px;
@@ -67,6 +73,13 @@
     }
     h2 {
       margin-bottom: 16px;
+    }
+    h3 {
+      display: block;
+      font-size: 25px;
+      line-height: 29px;
+      margin-top: 20px;
+      margin-bottom: 40px;
     }
   }
 

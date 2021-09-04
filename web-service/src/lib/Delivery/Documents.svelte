@@ -12,7 +12,6 @@
 
   $: items = (() => {
     if (innerWidth >= 1200) {
-      isCarousel = false;
       return  4;
     } else if (innerWidth < 1200 && innerWidth >= 992) {
       return  4;
@@ -159,8 +158,6 @@
   @media (min-width: 576px) {
     .slide img {
       height: 314px;
-      object-fit: cover;
-      object-position: center;
     }
   }
 
@@ -178,10 +175,9 @@
     }
   }
 
-  @media (min-width: 576px) {
+  @media (min-width: 1200px) {
     .slide img {
       height: 392px;
     }
   }
-
 </style>
