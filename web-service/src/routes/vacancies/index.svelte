@@ -1,9 +1,11 @@
 <script>
   import { onMount } from 'svelte';
 
+  let vacanciesHeroData;
+
   onMount(async () => {
-		// const acceptanceHeroDataRes = await fetch(`/api/acceptance-hero-data`);
-		// acceptanceHeroData = await acceptanceHeroDataRes.json();
+		const vacanciesHeroDataRes = await fetch(`/api/vacancies-hero-data`);
+		vacanciesHeroData = await vacanciesHeroDataRes.json();
 
 	});
 </script>

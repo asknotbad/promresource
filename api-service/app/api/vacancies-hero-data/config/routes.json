@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/vacancies-hero-data",
+      "handler": "vacancies-hero-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/vacancies-hero-data",
+      "handler": "vacancies-hero-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/vacancies-hero-data",
+      "handler": "vacancies-hero-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
