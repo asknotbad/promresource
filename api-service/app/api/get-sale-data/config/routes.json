@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/get-sale-data",
+      "handler": "get-sale-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/get-sale-data",
+      "handler": "get-sale-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/get-sale-data",
+      "handler": "get-sale-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
