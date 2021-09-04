@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/ask-quetion-data",
+      "handler": "ask-quetion-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/ask-quetion-data",
+      "handler": "ask-quetion-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/ask-quetion-data",
+      "handler": "ask-quetion-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
