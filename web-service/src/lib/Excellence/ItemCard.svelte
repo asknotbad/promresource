@@ -43,6 +43,9 @@
   .content {
     font-size: 14px;
     line-height: 16px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   @media (min-width: 576px) {
@@ -51,15 +54,26 @@
       column-gap: 25px;
       align-items: center;
       align-content: center;
+      text-align: left;
     }
     .index {
       grid-row: span 2;
     }
+  }
+
+  @media (min-width: 768px) {
+    article {
+      padding: 70px 60px 70px 30px;
+    }
     h3 {
-      text-align: left;
+      font-size: 20px;
+      line-height: 23px;
     }
     .content {
-      text-align: left;
+      font-size: 16px;
+      line-height: 19px;
+      gap: 19px;
     }
   }
+
 </style>
