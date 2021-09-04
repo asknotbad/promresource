@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/excellence-data",
+      "handler": "excellence-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/excellence-data",
+      "handler": "excellence-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/excellence-data",
+      "handler": "excellence-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
