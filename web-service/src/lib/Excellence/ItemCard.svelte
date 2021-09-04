@@ -76,4 +76,18 @@
     }
   }
 
+  @media (min-width: 992px) {
+    article {
+      padding: 50px 80px 50px 30px;
+      column-gap: 20px;
+      row-gap: 35px;
+      align-content: start;
+    }
+    .index {
+      grid-row: span 1;
+    }
+    .content {
+      grid-column: span 2;
+    }
+  }
 </style>

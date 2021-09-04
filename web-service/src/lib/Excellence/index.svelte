@@ -49,4 +49,17 @@
     }
   }
 
+  @media (min-width: 992px) {
+    section {
+      padding: 100px 0;
+    }
+    h2 {
+      margin-bottom: 60px;
+    }
+    .items {
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+  }
+
 </style>
