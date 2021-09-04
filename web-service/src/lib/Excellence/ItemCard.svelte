@@ -44,4 +44,22 @@
     font-size: 14px;
     line-height: 16px;
   }
+
+  @media (min-width: 576px) {
+    article {
+      grid-template-columns: min-content 1fr;
+      column-gap: 25px;
+      align-items: center;
+      align-content: center;
+    }
+    .index {
+      grid-row: span 2;
+    }
+    h3 {
+      text-align: left;
+    }
+    .content {
+      text-align: left;
+    }
+  }
 </style>
