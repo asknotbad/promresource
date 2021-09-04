@@ -1,0 +1,201 @@
+.delivery .tns-outer {
+  padding: 0;
+  position: relative;
+  z-index: 1;
+  height: 214px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+@media (min-width: 576px) {
+  .delivery .tns-outer {
+    height: 300px;
+  }
+}
+
+@media (min-width: 768px) {
+  .delivery .tns-outer {
+    height: 380px;
+  }
+}
+
+@media (min-width: 992px) {
+  .delivery .tns-outer {
+    height: 320px;
+  }
+}
+
+.delivery .tns-inner {
+  height: 100%;
+}
+.tns-outer [hidden] {
+  display: none;
+}
+
+.delivery .tns-outer [aria-controls],
+.delivery .tns-outer [data-action]{cursor:pointer}
+
+.delivery .tns-controls {
+  pointer-events: none;
+  max-width: 1160px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+.delivery .tns-controls button {
+  pointer-events: all;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delivery .tns-slider {
+  transition: all 0s;
+  height: 100%;
+}
+
+.delivery .tns-horizontal.tns-subpixel {
+  white-space: nowrap;
+}
+
+.delivery .tns-horizontal.tns-subpixel > .tns-item {
+  display: inline-block;
+  vertical-align: top;
+  white-space: normal;
+}
+
+.delivery .tns-horizontal.tns-no-subpixel:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.delivery .tns-horizontal.tns-no-subpixel > .tns-item {
+  float: left;
+}
+
+.delivery .tns-horizontal.tns-carousel.tns-no-subpixel > .tns-item {
+  margin-right: -100%
+}
+
+.delivery .tns-no-calc {
+  position: relative;
+  left: 0;
+}
+
+.delivery .tns-gallery {
+  position: relative;
+  left: 0;
+  min-height: 1px;
+}
+
+.delivery .tns-gallery > .tns-item {
+  position: absolute;
+  left: -100%;
+  transition: transform 0s, opacity 0s;
+}
+
+.delivery .tns-gallery > .tns-slide-active {
+  position: relative;
+  left: auto;
+}
+
+.delivery .tns-gallery > .tns-moving {
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+.delivery .tns-autowidth {
+  display: inline-block;
+}
+
+.delivery .tns-lazy-img {
+  transition: opacity 0.6s;
+  opacity: 0.6;
+}
+
+.delivery .tns-lazy-img.tns-complete {
+  opacity: 1;
+}
+
+.delivery .tns-ah {
+  transition: height 0s;
+}
+
+.delivery .tns-ovh {
+  overflow: hidden;
+  height: 100%;
+}
+
+.delivery .tns-visually-hidden {
+  position: absolute;
+  left: -10000em;
+}
+
+.tns-transparent {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.delivery .tns-fadeIn {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  z-index: 0;
+}
+
+.delivery .tns-normal,
+.delivery .tns-fadeOut {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  z-index: -1;
+}
+
+.delivery .tns-vpfix {
+  white-space: nowrap;
+}
+
+.delivery .tns-vpfix > div,
+.delivery .tns-vpfix > li {
+  display: inline-block;
+}
+
+.delivery .tns-t-subp2 {
+  margin: 0 auto;
+  width: 310px;
+  position: relative;
+  height: 10px;
+  overflow: hidden;
+}
+
+.delivery .tns-t-ct {
+  width: 2333.3333333%;
+  width: calc(100% * 70 / 3);
+  position: absolute;
+  right: 0;
+}
+
+.tns-t-ct:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.delivery .tns-t-ct > div {
+  width: 1.4285714%;
+  width: calc(100% / 70);
+  height: 10px;
+  float:left;
+}
