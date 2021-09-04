@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_components_company_stats_data_item_list_items",
+  "info": {
+    "name": "companyStatsDataItemListItem",
+    "icon": "highlighter"
+  },
+  "options": {},
+  "attributes": {
+    "count": {
+      "type": "integer",
+      "default": 0
+    },
+    "text": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

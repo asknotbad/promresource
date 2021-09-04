@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_components_company_stats_data_items",
+  "info": {
+    "name": "companyStatsDataItem",
+    "icon": "chart-line"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.company-stats-data-item-list-item"
+    }
+  }
+}
