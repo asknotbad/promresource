@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/laboratory-data",
+      "handler": "laboratory-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/laboratory-data",
+      "handler": "laboratory-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/laboratory-data",
+      "handler": "laboratory-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
