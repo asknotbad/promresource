@@ -2,7 +2,8 @@
   "kind": "singleType",
   "collectionName": "get_sale_data",
   "info": {
-    "name": "getSaleData"
+    "name": "getSaleData",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -48,6 +49,16 @@
         }
       },
       "component": "components.button"
+    },
+    "bg": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "components.img"
     }
   }
 }
