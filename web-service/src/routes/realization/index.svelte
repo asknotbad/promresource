@@ -7,6 +7,7 @@
   import OrderRequest from '$lib/OrderRequest/index.svelte';
   import Factory from '$lib/Factory/index.svelte';
   import Delivery from '$lib/Delivery/index.svelte';
+  import Laboratory from '$lib/Laboratory/index.svelte';
 
   let realizationHeroData;
   let catalogData;
@@ -16,6 +17,7 @@
   let orderRequestData;
   let factoryData;
   let deliveryData;
+  let laboratoryData;
 
   onMount(async () => {
 		const realizationHeroDataRes = await fetch(`/api/realization-hero-data`);
@@ -41,6 +43,9 @@
 
     const deliveryDataRes = await fetch(`/api/delivery-data`);
 		deliveryData = await deliveryDataRes.json();
+
+    const laboratoryDataRes = await fetch(`/api/laboratory-data`);
+		laboratoryData = await laboratoryDataRes.json();
 	});
 </script>
 
@@ -74,4 +79,8 @@
 
 {#if deliveryData}
   <Delivery bind:deliveryData />
+{/if}
+
+{#if laboratoryData}
+  <Laboratory bind:laboratoryData />
 {/if}
