@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/fabric-address-data",
+      "handler": "fabric-address-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/fabric-address-data",
+      "handler": "fabric-address-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/fabric-address-data",
+      "handler": "fabric-address-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
