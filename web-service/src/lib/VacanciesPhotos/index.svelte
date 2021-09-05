@@ -36,4 +36,36 @@
   img {
     width: 100%;
   }
+
+  @media (min-width: 576px) {
+    .photos {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 30px;
+    }
+    .photo:nth-of-type(5n - 4) {
+      grid-column: span 2;
+    }
+    img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .photos {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      column-gap: 30px;
+    }
+    .photo:nth-of-type(5n - 4),
+    .photo:nth-of-type(5n - 3) {
+      grid-column: span 3;
+    }
+    .photo:nth-of-type(5n - 2),
+    .photo:nth-of-type(5n - 1),
+    .photo:nth-of-type(5n) {
+      grid-column: span 2;
+    }
+  }
+
 </style>
