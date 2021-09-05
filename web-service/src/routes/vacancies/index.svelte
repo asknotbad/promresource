@@ -4,11 +4,13 @@
   import VacanciesCare from '$lib/VacanciesCare/index.svelte';
   import VacanciesPhotos from '$lib/VacanciesPhotos/index.svelte';
   import OrganizationOfWork from '$lib/OrganizationOfWork/index.svelte';
+  import Vacancies from '$lib/Vacancies/index.svelte';
 
   let vacanciesHeroData;
   let vacanciesCareData;
   let vacanciesPhotosData;
   let organizationOfWorkData;
+  let vacanciesData;
 
   onMount(async () => {
 		const vacanciesHeroDataRes = await fetch(`/api/vacancies-hero-data`);
@@ -22,6 +24,9 @@
 
 		const organizationOfWorkDataRes = await fetch(`/api/organization-of-work-data`);
 		organizationOfWorkData = await organizationOfWorkDataRes.json();
+
+    const vacanciesDataRes = await fetch(`/api/vacancies-data`);
+		vacanciesData = await vacanciesDataRes.json();
 
 	});
 </script>
@@ -44,4 +49,8 @@
 
 {#if organizationOfWorkData}
   <OrganizationOfWork bind:organizationOfWorkData />
+{/if}
+
+{#if vacanciesData}
+  <Vacancies bind:vacanciesData />
 {/if}
