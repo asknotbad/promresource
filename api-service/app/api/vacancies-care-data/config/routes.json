@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/vacancies-care-data",
+      "handler": "vacancies-care-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/vacancies-care-data",
+      "handler": "vacancies-care-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/vacancies-care-data",
+      "handler": "vacancies-care-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
