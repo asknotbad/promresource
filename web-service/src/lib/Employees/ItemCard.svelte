@@ -1,6 +1,7 @@
 <script>
   export let item;
   export let header;
+  export let isWhite = false;
 </script>
 
 {#if item}
@@ -10,7 +11,7 @@
         {header}
       </h2>
     {/if}
-    <article>
+    <article class:white={isWhite}>
       <div class="photo">
         <img src={item.photo.file.url} alt={item.photo.alt}>
       </div>
@@ -58,6 +59,9 @@
     font-size: 16px;
     line-height: 19px;
     padding-bottom: 30px;
+  }
+  article.white {
+    border: 1px solid #363433;
   }
   h2 {
     margin-bottom: 30px;
