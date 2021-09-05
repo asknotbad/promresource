@@ -127,4 +127,33 @@
   .signature {
     font-weight: 700;
   }
+
+  @media (min-width: 768px) {
+    section {
+      padding: 80px 0;
+    }
+    h2 {
+      padding: 60px 0;
+      margin-bottom: 40px;
+    }
+    ul {
+      line-height: 19px;
+      gap: 19px;
+      margin-bottom: 40px;
+    }
+    .photo {
+      margin-bottom: -90px;
+    }
+    .content {
+      padding: 30px;
+      font-size: 18px;
+      line-height: 21px;
+      gap: 21px;
+    }
+    .content::before,
+    .content::after {
+      display: none;
+    }
+  }
+
 </style>
