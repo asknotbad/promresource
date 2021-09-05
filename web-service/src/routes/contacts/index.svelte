@@ -3,6 +3,8 @@
   import ContactsHero from '$lib/ContactsHero/index.svelte';
   import CompanyDetails from '$lib/CompanyDetails/index.svelte';
 
+  import FabricAddress from '$lib/FabricAddress/index.svelte';
+
   let contactsHeroData;
   let companyDetailsData;
   let employeesData;
@@ -33,4 +35,10 @@
 
 {#if companyDetailsData}
   <CompanyDetails bind:companyDetailsData />
+{/if}
+
+
+
+{#if fabricAddressData}
+  <FabricAddress bind:fabricAddressData />
 {/if}
