@@ -105,4 +105,19 @@
     }
   }
 
+  @media (min-width: 992px) {
+    article {
+      padding: 50px 100px 50px 70px;
+    }
+    h3 {
+      padding-right: 0;
+      margin-right: -40px;
+      font-size: 25px;
+      line-height: 39px;
+    }
+    ul.open {
+      margin-top: 30px;
+    }
+
+  }
 </style>
