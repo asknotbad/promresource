@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import VacanciesHero from '$lib/VacanciesHero/index.svelte';
 
   let vacanciesHeroData;
 
@@ -13,3 +14,7 @@
 <svelte:head>
 	<title>Промресурс | Вакансии</title>
 </svelte:head>
+
+{#if vacanciesHeroData}
+  <VacanciesHero bind:vacanciesHeroData />
+{/if}
