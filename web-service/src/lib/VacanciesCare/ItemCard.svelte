@@ -4,7 +4,9 @@
 
 {#if item}
   <article>
-    <img src={item.cover.file.url} alt={item.cover.alt}>
+    <div class="cover">
+      <img src={item.cover.file.url} alt={item.cover.alt}>
+    </div>
     <h3>
       {item.header}
     </h3>
@@ -22,6 +24,9 @@
     row-gap: 20px;
     padding: 0 0 30px 0;
   }
+  img {
+    width: 100%;
+  }
   h3 {
     font-size: 22px;
     line-height: 26px;
@@ -35,4 +40,30 @@
     gap: 19px;
     padding: 0 20px;
   }
+
+  @media (min-width: 768px) {
+    article {
+      grid-template-columns: 1fr 2fr;
+      padding: 0 30px 0 0;
+      align-content: start;
+      column-gap: 20px;
+    }
+    .cover {
+      grid-row: span 2;
+    }
+    img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    h3 {
+      margin-top: 30px;
+      padding: 0;
+    }
+    .content {
+      margin-bottom: 30px;
+      padding: 0;
+    }
+  }
+
 </style>

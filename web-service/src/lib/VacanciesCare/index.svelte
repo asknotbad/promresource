@@ -27,9 +27,22 @@
     color: #fff;
     background: #363433;
   }
+  h2 {
+    margin-bottom: 30px;
+  }
   .cards {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
   }
+
+  @media (min-width: 768px) {
+    section {
+      padding: 60px 0;
+    }
+    h2 {
+      margin-bottom: 40px;
+    }
+  }
+
 </style>
