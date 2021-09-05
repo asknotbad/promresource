@@ -11,6 +11,7 @@
   let vacanciesPhotosData;
   let organizationOfWorkData;
   let vacanciesData;
+  let vacanciesSubscribeData;
 
   onMount(async () => {
 		const vacanciesHeroDataRes = await fetch(`/api/vacancies-hero-data`);
@@ -28,6 +29,8 @@
     const vacanciesDataRes = await fetch(`/api/vacancies-data`);
 		vacanciesData = await vacanciesDataRes.json();
 
+    const vacanciesSubscribeDataRes = await fetch(`/api/vacancies-subscribe-data`);
+		vacanciesSubscribeData = await vacanciesSubscribeDataRes.json();
 	});
 </script>
 

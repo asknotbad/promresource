@@ -118,6 +118,5 @@
     ul.open {
       margin-top: 30px;
     }
-
   }
 </style>
