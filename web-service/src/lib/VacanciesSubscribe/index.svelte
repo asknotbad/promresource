@@ -78,4 +78,19 @@
     }
   }
 
+  @media (min-width: 992px) {
+    section {
+      padding: 100px 0;
+    }
+    form {
+      grid-template-columns: 367px min-content;
+    }
+    form > :global(button),
+    form > :global(a) {
+      min-width: 406px;
+      padding: 0 30px;
+      white-space: nowrap;
+    }
+
+  }
 </style>
