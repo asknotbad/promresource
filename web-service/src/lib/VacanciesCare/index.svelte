@@ -45,4 +45,15 @@
     }
   }
 
+  @media (min-width: 992px) {
+    section {
+      padding: 100px 0;
+    }
+    h2 {
+      margin-bottom: 60px;
+    }
+    .cards {
+      gap: 30px;
+    }
+  }
 </style>

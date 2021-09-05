@@ -67,4 +67,17 @@
     }
   }
 
+  @media (min-width: 992px) {
+    article {
+      column-gap: 30px;
+      row-gap: 25px;
+      padding: 0 40px 0 0;
+    }
+    h3 {
+      margin-top: 33px;
+    }
+    .content {
+      margin-bottom: 33px;
+    }
+  }
 </style>
