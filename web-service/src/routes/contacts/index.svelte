@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
   import ContactsHero from '$lib/ContactsHero/index.svelte';
   import CompanyDetails from '$lib/CompanyDetails/index.svelte';
-
+  import Employees from '$lib/Employees/index.svelte';
   import FabricAddress from '$lib/FabricAddress/index.svelte';
 
   let contactsHeroData;
@@ -37,7 +37,9 @@
   <CompanyDetails bind:companyDetailsData />
 {/if}
 
-
+{#if employeesData}
+  <Employees bind:employeesData />
+{/if}
 
 {#if fabricAddressData}
   <FabricAddress bind:fabricAddressData />
