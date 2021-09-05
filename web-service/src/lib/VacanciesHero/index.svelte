@@ -8,6 +8,7 @@
   <section>
     <div class="container">
       <div class="header">
+        <div class="frame"></div>
         <h2>
           {vacanciesHeroData.header}
         </h2>
@@ -52,6 +53,15 @@
   }
   .header::before {
     right: 50%;
+  }
+  .frame {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 548px;
+    height: 246px;
+    border: 2px solid #E52B32;
+    z-index: -2;
   }
   h2 {
     font-size: 40px;
