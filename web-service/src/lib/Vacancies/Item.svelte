@@ -93,4 +93,16 @@
     font-size: 18px;
     line-height: 35px;
   }
+
+  @media (min-width: 768px) {
+    article {
+      padding: 40px 20px 40px 30px;
+    }
+    h3 {
+      padding-right: 30px;
+      font-size: 25px;
+      line-height: 39px;
+    }
+  }
+
 </style>
