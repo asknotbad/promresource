@@ -91,6 +91,5 @@
       padding: 0 30px;
       white-space: nowrap;
     }
-
   }
 </style>
