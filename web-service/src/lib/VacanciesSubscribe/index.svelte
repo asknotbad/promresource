@@ -65,4 +65,17 @@
   form > :global(*) {
     min-height: 55px;
   }
+
+  @media (min-width: 768px) {
+    section {
+      padding: 80px 0;
+    }
+    h2 {
+      margin-bottom: 40px;
+    }
+    form {
+      gap: 30px;
+    }
+  }
+
 </style>
