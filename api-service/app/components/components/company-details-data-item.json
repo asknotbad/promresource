@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_components_company_details_data_items",
+  "info": {
+    "name": "companyDetailsDataItem",
+    "icon": "drumstick-bite"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "name",
+        "colon",
+        "dash"
+      ]
+    },
+    "content": {
+      "type": "text"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "isActive": {
+      "type": "boolean"
+    }
+  }
+}
