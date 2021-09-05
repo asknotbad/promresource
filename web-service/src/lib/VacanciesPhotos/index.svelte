@@ -53,6 +53,12 @@
   }
 
   @media (min-width: 768px) {
+    section {
+      padding: 80px 0;
+    }
+    h2 {
+      margin-bottom: 40px;
+    }
     .photos {
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
       column-gap: 30px;
@@ -68,4 +74,15 @@
     }
   }
 
+  @media (min-width: 992px) {
+    section {
+      padding: 100px 0;
+    }
+    h2 {
+      margin-bottom: 60px;
+    }
+    .photos {
+      row-gap: 25px;
+    }
+  }
 </style>
