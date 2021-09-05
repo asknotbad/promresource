@@ -14,9 +14,6 @@
   {#if employeesData.sales && employeesData.sales.isActive === true}
     <Sales bind:data={employeesData.sales} />
   {/if}
-  {#if employeesData.sales && employeesData.sales.isActive === true}
-    <Sales bind:data={employeesData.sales} />
-  {/if}
   {#if employeesData.bookkeeping && employeesData.bookkeeping.isActive === true && employeesData.hr && employeesData.hr.isActive === true}
     <BookkeepingHr bind:bkData={employeesData.bookkeeping} bind:hrData={employeesData.hr} />
   {/if}
