@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_components_employees_data_departmets",
+  "info": {
+    "name": "employeesDataDepartmet",
+    "icon": "user-friends",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "purchasing",
+        "sales",
+        "bookkeeping",
+        "hr",
+        "purchase",
+        "laborProtection"
+      ]
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.employees-data-items"
+    }
+  }
+}

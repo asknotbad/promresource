@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_components_employees_data_items",
+  "info": {
+    "name": "employeesDataItems",
+    "icon": "user-tie"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "position": {
+      "type": "text"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
