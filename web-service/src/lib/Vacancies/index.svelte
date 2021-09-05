@@ -50,5 +50,4 @@
       margin-bottom: 60px;
     }
   }
-
 </style>
