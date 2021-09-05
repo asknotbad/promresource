@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_components_vacancies_data_items",
+  "info": {
+    "name": "vacanciesDataItem",
+    "icon": "cookie"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.vacancies-data-sub-item"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
