@@ -28,7 +28,7 @@
     position: relative;
     z-index: 1;
     padding-top: 60px;
-    overflow-x: hidden;
+    overflow: hidden;
   }
   .header {
     position: relative;
@@ -93,4 +93,46 @@
     }
   }
 
+  @media (min-width: 992px) {
+    section {
+      padding-top: 130px;
+    }
+    .header {
+      padding: 77px 0;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: 30px;
+    }
+    .frame {
+      top: -50px;
+    }
+    .cover {
+      margin-top: -130px;
+      position: relative;
+    }
+    img {
+      max-width: none;
+      width: 61vw;
+      position: absolute;
+      left: -30px;
+      top: 0;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    section {
+      padding-bottom: 75px;
+    }
+    .header {
+      padding-left: 40px;
+    }
+    .frame {
+      left: 70px;
+    }
+    img {
+      width: 60vw;
+    }
+  }
 </style>
