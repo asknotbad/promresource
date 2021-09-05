@@ -79,6 +79,7 @@
     font-size: 16px;
     line-height: 21px;
     margin-bottom: 30px;
+    word-break: keep-all;
   }
   .photo {
     margin-bottom: -20px;
