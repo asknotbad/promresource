@@ -58,7 +58,7 @@
     position: absolute;
     top: -30px;
     left: 0;
-    width: 548px;
+    width: 100vw;
     height: 246px;
     border: 2px solid #E52B32;
     z-index: -2;
@@ -66,9 +66,31 @@
   h2 {
     font-size: 40px;
     line-height: 47px;
+    max-width: 470px;
   }
   .cover {
     margin-top: -30px;
     z-index: 1;
   }
+  .button {
+    max-width: 480px;
+    margin-right: auto;
+  }
+
+  @media (min-width: 768px) {
+    section {
+      padding-top: 100px;
+    }
+    .header {
+      gap: 40px;
+      padding: 60px 0 95px 0;
+    }
+    .frame {
+      top: -40px;
+    }
+    .cover {
+      margin-top: -55px;
+    }
+  }
+
 </style>
