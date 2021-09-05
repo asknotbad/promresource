@@ -43,4 +43,19 @@
     font-size: 40px;
     line-height: 70px;
   }
+
+  @media (min-width: 768px) {
+    section {
+      padding: 182px 0;
+    }
+    h2 {
+      font-size: 60px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    section {
+      padding: 182px 0 235px 0;
+    }
+  }
 </style>
