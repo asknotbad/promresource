@@ -5,6 +5,7 @@
   import VacanciesPhotos from '$lib/VacanciesPhotos/index.svelte';
   import OrganizationOfWork from '$lib/OrganizationOfWork/index.svelte';
   import Vacancies from '$lib/Vacancies/index.svelte';
+  import VacanciesSubscribe from '$lib/VacanciesSubscribe/index.svelte';
 
   let vacanciesHeroData;
   let vacanciesCareData;
@@ -56,4 +57,8 @@
 
 {#if vacanciesData}
   <Vacancies bind:vacanciesData />
+{/if}
+
+{#if vacanciesSubscribeData}
+  <VacanciesSubscribe bind:vacanciesSubscribeData />
 {/if}
