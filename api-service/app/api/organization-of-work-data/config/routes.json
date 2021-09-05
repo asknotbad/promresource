@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/organization-of-work-data",
+      "handler": "organization-of-work-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/organization-of-work-data",
+      "handler": "organization-of-work-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/organization-of-work-data",
+      "handler": "organization-of-work-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
