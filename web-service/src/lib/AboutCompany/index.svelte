@@ -48,14 +48,16 @@
         {#if aboutCompanyData.counters && aboutCompanyData.counters.length > 0}
           <ul class="counters__list">
             {#each aboutCompanyData.counters as counter}
-              <li class="counter">
-                <div class="counter__value">
-                  {counter.value}
-                </div>
-                <div class="counter__text">
-                  {counter.text}
-                </div>
-              </li>
+              {#if counter.isActive === true}
+                <li class="counter">
+                  <div class="counter__value">
+                    {counter.value}
+                  </div>
+                  <div class="counter__text">
+                    {counter.text}
+                  </div>
+                </li>
+              {/if}
             {/each}
           </ul>
         {/if}

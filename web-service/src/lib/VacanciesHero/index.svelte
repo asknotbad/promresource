@@ -1,5 +1,6 @@
 <script>
   import Button from '$lib/Button/index.svelte';
+  import Scaling from './Scaling.svelte';
 
   export let vacanciesHeroData;
 </script>
@@ -21,6 +22,7 @@
       </div>
     </div>
   </section>
+  <Scaling bind:vacanciesHeroData />
 {/if}
 
 <style>
