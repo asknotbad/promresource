@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_components_organization_of_work_data_items",
+  "info": {
+    "name": "organizationOfWorkDataItem",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "icon": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.img"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
