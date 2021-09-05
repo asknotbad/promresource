@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/contacts-hero-data",
+      "handler": "contacts-hero-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/contacts-hero-data",
+      "handler": "contacts-hero-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/contacts-hero-data",
+      "handler": "contacts-hero-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
