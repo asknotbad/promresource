@@ -58,6 +58,8 @@
     align-items: center;
     border: 1px solid #FFFFFF;
     width: 100%;
+    font-size: 16px;
+    line-height: 19px;
   }
   li img {
     width: 50px;
@@ -118,6 +120,10 @@
     }
     h2 {
       margin-bottom: 40px;
+    }
+    li {
+      font-size: 20px;
+      line-height: 23px;
     }
     li:last-child {
       margin-bottom: -70px;
