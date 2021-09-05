@@ -3,7 +3,7 @@
   export let lpData;
 </script>
 
-{#if purchaseData && lpData}
+{#if purchaseData || lpData}
   <section>
     <div class="container">
       purchase & laborProtection

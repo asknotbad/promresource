@@ -1,8 +1,8 @@
 <script>
-  export let data;
+  export let salesData;
 </script>
 
-{#if data}
+{#if salesData}
   <section>
     <div class="container">
       Sales

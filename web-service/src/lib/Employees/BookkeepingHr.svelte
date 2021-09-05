@@ -14,5 +14,7 @@
 <style>
   section {
     padding: 60px 0;
+    background: #363433;
+    color: #fff;
   }
 </style>
