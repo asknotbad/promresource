@@ -156,4 +156,36 @@
     }
   }
 
+  @media (min-width: 992px) {
+    section {
+      padding: 100px 0;
+    }
+    ul {
+      grid-column: 1 / 2;
+      grid-row: span 4;
+      padding-right: 80px;
+    }
+    .photo {
+      grid-column: 2 / 3;
+      grid-row: span 2;
+      margin-top: -130px;
+      margin-bottom: -70px;
+      z-index: 1;
+    }
+    img {
+      max-width: 443px;
+      object-fit: cover;
+      object-position: center;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 30px;
+      align-items: start;
+      align-content: start;
+    }
+    .content {
+      grid-column: 2 / 3;
+    }
+  }
 </style>
