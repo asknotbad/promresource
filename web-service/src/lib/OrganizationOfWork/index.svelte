@@ -96,4 +96,51 @@
     line-height: 19px;
     color: #F2F2F2;
   }
+
+  @media (min-width: 576px) {
+    ul {
+      margin-bottom: 0;
+    }
+    li {
+      width: 50%;
+    }
+    li:last-child {
+      margin-bottom: -50px;
+    }
+    .director {
+      column-gap: 30px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    section {
+      padding: 80px 0;
+    }
+    h2 {
+      margin-bottom: 40px;
+    }
+    li:last-child {
+      margin-bottom: -70px;
+    }
+    .director {
+      column-gap: 40px;
+      align-items: end;
+      grid-template-columns: 5fr 6fr;
+    }
+    .photo {
+      grid-row: span 2;
+    }
+    .quote {
+      margin-top: 100px;
+      grid-row: 1 / 2;
+      grid-column: 2 / 3;
+      align-self: end;
+    }
+    .signature {
+      align-self: end;
+      font-size: 20px;
+      line-height: 26px;
+    }
+  }
+
 </style>
