@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_components_employees_data_items",
+  "collectionName": "components_components_employees_data_item",
   "info": {
-    "name": "employeesDataItems",
+    "name": "employeesDataItem",
     "icon": "user-tie"
   },
   "options": {},
@@ -17,6 +17,11 @@
     },
     "email": {
       "type": "email"
+    },
+    "photo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.img"
     },
     "order": {
       "type": "integer",
