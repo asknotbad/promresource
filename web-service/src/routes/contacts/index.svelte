@@ -5,6 +5,8 @@
 
   let contactsHeroData;
   let companyDetailsData;
+  let employeesData;
+  let fabricAddressData;
 
   onMount(async () => {
 		const contactsHeroDataRes = await fetch(`/api/contacts-hero-data`);
@@ -13,6 +15,11 @@
 		const companyDetailsDataRes = await fetch(`/api/company-details-data`);
 		companyDetailsData = await companyDetailsDataRes.json();
 
+		const employeesDataRes = await fetch(`/api/employees-data`);
+		employeesData = await employeesDataRes.json();
+
+		const fabricAddressDataRes = await fetch(`/api/fabric-address-data`);
+		fabricAddressData = await fabricAddressDataRes.json();
 	});
 </script>
 
