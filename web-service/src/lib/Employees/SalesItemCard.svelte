@@ -45,6 +45,7 @@
 <style>
   article {
     border: 1px solid #363433;
+    word-break: break-word;
   }
   img {
     width: 100%;
@@ -57,8 +58,31 @@
     grid-template-columns: 1fr;
     gap: 19px;
   }
+  h3,
+  h4 {
+    font-size: 16px;
+    line-height: 19px;
+  }
   .phone > *,
   .email > * {
     display: inline-block;
   }
+
+  @media (min-width: 768px) {
+    .photo {
+      height: 228px;
+    }
+    img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .content {
+      padding: 30px 25px;
+    }
+  }
+
 </style>
