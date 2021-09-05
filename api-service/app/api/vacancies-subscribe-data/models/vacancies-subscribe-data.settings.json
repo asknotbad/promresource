@@ -2,7 +2,8 @@
   "kind": "singleType",
   "collectionName": "vacancies_subscribe_data",
   "info": {
-    "name": "vacanciesSubscribeData"
+    "name": "vacanciesSubscribeData",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -40,6 +41,16 @@
         }
       },
       "component": "components.button"
+    },
+    "bg": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "components.img"
     }
   }
 }
