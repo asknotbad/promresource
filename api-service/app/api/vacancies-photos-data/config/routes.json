@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/vacancies-photos-data",
+      "handler": "vacancies-photos-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/vacancies-photos-data",
+      "handler": "vacancies-photos-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/vacancies-photos-data",
+      "handler": "vacancies-photos-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
