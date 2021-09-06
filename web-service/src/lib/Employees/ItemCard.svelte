@@ -164,6 +164,9 @@
       padding: 33px 0 23px 20px;
       text-align: left;
     }
+    img {
+      min-height: 300px;
+    }
   }
 
 </style>
