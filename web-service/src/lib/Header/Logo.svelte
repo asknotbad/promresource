@@ -28,6 +28,14 @@
     .logo {
       grid-column: 1 / 2;
       margin-right: 10px;
+      width: 180px;
+      max-height: 100px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: left center;
     }
   }
 </style>
