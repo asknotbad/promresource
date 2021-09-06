@@ -165,7 +165,7 @@
       text-align: left;
     }
     img {
-      min-height: 300px;
+      height: 300px;
     }
   }
 
