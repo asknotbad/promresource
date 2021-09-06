@@ -59,6 +59,7 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;
+    white-space: nowrap;
   }
   .link-icon {
     width: 100%;
