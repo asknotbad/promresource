@@ -61,6 +61,13 @@
     .logo {
       grid-column: 1 / 2;
       grid-row: 1 / 2;
+      width: 160px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: left center;
     }
     a {
       max-width: 100%;
