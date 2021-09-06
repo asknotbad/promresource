@@ -6,12 +6,18 @@
 
 {#if item}
   <article>
-    <img src={item.cover.file.url} alt={item.cover.alt} class="cover">
+    {#if item.cover && item.cover.file}
+      <img src={item.cover.file.url} alt={item.cover.alt} class="cover">
+    {/if}
     <h3>
-      {item.header}
+      {#if item.header}
+        {item.header}
+      {/if}
     </h3>
     <div class="announce">
-      {@html item.announce}
+      {#if item.announce}
+        {@html item.announce}
+      {/if}
     </div>
     {#if item.link && item.link.isActive === true}
       <a class="link" href={item.link.url}>
