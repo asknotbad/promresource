@@ -13,7 +13,9 @@
       </div>
     </div>
     <div class="photo">
-      <img src={item.photo.file.url} alt={item.photo.alt}>
+      {#if item.photo && item.photo.file}
+        <img src={item.photo.file.url} alt={item.photo.alt}>
+      {/if}
     </div>
     <div class="items">
       {#each item.items as item}
