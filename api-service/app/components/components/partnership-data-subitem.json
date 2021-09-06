@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_components_partnership_data_items",
+  "collectionName": "components_components_partnership_data_subitems",
   "info": {
-    "name": "partnershipDataItem",
+    "name": "partnershipDataSubItem",
     "icon": "hand-holding-usd"
   },
   "options": {},
