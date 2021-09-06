@@ -71,6 +71,8 @@
   }
   img {
     width: 100%;
+    object-fit: cover;
+    object-position: center;
   }
   h3,
   h4 {
@@ -124,6 +126,9 @@
   }
 
   @media (min-width: 768px) {
+    .wrapper {
+      height: min-content;
+    }
     h2 {
       margin-bottom: 40px;
     }
