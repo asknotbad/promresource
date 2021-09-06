@@ -4,8 +4,8 @@
 
 <div class="logo">
   <a href="/">
-    {#if logo && logo.url && logo.url !== ''}
-      <img src={logo.url} alt={logo.text}>
+    {#if logo && logo.img && logo.img.url !== ''}
+      <img src={logo.img.url} alt={logo.text}>
     {:else}
       {logo.text}
     {/if}
