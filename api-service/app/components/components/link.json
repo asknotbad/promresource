@@ -2,7 +2,8 @@
   "collectionName": "components_components_links",
   "info": {
     "name": "link",
-    "icon": "icons"
+    "icon": "icons",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -33,6 +34,12 @@
     "isActive": {
       "type": "boolean",
       "default": false
+    },
+    "action": {
+      "type": "enumeration",
+      "enum": [
+        "openModal"
+      ]
     }
   }
 }
