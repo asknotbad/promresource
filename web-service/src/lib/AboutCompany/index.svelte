@@ -219,6 +219,9 @@
   }
 
   @media (min-width: 768px) {
+    section {
+      padding: 80px 0;
+    }
     .container {
       grid-template-columns: 7fr 5fr;
     }
@@ -253,6 +256,9 @@
   }
 
   @media (min-width: 992px) {
+    section {
+      padding: 100px 0;
+    }
     .container {
       grid-template-columns: 1fr 1fr;
     }
