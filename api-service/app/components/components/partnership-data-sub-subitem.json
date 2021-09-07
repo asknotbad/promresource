@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_components_partnership_data_subitems",
+  "collectionName": "components_components_partnership_data_sub_subitems",
   "info": {
-    "name": "partnershipDataSubItem",
+    "name": "partnershipDataSubSubItem",
     "icon": "hand-holding-usd"
   },
   "options": {},
@@ -26,11 +26,6 @@
       "type": "component",
       "repeatable": false,
       "component": "components.img"
-    },
-    "items": {
-      "type": "component",
-      "repeatable": true,
-      "component": "components.partnership-data-sub-subitem"
     },
     "order": {
       "type": "integer",
