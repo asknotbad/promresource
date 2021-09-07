@@ -161,6 +161,10 @@
     section {
       padding: 100px 0;
     }
+    h2::after {
+      left: auto;
+      right: calc(-100% - 30px);
+    }
     ul {
       grid-column: 1 / 2;
       grid-row: span 4;
