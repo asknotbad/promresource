@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import Header from '$lib/Header/index.svelte';
   import Footer from '$lib/Footer/index.svelte';
+	import Modals from '$lib/Modals/index.svelte';
 	import '../app.css';
 
   let headerData;
@@ -27,6 +28,8 @@
 {#if footerData}
   <Footer bind:footerData />
 {/if}
+
+<Modals />
 
 <style>
   main {

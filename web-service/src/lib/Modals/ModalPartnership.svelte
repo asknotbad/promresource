@@ -2,53 +2,65 @@
   import Button from '$lib/Button/index.svelte';
   import { activeModal, modalData } from '$lib/stores';
 
-  export let item;
-
-  function toggleModal(modalName) {
-    if ($activeModal === modalName) {
-      activeModal.set(null);
-      modalData.set(null);
+  function toggleModal(modalName, items) {
+    if (items && items.length > 0) {
+      modalData.set(items);
     } else {
-      modalData.set(item.items);
+      modalData.set($modalData.items);
       activeModal.set(modalName);
     };
   };
 
+  function closeModal() {
+    activeModal.set(null);
+    modalData.set(null);
+  };
 </script>
 
-{#if item}
-  <article>
-    {#if item.cover && item.cover.file}
-      <img src={item.cover.file.url} alt={item.cover.alt} class="cover">
-    {/if}
-    <h3>
-      {#if item.header}
-        {item.header}
+{#if $modalData}
+  <div class="wrapper">
+    {#each $modalData as item}
+      {#if item.isActive === true}
+        <article>
+          {#if item.cover && item.cover.file}
+            <img src={item.cover.file.url} alt={item.cover.alt} class="cover">
+          {/if}
+          <h3>
+            {#if item.header}
+              {item.header}
+            {/if}
+          </h3>
+          <div class="announce">
+            {#if item.announce}
+              {@html item.announce}
+            {/if}
+          </div>
+          {#if item.link && item.link.isActive === true}
+            {#if item.link.url && item.link.url !== ''}
+              <a class="link" href={item.link.url}  on:click={closeModal}>
+                {item.link.text} <img class="link-icon" src={item.link.icon.url} alt="">
+              </a>
+            {:else if item.link.action && item.link.action === 'openModal'}
+              <button class="link" on:click|preventDefault={() => toggleModal('partnership', item.items)} >
+                {item.link.text} <img class="link-icon" src={item.link.icon.url} alt="">
+              </button>
+            {/if}
+          {/if}
+          {#if item.button && item.button.isActive === true}
+            <Button bind:button={item.button} />
+          {/if}
+        </article>
       {/if}
-    </h3>
-    <div class="announce">
-      {#if item.announce}
-        {@html item.announce}
-      {/if}
-    </div>
-    {#if item.link && item.link.isActive === true}
-      {#if item.link.url && item.link.url !== ''}
-        <a class="link" href={item.link.url}>
-          {item.link.text} <img class="link-icon" src={item.link.icon.url} alt="">
-        </a>
-      {:else if item.link.action && item.link.action === 'openModal'}
-        <button class="link" on:click|preventDefault={() => toggleModal('partnership')}>
-          {item.link.text} <img class="link-icon" src={item.link.icon.url} alt="">
-        </button>
-      {/if}
-    {/if}
-    {#if item.button && item.button.isActive === true}
-      <Button bind:button={item.button} />
-    {/if}
-  </article>
+    {/each}
+  </div>
 {/if}
 
 <style>
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
   article {
     position: relative;
     display: grid;
@@ -102,6 +114,9 @@
   }
 
   @media (min-width: 768px) {
+    .wrapper {
+      gap: 30px;
+    }
     article {
       grid-template-columns: 1fr 2fr;
       column-gap: 30px;
@@ -134,20 +149,11 @@
       width: auto;
       margin-right: auto;
     }
-    article:nth-of-type(even) {
-      grid-template-columns: 2fr 1fr;
-      padding: 25px 0 25px 30px;
-    }
-    article:nth-of-type(even) .cover {
-      left: auto;
-      right: 0;
-    }
-    article:nth-of-type(even) > *:not(.cover) {
-      grid-column: 1 / 2;
-    }
-    article:nth-of-type(even) > :global(a:not(.link)),
-    article:nth-of-type(even) > :global(button) {
-      grid-column: 1 / 2;
+  }
+
+  @media (min-width: 992px) {
+    .wrapper {
+      gap: 40px;
     }
   }
 </style>
