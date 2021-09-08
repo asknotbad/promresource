@@ -53,4 +53,21 @@
     grid-template-columns: 1fr;
     gap: 19px;
   }
+
+  @media (min-width: 768px) {
+    section {
+      padding: 80px 0;
+    }
+    article {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 30px;
+    }
+    .cover {
+      margin: 0;
+      grid-row: span 3;
+    }
+    img {
+      height: 100%;
+    }
+  }
 </style>
