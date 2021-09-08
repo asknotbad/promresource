@@ -61,13 +61,36 @@
     article {
       grid-template-columns: 1fr 1fr;
       column-gap: 30px;
+      align-items: start;
     }
     .cover {
       margin: 0;
-      grid-row: span 3;
+      grid-row: span 4;
+      align-self: stretch;
     }
     img {
+      min-height: 300px;
       height: 100%;
     }
+  }
+
+  @media (min-width: 992px) {
+    section {
+      padding: 100px 0;
+    }
+    article {
+      row-gap: 40px;
+    }
+    .cover {
+      margin: 0;
+    }
+    img {
+      min-height: 282px;
+    }
+    .content {
+      line-height: 20px;
+      gap: 20px;
+    }
+
   }
 </style>
