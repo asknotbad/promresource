@@ -107,4 +107,61 @@
     word-break: normal;
     white-space: nowrap;
   }
+
+  @media (min-width: 576px) {
+    .photo {
+      height: 200px;
+    }
+    li {
+      word-break: normal;
+    }
+  }
+
+  @media (min-width: 768px) {
+    article {
+      grid-template-columns: 1fr 3fr;
+      padding-bottom: 0;
+      border: none;
+    }
+    .photo {
+      grid-row: span 4;
+      height: 100%;
+      align-self: stretch;
+      margin-bottom: 0;
+    }
+    h3 {
+      padding: 25px 30px;
+      margin-bottom: 0;
+      border: 1px solid #363433;
+      border-bottom: none;
+      font-size: 22px;
+      line-height: 26px;
+    }
+    .description {
+      border: 1px solid #363433;
+      border-top: none;
+      border-bottom: none;
+      padding: 0 30px 25px 30px;
+      margin-bottom: 0;
+    }
+    .button {
+      border: 1px solid #363433;
+      border-top: none;
+      padding: 0 30px 25px 30px;
+    }
+    .button > :global(*) {
+      width: auto;
+      margin-right: auto;
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+    ul.open {
+      margin-top: 20px;
+    }
+    li {
+      font-size: 20px;
+      line-height: 23px;
+    }
+  }
+
 </style>
