@@ -164,4 +164,19 @@
     }
   }
 
+  @media (min-width: 992px) {
+    h3 {
+      padding: 30px;
+    }
+    .button {
+      padding: 30px;
+    }
+    .button > :global(*) {
+      padding-left: 34px;
+      padding-right: 34px;
+    }
+    ul.open {
+      margin-top: 30px;
+    }
+  }
 </style>
