@@ -56,7 +56,7 @@
 
   @media (min-width: 768px) {
     section {
-      padding: 80px 0;
+      padding: 80px 0 40px 0;
     }
     article {
       grid-template-columns: 1fr 1fr;

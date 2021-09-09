@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import AcceptanceCatalogText from '$lib/AcceptanceCatalogText/index.svelte';
+  import CatalogItems from '$lib/CatalogItems/index.svelte';
 
   let catalogData;
   let acceptanceCatalogTextData;
@@ -19,6 +20,10 @@
 	<title>Промресурс | Приёмка лома</title>
 </svelte:head>
 
-{#if catalogData && acceptanceCatalogTextData}
+{#if acceptanceCatalogTextData}
   <AcceptanceCatalogText bind:catalogData bind:acceptanceCatalogTextData />
+{/if}
+
+{#if catalogData}
+  <CatalogItems bind:catalogData />
 {/if}
