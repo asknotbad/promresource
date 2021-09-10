@@ -56,7 +56,6 @@
 
 {#if askQuetionData}
 <section>
-  {askQuetionData.button.disabled}
   <div class="container">
     <h2>
       {askQuetionData.header}
