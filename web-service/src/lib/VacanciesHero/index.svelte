@@ -1,8 +1,13 @@
 <script>
   import Button from '$lib/Button/index.svelte';
   import Scaling from './Scaling.svelte';
+  import { activeModal, modalData } from '$lib/stores';
 
   export let vacanciesHeroData;
+
+  function openModal() {
+    console.log('OOOOPPPEN')
+  }
 </script>
 
 {#if vacanciesHeroData}
@@ -14,7 +19,7 @@
           {vacanciesHeroData.header}
         </h2>
         <div class="button">
-          <Button bind:button={vacanciesHeroData.button} />
+          <Button bind:button={vacanciesHeroData.button} on:click={openModal} />
         </div>
       </div>
       <div class="cover">
@@ -28,16 +33,15 @@
 <style>
   section {
     position: relative;
-    z-index: 1;
     padding-top: 60px;
     overflow: hidden;
+    z-index: 1;
   }
   .header {
     position: relative;
-    z-index: -1;
     color: #fff;
     background: #363433;
-    padding: 30px 0 60px 0;
+    padding: 30px 0;
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
@@ -47,7 +51,7 @@
     content: '';
     display: block;
     width: 100vw;
-    height: calc(100%);
+    height: calc(100% + 30px);
     position: absolute;
     z-index: -1;
     top: 0;
@@ -71,12 +75,14 @@
     max-width: 470px;
   }
   .cover {
-    margin-top: -30px;
     z-index: 1;
   }
   .button {
     max-width: 480px;
     margin-right: auto;
+  }
+  .button > :global(*) {
+    pointer-events: all;
   }
 
   @media (min-width: 768px) {
@@ -85,13 +91,14 @@
     }
     .header {
       gap: 40px;
-      padding: 60px 0 95px 0;
+      padding: 60px 0 40px 0;
+    }
+    .header::before,
+    .header::after {
+      height: calc(100% + 55px);
     }
     .frame {
       top: -40px;
-    }
-    .cover {
-      margin-top: -55px;
     }
   }
 
@@ -101,6 +108,10 @@
     }
     .header {
       padding: 77px 0;
+    }
+    .header::before,
+    .header::after {
+      height: 100%;
     }
     .container {
       display: grid;
@@ -128,7 +139,7 @@
       padding-bottom: 75px;
     }
     .header {
-      padding-left: 40px;
+      padding: 80px 0 80px 40px;
     }
     .frame {
       left: 70px;
