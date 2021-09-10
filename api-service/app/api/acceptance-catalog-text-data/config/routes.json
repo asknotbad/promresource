@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/acceptance-catalog-text-data",
+      "handler": "acceptance-catalog-text-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/acceptance-catalog-text-data",
+      "handler": "acceptance-catalog-text-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/acceptance-catalog-text-data",
+      "handler": "acceptance-catalog-text-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
