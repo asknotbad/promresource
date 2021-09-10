@@ -16,7 +16,7 @@
 </script>
 
 <svelte:head>
-	<title>Промресурс | Приёмка лома</title>
+	<title>Промресурс | Продажа готовой продукции</title>
 </svelte:head>
 
 {#if realizationCatalogTextData}

@@ -148,6 +148,7 @@
       border: 1px solid #363433;
       border-top: none;
       padding: 0 30px 25px 30px;
+      display: flex;
     }
     .button > :global(*) {
       width: auto;
