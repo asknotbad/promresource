@@ -3,22 +3,69 @@
 
   export let askQuetionData;
 
-  let sendData = async () => {
+  let phone;
+  let name;
+  let message;
+  let originalText = askQuetionData.button.text;
 
+  let sendData = async () => {
+    if (askQuetionData.button.disabled === false) {
+      askQuetionData.button.disabled = true;
+      askQuetionData.button.text = "Отправка..."
+
+      const sendMailUrl = `/api/email`;
+      const sendMailRes = await fetch(sendMailUrl, {
+        method: 'POST',
+        body: JSON.stringify({
+          to: askQuetionData.recipient,
+          subject: 'Вопрос с айта ООО "Промресурс"',
+          text: `
+Здравствуйте!\n
+Вам отправлено сообщение из формы "${askQuetionData.header}"\n
+Имя отправителя: ${name}\n
+Номер телефона отправителя: ${phone}\n
+Текст сообщения: ${message}
+          `,
+          html: `
+            <h2>Здравствуйте!</h2>
+            <p>Вам отправлено сообщение из формы <b>"${askQuetionData.header}"</b></p>
+            <p>Имя отправителя: ${name}</p>
+            <p>Номер телефона отправителя: ${phone}</p>
+            <hr>
+            <p>Текст сообщения:</p>
+            <p>
+              <b><i>${message ? message.replace(/\n/gi, '<br>') : 'Пустое сообщение'}</i></b>
+            </p>
+          `,
+        }),
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8'
+        },
+      });
+
+      if (sendMailRes.ok) {
+        askQuetionData.button.text = "Сообщение отправлено!";
+        setTimeout(() => {
+          askQuetionData.button.text = originalText;
+          askQuetionData.button.disabled = false;
+        }, 2000);
+      };
+    };
   };
 </script>
 
 {#if askQuetionData}
 <section>
+  {askQuetionData.button.disabled}
   <div class="container">
     <h2>
       {askQuetionData.header}
     </h2>
     <form on:submit|preventDefault={sendData}>
-      <input type="tel" placeholder="Ваш номер телефона">
-      <input type="text" placeholder="Ваше имя">
-      <textarea placeholder="Ваш вопрос"></textarea>
-      <Button bind:button={askQuetionData.button} />
+      <input bind:value={phone} type="tel" placeholder="Ваш номер телефона" required>
+      <input bind:value={name} type="text" placeholder="Ваше имя" required>
+      <textarea bind:value={message} placeholder="Ваш вопрос" required></textarea>
+      <Button bind:button={askQuetionData.button} on:click={sendData} />
     </form>
   </div>
 </section>
