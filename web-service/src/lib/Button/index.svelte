@@ -1,5 +1,6 @@
 <script>
   export let button;
+  export let isOpen;
 </script>
 
 {#if button.link && button.link !== ''}
@@ -7,7 +8,7 @@
     {button.text}
   </a>
 {:else}
-  <button on:click|preventDefault class="{button.size} {button.color}" disabled={button.disabled}>
+  <button on:click|preventDefault class="{button.size} {button.color}" disabled={button.disabled} class:open={isOpen}>
     {button.text}
   </button>
 {/if}
@@ -30,10 +31,15 @@
     cursor: pointer;
     border-radius: 5px;
     box-shadow: 0px 4px 4px 3px rgba(38, 38, 38, 0.05);
+    transition: .25s ease-in-out;
   }
   .blue {
     border: 1px solid #2C14B2;
     background: #2C14B2;
+  }
+  .blue.open {
+    background: #fff;
+    color: #2C14B2;
   }
   .red {
     border: 1px solid #E62B32;
