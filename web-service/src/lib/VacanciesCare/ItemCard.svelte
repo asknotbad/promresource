@@ -51,6 +51,7 @@
     .cover {
       grid-row: span 2;
       align-self: stretch;
+      height: 100%;
     }
     img {
       height: 100%;
