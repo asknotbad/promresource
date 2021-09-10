@@ -4,11 +4,11 @@
 </script>
 
 {#if button.link && button.link !== ''}
-  <a href={button.link} class="{button.size} {button.color}" disabled={button.disabled}>
+  <a href={button.link} class="{button.size} {button.color}" disabled="{button.disabled === true ? true : false}">
     {button.text}
   </a>
 {:else}
-  <button on:click|preventDefault class="{button.size} {button.color}" disabled={button.disabled} class:open={isOpen}>
+  <button on:click|preventDefault class="{button.size} {button.color}" disabled="{button.disabled === true ? true : false}" class:open={isOpen}>
     {button.text}
   </button>
 {/if}
