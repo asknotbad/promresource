@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/services-catalog-text-data",
+      "handler": "services-catalog-text-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/services-catalog-text-data",
+      "handler": "services-catalog-text-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/services-catalog-text-data",
+      "handler": "services-catalog-text-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
