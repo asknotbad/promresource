@@ -12,6 +12,7 @@ services:
       DATABASE_PORT: 5432
       DATABASE_USERNAME: ${POSTGRES_USER}
       DATABASE_PASSWORD: ${POSTGRES_PASSWORD}
+      SENDGRID_API_KEY: ${SENDGRID_API_KEY}
     # command: 'strapi start'
 
   web:
