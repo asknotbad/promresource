@@ -68,6 +68,7 @@
     row-gap: 25px;
     border: 1px solid #363433;
     padding: 0 20px 25px 20px;
+    max-width: 1022px;
   }
   .cover {
     margin: 0 -20px;
