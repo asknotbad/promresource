@@ -13,7 +13,6 @@
     const acceptanceCatalogTextDataRes = await fetch(`/api/acceptance-catalog-text-data`);
 		acceptanceCatalogTextData = await acceptanceCatalogTextDataRes.json();
 	});
-
 </script>
 
 <svelte:head>
