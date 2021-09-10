@@ -3,8 +3,44 @@
 
   export let vacanciesSubscribeData;
 
-  function sendData() {
+  let email;
+  let originalText = vacanciesSubscribeData.button.text;
 
+  let sendData = async () => {
+    if (vacanciesSubscribeData.button.disabled === false) {
+      vacanciesSubscribeData.button.disabled = true;
+      vacanciesSubscribeData.button.text = "Отправка..."
+
+      const sendMailUrl = `/api/email`;
+      const sendMailRes = await fetch(sendMailUrl, {
+        method: 'POST',
+        body: JSON.stringify({
+          to: vacanciesSubscribeData.recipient,
+          subject: 'Заявка на подписку с сайта ООО "Промресурс"',
+          text: `
+Здравствуйте!\n
+Вам отправлено сообщение из формы "${vacanciesSubscribeData.header}"\n
+Email отправителя: ${email}
+          `,
+          html: `
+            <h2>Здравствуйте!</h2>
+            <p>Вам отправлено сообщение из формы <b>"${vacanciesSubscribeData.header}"</b></p>
+            <p>Email отправителя: ${email}</p>
+          `,
+        }),
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8'
+        },
+      });
+
+      if (sendMailRes.ok) {
+        vacanciesSubscribeData.button.text = "Заявка отправлена!";
+        setTimeout(() => {
+          vacanciesSubscribeData.button.text = originalText;
+          vacanciesSubscribeData.button.disabled = false;
+        }, 2000);
+      };
+    };
   };
 </script>
 
@@ -16,7 +52,7 @@
         {vacanciesSubscribeData.header}
       </h2>
       <form on:submit={sendData}>
-        <input type="email" placeholder="Ваш email">
+        <input bind:value={email} type="email" placeholder="Ваш email" required>
         <Button bind:button={vacanciesSubscribeData.button} on:click={sendData} />
       </form>
     </div>
