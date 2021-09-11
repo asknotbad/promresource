@@ -46,6 +46,9 @@
       if (sendMailRes.ok) {
         askQuetionData.button.text = "Сообщение отправлено!";
         setTimeout(() => {
+          phone = null;
+          name = null;
+          message = null;
           askQuetionData.button.text = originalText;
           askQuetionData.button.disabled = false;
         }, 2000);

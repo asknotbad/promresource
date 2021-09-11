@@ -36,6 +36,7 @@ Email отправителя: ${email}
       if (sendMailRes.ok) {
         vacanciesSubscribeData.button.text = "Заявка отправлена!";
         setTimeout(() => {
+          email = null;
           vacanciesSubscribeData.button.text = originalText;
           vacanciesSubscribeData.button.disabled = false;
         }, 2000);
