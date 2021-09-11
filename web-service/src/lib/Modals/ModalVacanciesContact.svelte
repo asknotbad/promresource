@@ -106,4 +106,31 @@ Email отправителя: ${email}\n
     font-family: 'Roboto', sans-serif;
     background: #FFFFFF;
   }
+
+  @media (min-width: 768px) {
+    h2 {
+      font-size: 35px;
+      line-height: 45px;
+      margin-bottom: 30px;
+    }
+    form {
+      gap: 25px;
+    }
+    textarea {
+      margin-bottom: 5px;
+      height: 135px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    h2 {
+      margin-bottom: 56px;
+    }
+    form {
+      gap: 25px;
+    }
+    textarea {
+      margin-bottom: 0;
+    }
+  }
 </style>
