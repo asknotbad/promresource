@@ -12,7 +12,7 @@
         {getSaleData.header}
       </h2>
       <div class="button">
-        <Button bind:button={getSaleData.button} />
+        <Button bind:button={getSaleData.button} bind:dataForModal={getSaleData} />
       </div>
     </div>
   </section>
