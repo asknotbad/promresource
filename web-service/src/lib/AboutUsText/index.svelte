@@ -14,7 +14,7 @@
         {@html aboutUsTextData.content}
       </div>
       <div class="button">
-        <Button bind:button={aboutUsTextData.button} />
+        <Button bind:button={aboutUsTextData.button} bind:dataForModal={aboutUsTextData} />
       </div>
       <div class="cover">
         <img src={aboutUsTextData.cover.file.url} alt={aboutUsTextData.cover.alt}>
