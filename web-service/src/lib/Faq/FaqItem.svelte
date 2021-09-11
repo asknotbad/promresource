@@ -38,6 +38,7 @@
     grid-template-columns: 1fr 22px;
     gap: 10px;
     align-content: start;
+    cursor: pointer;
   }
   button {
     width: 22px;
