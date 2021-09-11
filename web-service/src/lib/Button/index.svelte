@@ -26,6 +26,11 @@
         modalData.set(null);
         modalData.set(dataForModal);
         activeModal.set('phoneSubsribe');
+      } else if (button.action === 'modalDeliveryRequest') {
+        activeModal.set(null);
+        modalData.set(null);
+        modalData.set(dataForModal);
+        activeModal.set('deliveryRequest');
       };
     };
   };
