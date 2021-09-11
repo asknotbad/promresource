@@ -1,20 +1,34 @@
 <script>
   import { modalData, activeModal } from '$lib/stores';
+  import { onMount } from 'svelte';
 
   export let button;
   export let isOpen;
   export let noDefaultAction = false;
+  export let dataForModal = null;
+
   let buttonElement;
 
   function openModal() {
-    if (button.action === 'modalContactUs') {
-
+    if (dataForModal) {
+      if (button.action === 'modalContactUs') {
+        activeModal.set(null);
+        modalData.set(null);
+        modalData.set(dataForModal);
+        activeModal.set('contactUs');
+      };
     };
   };
+
+  onMount(() => {
+    if (buttonElement && noDefaultAction === false) {
+      buttonElement.addEventListener('click', openModal);
+    };
+  });
 </script>
 
 {#if button.link && button.link !== ''}
-  <a bind:this={buttonElement} href={button.link} class="{button.size} {button.color}" disabled="{button.disabled === true ? true : false}">
+  <a href={button.link} class="{button.size} {button.color}" disabled="{button.disabled === true ? true : false}">
     {button.text}
   </a>
 {:else}

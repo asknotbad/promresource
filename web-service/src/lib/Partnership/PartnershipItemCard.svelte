@@ -43,7 +43,7 @@
       {/if}
     {/if}
     {#if item.button && item.button.isActive === true}
-      <Button bind:button={item.button} />
+      <Button bind:button={item.button} bind:dataForModal={item} />
     {/if}
   </article>
 {/if}
