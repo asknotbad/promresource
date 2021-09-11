@@ -1,15 +1,14 @@
 <script>
   import Modal from './Modal.svelte';
   import ModalPartnership from './ModalPartnership.svelte';
-  // import ModalRegister from './ModalRegister.svelte';
+  import ModalVacanciesContact from './ModalVacanciesContact.svelte';
   // import ModalText from './ModalText.svelte';
   import ModalImg from './ModalImg.svelte';
 
-  import { activeModal, modalData, prevModalData } from '$lib/stores';
+  import { activeModal, modalData } from '$lib/stores';
 
   const onModalClose = () => {
     activeModal.set(null);
-    prevModalData.set(null);
     modalData.set(null);
   };
 
@@ -19,11 +18,11 @@
   <Modal on:close={() => onModalClose()}>
     <ModalPartnership />
   </Modal>
-<!-- {:else if $activeModal === 'register'}
+{:else if $activeModal === 'vacanciesContact'}
   <Modal on:close={() => onModalClose()}>
-    <ModalRegister />
+    <ModalVacanciesContact />
   </Modal>
-{:else if $activeModal === 'text'}
+<!-- {:else if $activeModal === 'text'}
   <Modal on:close={() => onModalClose()}>
     <ModalText on:close={() => onModalClose()}>
       {#if $modalHeader && $modalHeader !== ''}

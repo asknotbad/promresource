@@ -6,8 +6,9 @@
   export let vacanciesHeroData;
 
   function openModal() {
-    console.log('OOOOPPPEN')
-  }
+    modalData.set(vacanciesHeroData);
+    activeModal.set('vacanciesContact');
+  };
 </script>
 
 {#if vacanciesHeroData}

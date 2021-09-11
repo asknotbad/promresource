@@ -93,8 +93,7 @@
     max-height: calc(100% - 30px);
     position: relative;
     background: #FFFFFF;
-    padding: 70px;
-    padding-bottom: 60px;
+    padding: 70px 20px 30px 20px;
     scrollbar-width: none;
     -ms-overflow-style: none;
     overflow-y: scroll;
