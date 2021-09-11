@@ -11,9 +11,9 @@
 
 {#if item}
   <article class:open={isOpen}>
-    <h3>
+    <h3 on:click={toggleOpen}>
       {item.q}
-      <button class:open={isOpen} on:click={toggleOpen}>
+      <button class:open={isOpen}>
         <img src={arrow} alt="">
       </button>
     </h3>
