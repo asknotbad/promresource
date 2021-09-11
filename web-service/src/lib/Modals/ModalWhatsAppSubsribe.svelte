@@ -87,13 +87,6 @@
   input {
     height: 70px;
     padding: 0 30px;
-  }
-  textarea {
-    height: 214px;
-    padding: 25px 30px;
-  }
-  input,
-  textarea {
     width: 100%;
     border: 1px solid rgba(44, 20, 178, 0.5);
     box-shadow: 0px 4px 4px 3px rgba(38, 38, 38, 0.05);
@@ -113,18 +106,11 @@
     form {
       gap: 25px;
     }
-    textarea {
-      margin-bottom: 5px;
-      height: 135px;
-    }
   }
 
   @media (min-width: 992px) {
     h2 {
       margin-bottom: 56px;
-    }
-    textarea {
-      margin-bottom: 0;
     }
   }
 </style>
