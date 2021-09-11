@@ -34,7 +34,8 @@
       "enum": [
         "openModal",
         "modalContactUs",
-        "modalVacanciesContact"
+        "modalVacanciesContact",
+        "modalWhatsAppSubsribe"
       ]
     },
     "disabled": {
