@@ -3,6 +3,52 @@
   import Button from '$lib/Button/index.svelte';
 
   export let faqData;
+
+  let message;
+  let originalText = faqData.button.text;
+  let button = faqData.button;
+
+  let sendData = async () => {
+    if (button.disabled === false) {
+      button.disabled = true;
+      button.text = "Отправка..."
+
+      const sendMailUrl = `/api/email`;
+      const sendMailRes = await fetch(sendMailUrl, {
+        method: 'POST',
+        body: JSON.stringify({
+          to: faqData.recipient,
+          subject: 'Вопрос с сайта ООО "Промресурс"',
+          text: `
+Здравствуйте!\n
+Вам отправлено сообщение из формы "${faqData.formHeader}"\n
+Текст сообщения: ${message}
+          `,
+          html: `
+            <h2>Здравствуйте!</h2>
+            <p>Вам отправлено сообщение из формы <b>"${faqData.formHeader}"</b> </p>
+            <hr>
+            <p>Текст сообщения:</p>
+            <p>
+              <b><i>${message ? message.replace(/\n/gi, '<br>') : 'Пустое сообщение'}</i></b>
+            </p>
+          `,
+        }),
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8'
+        },
+      });
+
+      if (sendMailRes.ok) {
+        button.text = "Сообщение отправлено!";
+        setTimeout(() => {
+          message = null;
+          button.text = originalText;
+          button.disabled = false;
+        }, 2000);
+      };
+    };
+  };
 </script>
 
 {#if faqData}
@@ -19,9 +65,9 @@
       <h3>
         {faqData.formHeader}
       </h3>
-      <textarea></textarea>
+      <textarea bind:value={message}></textarea>
       <div class="button">
-        <Button bind:button={faqData.button} on:click />
+        <Button bind:button={button} on:click={sendData} noDefaultAction />
       </div>
     </div>
   </section>
