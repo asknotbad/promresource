@@ -44,14 +44,6 @@
       },
       "component": "components.img"
     },
-    "recipient": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "email"
-    },
     "subheader": {
       "pluginOptions": {
         "i18n": {
@@ -77,24 +69,6 @@
         }
       },
       "component": "components.about-company-counter-item"
-    },
-    "modalHeader": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string"
-    },
-    "modalButton": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "components.button"
     }
   }
 }

@@ -6,8 +6,17 @@
   let email;
   let phone;
   let message;
-  let button = $modalData.modalButton;
-  let originalText = $modalData.modalButton.text;
+  let button = {
+    text: "Отправить данные",
+    link: null,
+    color: "blue",
+    size: "big",
+    action: null,
+    disabled: false,
+    isExternalLink: false,
+    isActive: true
+  };
+  let originalText = button.text;
 
   let sendData = async () => {
     if (button.disabled === false) {
@@ -18,11 +27,11 @@
       const sendMailRes = await fetch(sendMailUrl, {
         method: 'POST',
         body: JSON.stringify({
-          to: $modalData.recipient,
+          to: $modalData.button.modalFormRecipient,
           subject: 'Запрос на контакт с сайта ООО "Промресурс"',
           text: `
 Здравствуйте!\n
-Вам отправлено сообщение из формы "${$modalData.modalHeader}"\n
+Вам отправлено сообщение из формы "Связаться с отделом кадров" (открыто в "${$modalData.header} / ${$modalData.button.text}")\n
 Имя отправителя: ${name}\n
 Email отправителя: ${email}\n
 Номер телефона отправителя: ${phone}\n
@@ -30,7 +39,7 @@ Email отправителя: ${email}\n
           `,
           html: `
             <h2>Здравствуйте!</h2>
-            <p>Вам отправлено сообщение из формы <b>"${$modalData.modalHeader}"</b></p>
+            <p>Вам отправлено сообщение из формы <b>"Связаться с отделом кадров"</b> (открыто в "${$modalData.header} / ${$modalData.button.text}")</p>
             <p>Имя отправителя: ${name}</p>
             <p>Email отправителя: ${email}</p>
             <p>Номер телефона отправителя: ${phone}</p>
@@ -64,14 +73,14 @@ Email отправителя: ${email}\n
 {#if $modalData}
   <div class="wrapper">
     <h2>
-      {$modalData.modalHeader}
+      Связаться с отделом кадров
     </h2>
     <form on:submit={sendData}>
       <input bind:value={name} type="text" placeholder="Ваше имя" required>
       <input bind:value={email} type="email" placeholder="Ваше email" required>
       <input bind:value={phone} type="tel" placeholder="Ваш номер телефона" required>
       <textarea bind:value={message} placeholder="Ваш вопрос" required></textarea>
-      <Button bind:button on:click={sendData} />
+      <Button bind:button on:click={sendData}  noDefaultAction />
     </form>
   </div>
 {/if}

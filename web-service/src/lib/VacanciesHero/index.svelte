@@ -1,14 +1,8 @@
 <script>
   import Button from '$lib/Button/index.svelte';
   import Scaling from './Scaling.svelte';
-  import { activeModal, modalData } from '$lib/stores';
 
   export let vacanciesHeroData;
-
-  function openModal() {
-    modalData.set(vacanciesHeroData);
-    activeModal.set('vacanciesContact');
-  };
 </script>
 
 {#if vacanciesHeroData}
@@ -20,7 +14,7 @@
           {vacanciesHeroData.header}
         </h2>
         <div class="button">
-          <Button bind:button={vacanciesHeroData.button} on:click={openModal} />
+          <Button bind:button={vacanciesHeroData.button} bind:dataForModal={vacanciesHeroData} />
         </div>
       </div>
       <div class="cover">

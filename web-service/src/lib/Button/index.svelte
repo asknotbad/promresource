@@ -3,7 +3,7 @@
   import { onMount } from 'svelte';
 
   export let button;
-  export let isOpen;
+  export let isOpen = false;
   export let noDefaultAction = false;
   export let dataForModal = null;
 
@@ -16,6 +16,12 @@
         modalData.set(null);
         modalData.set(dataForModal);
         activeModal.set('contactUs');
+      } else if (button.action === 'modalVacanciesContact') {
+        console.log('YAAA')
+        activeModal.set(null);
+        modalData.set(null);
+        modalData.set(dataForModal);
+        activeModal.set('vacanciesContact');
       } else if (button.action === 'modalWhatsAppSubsribe') {
         activeModal.set(null);
         modalData.set(null);
