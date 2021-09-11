@@ -28,7 +28,7 @@
         {@html acceptanceHeroData.bottomText}
       </div>
       <div class="button">
-        <Button bind:button={acceptanceHeroData.button} />
+        <Button bind:button={acceptanceHeroData.button} bind:dataForModal={acceptanceHeroData} />
       </div>
     </div>
   </section>

@@ -16,6 +16,11 @@
         modalData.set(null);
         modalData.set(dataForModal);
         activeModal.set('contactUs');
+      } else if (button.action === 'modalWhatsAppSubsribe') {
+        activeModal.set(null);
+        modalData.set(null);
+        modalData.set(dataForModal);
+        activeModal.set('whatsAppSubsribe');
       };
     };
   };

@@ -3,6 +3,7 @@
   import ModalPartnership from './ModalPartnership.svelte';
   import ModalVacanciesContact from './ModalVacanciesContact.svelte';
   import ModalContactUs from './ModalContactUs.svelte';
+  import ModalWhatsAppSubsribe from './ModalWhatsAppSubsribe.svelte';
   // import ModalText from './ModalText.svelte';
   import ModalImg from './ModalImg.svelte';
 
@@ -26,6 +27,10 @@
 {:else if $activeModal === 'contactUs'}
   <Modal on:close={() => onModalClose()}>
     <ModalContactUs />
+  </Modal>
+{:else if $activeModal === 'whatsAppSubsribe'}
+  <Modal on:close={() => onModalClose()}>
+    <ModalWhatsAppSubsribe />
   </Modal>
 <!-- {:else if $activeModal === 'text'}
   <Modal on:close={() => onModalClose()}>
