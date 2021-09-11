@@ -49,8 +49,12 @@ Email отправителя: ${email}\n
       if (sendMailRes.ok) {
         button.text = "Сообщение отправлено!";
         setTimeout(() => {
+          name = null;
+          email = null;
+          phone = null;
+          message = null;
           button.text = originalText;
-          button.disabled === false;
+          button.disabled = false;
         }, 2000);
       };
     };
