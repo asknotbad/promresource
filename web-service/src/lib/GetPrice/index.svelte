@@ -3,8 +3,50 @@
 
   export let getPriceData;
 
-  let sendData = async () => {
+  let name;
+  let phone;
+  let originalText = getPriceData.button.text;
+  let button = getPriceData.button;
 
+  let sendData = async () => {
+    if (button.disabled === false) {
+      button.disabled = true;
+      button.text = "Отправка..."
+
+      const sendMailUrl = `/api/email`;
+      const sendMailRes = await fetch(sendMailUrl, {
+        method: 'POST',
+        body: JSON.stringify({
+          to: getPriceData.recipient,
+          subject: 'Запрос подписки на прайс по номеру телефона с сайта ООО "Промресурс"',
+          text: `
+Здравствуйте!\n
+Вам отправлено сообщение из формы "${getPriceData.header}"\n
+Имя отправителя: ${name}\n
+Номер телефона отправителя: ${phone}
+          `,
+          html: `
+            <h2>Здравствуйте!</h2>
+            <p>Вам отправлено сообщение из формы <b>"${getPriceData.header}"</b> </p>
+            <p>Имя отправителя: ${name}</p>
+            <p>Номер телефона отправителя: ${phone}</p>
+          `,
+        }),
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8'
+        },
+      });
+
+      if (sendMailRes.ok) {
+        button.text = "Сообщение отправлено!";
+        setTimeout(() => {
+          phone = null;
+          name = null;
+          button.text = originalText;
+          button.disabled = false;
+        }, 2000);
+      };
+    };
   };
 </script>
 
@@ -16,9 +58,9 @@
       {getPriceData.header}
     </h2>
     <form on:submit|preventDefault={sendData}>
-      <input type="tel" placeholder="Ваш номер телефона">
-      <input type="text" placeholder="Ваше имя">
-      <Button bind:button={getPriceData.button} />
+      <input bind:value={phone} type="tel" placeholder="Ваш номер телефона">
+      <input bind:value={name} type="text" placeholder="Ваше имя">
+      <Button bind:button on:click={sendData} noDefaultAction />
     </form>
   </div>
 </section>
