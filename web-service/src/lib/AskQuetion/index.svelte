@@ -18,7 +18,7 @@
         method: 'POST',
         body: JSON.stringify({
           to: askQuetionData.recipient,
-          subject: 'Вопрос с айта ООО "Промресурс"',
+          subject: 'Вопрос с сайта ООО "Промресурс"',
           text: `
 Здравствуйте!\n
 Вам отправлено сообщение из формы "${askQuetionData.header}"\n
