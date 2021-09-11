@@ -36,7 +36,8 @@
         "modalContactUs",
         "modalVacanciesContact",
         "modalWhatsAppSubsribe",
-        "modalPhoneSubsribe"
+        "modalPhoneSubsribe",
+        "modalDeliveryRequest"
       ]
     },
     "disabled": {
