@@ -28,7 +28,7 @@
         {@html realizationHeroData.secondaryContent}
       </div>
       <div class="button">
-        <Button bind:button={realizationHeroData.button} />
+        <Button bind:button={realizationHeroData.button} bind:dataForModal={realizationHeroData} />
       </div>
     </div>
   </section>
