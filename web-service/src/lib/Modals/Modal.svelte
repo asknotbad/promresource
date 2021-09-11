@@ -128,4 +128,18 @@
   button:not(:disabled):active {
     background: none;
   }
+
+  @media (min-width: 768px) {
+    .modal__content {
+      padding: 70px 32px 80px 32px;
+      min-width: 708px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .modal__content {
+      padding: 80px 70px;
+      min-width: 833px;
+    }
+  }
 </style>
