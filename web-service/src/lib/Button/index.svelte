@@ -1,14 +1,24 @@
 <script>
+  import { modalData, activeModal } from '$lib/stores';
+
   export let button;
   export let isOpen;
+  export let noDefaultAction = false;
+  let buttonElement;
+
+  function openModal() {
+    if (button.action === 'modalContactUs') {
+
+    };
+  };
 </script>
 
 {#if button.link && button.link !== ''}
-  <a href={button.link} class="{button.size} {button.color}" disabled="{button.disabled === true ? true : false}">
+  <a bind:this={buttonElement} href={button.link} class="{button.size} {button.color}" disabled="{button.disabled === true ? true : false}">
     {button.text}
   </a>
 {:else}
-  <button on:click|preventDefault class="{button.size} {button.color}" disabled="{button.disabled === true ? true : false}" class:open={isOpen}>
+  <button bind:this={buttonElement} on:click|preventDefault class="{button.size} {button.color}" disabled="{button.disabled === true ? true : false}" class:open={isOpen}>
     {button.text}
   </button>
 {/if}

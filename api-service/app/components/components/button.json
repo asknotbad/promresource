@@ -32,7 +32,9 @@
     "action": {
       "type": "enumeration",
       "enum": [
-        "openModal"
+        "openModal",
+        "modalContactUs",
+        "modalVacanciesContact"
       ]
     },
     "disabled": {
