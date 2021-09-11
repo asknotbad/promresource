@@ -2,6 +2,7 @@
   import Modal from './Modal.svelte';
   import ModalPartnership from './ModalPartnership.svelte';
   import ModalVacanciesContact from './ModalVacanciesContact.svelte';
+  import ModalContactUs from './ModalContactUs.svelte';
   // import ModalText from './ModalText.svelte';
   import ModalImg from './ModalImg.svelte';
 
@@ -21,6 +22,10 @@
 {:else if $activeModal === 'vacanciesContact'}
   <Modal on:close={() => onModalClose()}>
     <ModalVacanciesContact />
+  </Modal>
+{:else if $activeModal === 'contactUs'}
+  <Modal on:close={() => onModalClose()}>
+    <ModalContactUs />
   </Modal>
 <!-- {:else if $activeModal === 'text'}
   <Modal on:close={() => onModalClose()}>

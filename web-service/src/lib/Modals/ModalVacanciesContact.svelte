@@ -126,9 +126,6 @@ Email отправителя: ${email}\n
     h2 {
       margin-bottom: 56px;
     }
-    form {
-      gap: 25px;
-    }
     textarea {
       margin-bottom: 0;
     }
