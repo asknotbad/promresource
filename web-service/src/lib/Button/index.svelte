@@ -21,6 +21,11 @@
         modalData.set(null);
         modalData.set(dataForModal);
         activeModal.set('whatsAppSubsribe');
+      } else if (button.action === 'modalPhoneSubsribe') {
+        activeModal.set(null);
+        modalData.set(null);
+        modalData.set(dataForModal);
+        activeModal.set('phoneSubsribe');
       };
     };
   };
