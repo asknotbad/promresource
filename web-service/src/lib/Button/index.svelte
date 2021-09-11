@@ -31,6 +31,11 @@
         modalData.set(null);
         modalData.set(dataForModal);
         activeModal.set('deliveryRequest');
+      } else if (button.action === 'modalSaleSubsribe') {
+        activeModal.set(null);
+        modalData.set(null);
+        modalData.set(dataForModal);
+        activeModal.set('saleSubsribe');
       };
     };
   };
