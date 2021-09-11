@@ -35,7 +35,8 @@
         "openModal",
         "modalContactUs",
         "modalVacanciesContact",
-        "modalWhatsAppSubsribe"
+        "modalWhatsAppSubsribe",
+        "modalPhoneSubsribe"
       ]
     },
     "disabled": {
