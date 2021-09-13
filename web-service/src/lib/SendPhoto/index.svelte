@@ -29,7 +29,7 @@
             </div>
           </div>
         </label>
-        <Button bind:button={sendPhotoData.button} />
+        <Button bind:button={sendPhotoData.button} noDefaultAction />
       </form>
     </div>
   </section>
