@@ -24,8 +24,8 @@
       {@html item.description}
     </div>
     <div class="button">
-      {#if item.button && item.button.isActive === true}
-        <Button bind:button={item.button} on:click={toggleOpen} bind:isOpen />
+      {#if item.buttonCatalog && item.buttonCatalog.isActive === true}
+        <Button bind:button={item.buttonCatalog} on:click={toggleOpen} bind:isOpen />
       {/if}
     </div>
     <ul class:open={isOpen}>
