@@ -13,13 +13,13 @@
       <div class="video">
         {@html realizationCompanyData.video}
       </div>
-      <div class="announce">
-        {@html realizationCompanyData.announce}
+      <div class="content">
+        {@html realizationCompanyData.content}
       </div>
       <div class="more">
-        <button>
-          Читать подробнее <img src={arrow} alt="">
-        </button>
+        <a href={realizationCompanyData.link.url}>
+          {realizationCompanyData.link.text} <img src={realizationCompanyData.link.icon.url} alt={realizationCompanyData.link.icon.alt}>
+        </a>
       </div>
     </div>
   </section>
@@ -60,26 +60,26 @@
     width: 100%;
     height: 280px;
   }
-  .announce {
+  .content {
     display: grid;
     grid-template-columns: 1fr;
     font-size: 16px;
     line-height: 19px;
     gap: 20px;
   }
-  .announce :global(ul),
-  .announce :global(li) {
+  .content :global(ul),
+  .content :global(li) {
     display: grid;
     grid-template-columns: 1fr;
     gap: 19px;
   }
-  .announce :global(ul li::before) {
+  .content :global(ul li::before) {
     content: '—';
     width: auto;
     display: contents;
     margin-right: 6px;
   }
-  .more button {
+  .more a {
     border: none;
     background: none;
     cursor: pointer;
@@ -94,7 +94,7 @@
     justify-content: flex-start;
     align-items: center;
   }
-  .more button img {
+  .more a img {
     margin-left: 8px;
     width: 32px;
     object-fit: contain;
