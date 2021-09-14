@@ -1,5 +1,4 @@
 <script>
-  import arrow from './arrow-blue.svg';
   import Carousel from './Carousel.svelte';
 
   export let philosophyVideoData;
@@ -14,13 +13,13 @@
       <div class="video">
         {@html philosophyVideoData.video}
       </div>
-      <div class="announce">
-        {@html philosophyVideoData.announce}
+      <div class="content">
+        {@html philosophyVideoData.content}
       </div>
       <div class="more">
-        <button>
-          Читать подробнее <img src={arrow} alt="">
-        </button>
+        <a href={philosophyVideoData.link.url}>
+          {philosophyVideoData.link.text} <img src={philosophyVideoData.link.icon.url} alt={philosophyVideoData.link.icon.alt}>
+        </a>
       </div>
       <Carousel bind:carouselData={philosophyVideoData.carousel} />
     </div>
@@ -62,26 +61,26 @@
     width: 100%;
     height: 280px;
   }
-  .announce {
+  .content {
     display: grid;
     grid-template-columns: 1fr;
     font-size: 16px;
     line-height: 19px;
     gap: 20px;
   }
-  .announce :global(ul),
-  .announce :global(li) {
+  .content :global(ul),
+  .content :global(li) {
     display: grid;
     grid-template-columns: 1fr;
     gap: 19px;
   }
-  .announce :global(ul li::before) {
+  .content :global(ul li::before) {
     content: '—';
     width: auto;
     display: contents;
     margin-right: 6px;
   }
-  .more button {
+  .more a {
     border: none;
     background: none;
     cursor: pointer;
@@ -96,7 +95,7 @@
     justify-content: flex-start;
     align-items: center;
   }
-  .more button img {
+  .more a img {
     margin-left: 8px;
     width: 32px;
     object-fit: contain;
