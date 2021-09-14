@@ -1,6 +1,4 @@
 <script>
-  import arrow from './arrow-red.svg';
-
   export let realizationCompanyData;
 </script>
 
