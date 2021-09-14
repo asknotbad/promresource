@@ -16,7 +16,7 @@
     <div class="content">
       {@html item.description}
     </div>
-    <a class="more" href="/">
+    <a class="more" href="/realization/catalog">
       Подробнее <img src={arrowMore} alt="">
     </a>
     <div class="button">
