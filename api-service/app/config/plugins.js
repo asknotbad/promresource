@@ -5,8 +5,8 @@ module.exports = ({ env }) => ({
       apiKey: env('SENDGRID_API_KEY'),
     },
     settings: {
-      defaultFrom: 'robot@asknotbad.com',
-      defaultReplyTo: 'd@asknotbad.com',
+      defaultFrom: 'robot@promresurs-ul.ru',
+      defaultReplyTo: 'info@promresurs-ul.ru',
       testAddress: 'd@asknotbad.com',
     },
   },
