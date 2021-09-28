@@ -100,6 +100,10 @@
     line-height: 21px;
     padding: 0 30px;
   }
+  [disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 
   @media (min-width: 768px) {
     .big {
