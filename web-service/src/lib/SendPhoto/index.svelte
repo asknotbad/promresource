@@ -1,7 +1,57 @@
 <script>
   import Button from '$lib/Button/index.svelte';
   import iconFile from './icon-add-file.svg';
+  import File from './File.svelte';
   export let sendPhotoData;
+
+  let files = [];
+
+  let filesinput;
+  let waitingFiles = false;
+  let waiting = false;
+  let defaultText = sendPhotoData.button.text;
+
+  $: sendPhotoData.button.disabled = waitingFiles === true || waiting === true ? true : false;
+
+  $: sendPhotoData.button.text = waitingFiles === true ?
+    'Отправка файлов...' : waiting === true ?
+      'Отправка сообщения...' : defaultText;
+
+  const onFilesSelected = (e) => {
+    const filesToUpload = Array.from(e.target.files);
+
+    filesToUpload.forEach(async (file, i) => {
+      waiting = true;
+
+      const formData = new FormData();
+      formData.append(`files`, file, file.name);
+
+      const fileUrl = `/api/upload`;
+      const fileRes = await fetch(fileUrl, {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (fileRes.ok) {
+        const r = await fileRes.json();
+        files = [...files, r[0].id];
+        waiting = false;
+      } else {
+        const r = await fileRes.json();
+        console.log('Upload error:', r);
+        waiting = false;
+      };
+    });
+  };
+
+  function deleteFile(event) {
+    files.map((id, i) => {
+      if (id === event.detail.id) {
+        files.splice(i, 1);
+      };
+    });
+    files = files;
+  };
 
   let sendData = async () => {
 
@@ -18,8 +68,15 @@
       <form on:submit|preventDefault={sendData}>
         <input type="tel" placeholder="Ваш номер телефона">
         <input type="text" placeholder="Ваше имя">
+        <ul class="files">
+          {#each files as fileId (fileId)}
+            <li>
+              <File bind:fileId on:deleteFile={deleteFile} />
+            </li>
+          {/each}
+        </ul>
         <label>
-          <input type="file" class="visuallyhidden">
+          <input type="file" class="visuallyhidden" multiple on:change={(e)=>onFilesSelected(e)} bind:this={filesinput}>
           <div class="placeholder">
             <div class="icon">
               <img src={iconFile} alt="">

@@ -53,11 +53,11 @@
 </script>
 
 {#if button.link && button.link !== ''}
-  <a href={button.link} class="{button.size} {button.color}" disabled="{button.disabled === true ? true : false}">
+  <a href={button.link} class="{button.size} {button.color}" disabled="{button.disabled && button.disabled === true ? "true" : "false"}">
     {button.text}
   </a>
 {:else}
-  <button bind:this={buttonElement} on:click|preventDefault class="{button.size} {button.color}" disabled="{button.disabled === true ? true : false}" class:open={isOpen}>
+  <button bind:this={buttonElement} on:click|preventDefault class="{button.size} {button.color}" disabled="{button.disabled && button.disabled === true ? "true" : "false"}" class:open={isOpen}>
     {button.text}
   </button>
 {/if}
@@ -99,6 +99,10 @@
     font-size: 18px;
     line-height: 21px;
     padding: 0 30px;
+  }
+  [disabled="true"] {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 
   @media (min-width: 768px) {
