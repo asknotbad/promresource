@@ -68,13 +68,15 @@
       <form on:submit|preventDefault={sendData}>
         <input type="tel" placeholder="Ваш номер телефона">
         <input type="text" placeholder="Ваше имя">
-        <ul class="files">
-          {#each files as fileId (fileId)}
-            <li>
-              <File bind:fileId on:deleteFile={deleteFile} />
-            </li>
-          {/each}
-        </ul>
+        {#if files && files.length > 0}
+          <ul class="files">
+            {#each files as fileId (fileId)}
+              <li>
+                <File bind:fileId on:deleteFile={deleteFile} />
+              </li>
+            {/each}
+          </ul>
+        {/if}
         <label>
           <input type="file" class="visuallyhidden" multiple on:change={(e)=>onFilesSelected(e)} bind:this={filesinput}>
           <div class="placeholder">
