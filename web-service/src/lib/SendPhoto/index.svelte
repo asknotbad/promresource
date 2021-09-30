@@ -21,7 +21,8 @@
     const filesToUpload = Array.from(e.target.files);
 
     filesToUpload.forEach(async (file, i) => {
-      waiting = true;
+      sendPhotoData.button.disabled = true;
+      waitingFiles = true;
 
       const formData = new FormData();
       formData.append(`files`, file, file.name);
@@ -35,11 +36,13 @@
       if (fileRes.ok) {
         const r = await fileRes.json();
         files = [...files, r[0].id];
-        waiting = false;
+        sendPhotoData.button.disabled = false;
+        waitingFiles = false;
       } else {
         const r = await fileRes.json();
         console.log('Upload error:', r);
-        waiting = false;
+        sendPhotoData.button.disabled = false;
+        waitingFiles = false;
       };
     });
   };
