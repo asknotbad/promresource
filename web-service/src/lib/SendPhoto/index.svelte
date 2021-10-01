@@ -10,9 +10,9 @@
   let files = [];
 
   let filesinput;
-  // let waitingFiles = false;
-  // let waiting = false;
-  // let defaultText = sendPhotoData.button.text;
+  let waitingFiles = false;
+  let waiting = false;
+  let defaultText = sendPhotoData.button.text;
 
   // sendPhotoData.button.disabled = false;
 
@@ -31,6 +31,7 @@
 
 
   const onFilesSelected = (e) => {
+    waitingFiles = true;
     const filesToUpload = Array.from(e.target.files);
 
     filesToUpload.forEach(async (file, i) => {
@@ -51,12 +52,12 @@
         files = [...files, r[0]];
 
         // sendPhotoData.button.disabled = false;
-        // waitingFiles = false;
+        waitingFiles = false;
       } else {
         const r = await fileRes.json();
         console.log('Upload error:', r);
         // sendPhotoData.button.disabled = false;
-        // waitingFiles = false;
+        waitingFiles = false;
       };
     });
   };
@@ -94,6 +95,9 @@
   };
 
   let sendData = async () => {
+    waiting = true;
+    sendPhotoData.button.text = 'Отправка сообщения...'
+
     const sendMailUrl = `/api/email`;
     const sendMailRes = await fetch(sendMailUrl, {
       method: 'POST',
@@ -131,8 +135,13 @@ ${printDocumentsText(files)}
     });
 
     if (sendMailRes.ok) {
+      sendPhotoData.button.text = 'Сообщение отправлено!'
       setTimeout(() => {
-
+        phone = '';
+        name = '';
+        files = [];
+        sendPhotoData.button.text = defaultText;
+        waiting = false;
       }, 2000);
     };
   };
@@ -164,7 +173,7 @@ ${printDocumentsText(files)}
               <img src={iconFile} alt="">
             </div>
             <div class="text">
-              Прикрепить фото или видео
+              {waitingFiles === true ? 'Отправка файлов...' : 'Прикрепить фото или видео'}
             </div>
           </div>
         </label>
