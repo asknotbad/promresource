@@ -57,7 +57,7 @@
     {button.text}
   </a>
 {:else}
-  <button bind:this={buttonElement} on:click|preventDefault class="{button.size} {button.color}" disabled="{button.disabled && button.disabled === true ? "true" : "false"}" class:open={isOpen}>
+  <button bind:this={buttonElement} on:click|preventDefault class="{button.size} {button.color}" class:open={isOpen}>
     {button.text}
   </button>
 {/if}
