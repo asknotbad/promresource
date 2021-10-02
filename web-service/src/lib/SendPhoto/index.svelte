@@ -1,28 +1,41 @@
 <script>
+  import { page } from '$app/stores';
   import Button from '$lib/Button/index.svelte';
   import iconFile from './icon-add-file.svg';
   import File from './File.svelte';
   export let sendPhotoData;
 
+  let phone = '';
+  let name = '';
   let files = [];
 
   let filesinput;
-  let waitingFiles = false;
-  let waiting = false;
-  let defaultText = sendPhotoData.button.text;
+  // let waitingFiles = false;
+  // let waiting = false;
+  // let defaultText = sendPhotoData.button.text;
 
-  $: sendPhotoData.button.disabled = waitingFiles === true || waiting === true ? true : false;
+  // sendPhotoData.button.disabled = false;
 
-  $: sendPhotoData.button.text = waitingFiles === true ?
-    'Отправка файлов...' : waiting === true ?
-      'Отправка сообщения...' : defaultText;
+  // $: sendPhotoData.button.text = waitingFiles === true ?
+    // 'Отправка файлов...' : waiting === true ?
+      // 'Отправка сообщения...' : defaultText;
+
+  // $: (async () => {
+  //   uploadedFiles = [];
+  //   files.map(async fileId => {
+  //     const fileRes = await fetch(`/api/upload/files/${fileId}`);
+  //     uploadedFiles = [...uploadedFiles, await fileRes.json()];
+  //     console.log(uploadedFiles);
+  //   });
+  // })();
+
 
   const onFilesSelected = (e) => {
     const filesToUpload = Array.from(e.target.files);
 
     filesToUpload.forEach(async (file, i) => {
-      sendPhotoData.button.disabled = true;
-      waitingFiles = true;
+      // sendPhotoData.button.disabled = true;
+      // waitingFiles = true;
 
       const formData = new FormData();
       formData.append(`files`, file, file.name);
@@ -35,29 +48,93 @@
 
       if (fileRes.ok) {
         const r = await fileRes.json();
-        files = [...files, r[0].id];
-        sendPhotoData.button.disabled = false;
-        waitingFiles = false;
+        files = [...files, r[0]];
+
+        // sendPhotoData.button.disabled = false;
+        // waitingFiles = false;
       } else {
         const r = await fileRes.json();
         console.log('Upload error:', r);
-        sendPhotoData.button.disabled = false;
-        waitingFiles = false;
+        // sendPhotoData.button.disabled = false;
+        // waitingFiles = false;
       };
     });
   };
 
   function deleteFile(event) {
-    files.map((id, i) => {
-      if (id === event.detail.id) {
+    files.map((file, i) => {
+      if (file.id === event.detail.id) {
         files.splice(i, 1);
       };
     });
     files = files;
   };
 
-  let sendData = async () => {
+  function printDocumentsText(documents) {
+    let documentsText = '';
+    documents.forEach(async file => {
+      documentsText += `
+      — https://${$page.host}${file.url}\n
+      `;
+    });
+    return documentsText;
+  };
 
+  function printDocumentsHtml(documents) {
+    let documentsHtml = '<ul>';
+    documents.forEach(async file => {
+      documentsHtml += `
+        <li>
+          <a href="https://${$page.host}${file.url}" target="_blank">${file.name}</a>
+        </li>
+      `;
+    });
+    documentsHtml += '<ul>';
+    return documentsHtml;
+  };
+
+  let sendData = async () => {
+    const sendMailUrl = `/api/email`;
+    const sendMailRes = await fetch(sendMailUrl, {
+      method: 'POST',
+      body: JSON.stringify({
+        to: sendPhotoData.recipient,
+        subject: 'Заявка на коммерческое предложение с сайта ООО "Промресурс"',
+        text: `
+        Здравствуйте!\n
+Вам отправлено сообщение из формы "${sendPhotoData.header}".\n
+— Имя отправителя: ${name}\n
+— Номер телефона отправителя: ${phone}\n
+— Прикреплённые файлы:\n
+${printDocumentsText(files)}
+        `,
+        html: `
+          <h2>Здравствуйте!</h2>
+          <p>Вам отправлено сообщение из формы "${sendPhotoData.header}".</p>
+          <ul>
+            <li>
+              Имя отправителя: ${name}
+            </li>
+            <li>
+              Номер телефона отправителя: ${phone}
+            </li>
+            <li>
+              Прикреплённые файлы:
+              ${printDocumentsHtml(files)}
+            </li>
+          </ul>
+        `,
+      }),
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8'
+      },
+    });
+
+    if (sendMailRes.ok) {
+      setTimeout(() => {
+
+      }, 2000);
+    };
   };
 </script>
 
@@ -66,16 +143,16 @@
     <img class="bg" src={sendPhotoData.bg.file.url} alt={sendPhotoData.bg.alt}>
     <div class="container">
       <h2>
-        {sendPhotoData.header}
+        {sendPhotoData.header} {sendPhotoData.recipient}
       </h2>
       <form on:submit|preventDefault={sendData}>
-        <input type="tel" placeholder="Ваш номер телефона">
-        <input type="text" placeholder="Ваше имя">
+        <input bind:value={phone} type="tel" placeholder="Ваш номер телефона">
+        <input bind:value={name} type="text" placeholder="Ваше имя">
         {#if files && files.length > 0}
           <ul class="files">
-            {#each files as fileId (fileId)}
+            {#each files as file (file.id)}
               <li>
-                <File bind:fileId on:deleteFile={deleteFile} />
+                <File bind:file on:deleteFile={deleteFile} />
               </li>
             {/each}
           </ul>
@@ -91,7 +168,7 @@
             </div>
           </div>
         </label>
-        <Button bind:button={sendPhotoData.button} noDefaultAction />
+        <Button bind:button={sendPhotoData.button} noDefaultAction on:click={sendData} />
       </form>
     </div>
   </section>

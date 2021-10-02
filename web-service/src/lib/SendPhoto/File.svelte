@@ -1,17 +1,11 @@
 <script>
-  import { onMount, createEventDispatcher } from 'svelte';
-  export let fileId;
+  import { createEventDispatcher } from 'svelte';
+  export let file;
 
   const dispatch = createEventDispatcher();
-  let file;
-
-  onMount(async () => {
-    const fileRes = await fetch(`/api/upload/files/${fileId}`);
-    file = await fileRes.json();
-  });
 
   async function deleteFile() {
-    const deleteRes = await fetch(`/api/upload/files/${fileId}`, {
+    const deleteRes = await fetch(`/api/upload/files/${file.id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json; charset=utf-8'
@@ -19,7 +13,7 @@
     });
     if (deleteRes.ok) {
       dispatch('deleteFile', {
-        id: fileId,
+        id: file.id,
       });
     } else {
       const r = await deleteRes.json();
