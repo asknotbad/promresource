@@ -143,7 +143,7 @@ ${printDocumentsText(files)}
     <img class="bg" src={sendPhotoData.bg.file.url} alt={sendPhotoData.bg.alt}>
     <div class="container">
       <h2>
-        {sendPhotoData.header} {sendPhotoData.recipient}
+        {sendPhotoData.header}
       </h2>
       <form on:submit|preventDefault={sendData}>
         <input bind:value={phone} type="tel" placeholder="Ваш номер телефона">
