@@ -14,30 +14,11 @@
   let waiting = false;
   let defaultText = sendPhotoData.button.text;
 
-  // sendPhotoData.button.disabled = false;
-
-  // $: sendPhotoData.button.text = waitingFiles === true ?
-    // 'Отправка файлов...' : waiting === true ?
-      // 'Отправка сообщения...' : defaultText;
-
-  // $: (async () => {
-  //   uploadedFiles = [];
-  //   files.map(async fileId => {
-  //     const fileRes = await fetch(`/api/upload/files/${fileId}`);
-  //     uploadedFiles = [...uploadedFiles, await fileRes.json()];
-  //     console.log(uploadedFiles);
-  //   });
-  // })();
-
-
   const onFilesSelected = (e) => {
     waitingFiles = true;
     const filesToUpload = Array.from(e.target.files);
 
     filesToUpload.forEach(async (file, i) => {
-      // sendPhotoData.button.disabled = true;
-      // waitingFiles = true;
-
       const formData = new FormData();
       formData.append(`files`, file, file.name);
 
@@ -50,13 +31,10 @@
       if (fileRes.ok) {
         const r = await fileRes.json();
         files = [...files, r[0]];
-
-        // sendPhotoData.button.disabled = false;
         waitingFiles = false;
       } else {
         const r = await fileRes.json();
         console.log('Upload error:', r);
-        // sendPhotoData.button.disabled = false;
         waitingFiles = false;
       };
     });
