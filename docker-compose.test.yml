@@ -3,18 +3,16 @@ version: '3.8'
 services:
   web:
     build:
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.web.rule=Host(`${APP_HOST}`)"
-
   api:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.api.rule=Host(`${APP_HOST}`) && PathPrefix(`/api`, `/uploads`, `/admin`, `/content-manager`, `/i18n`, `/content-type-builder`, `/upload`, `/users-permissions`, `/email`) || Host(`${API_HOST}`)"
       - "traefik.http.routers.api.middlewares=api-stripprefix"
       - "traefik.http.middlewares.api-stripprefix.stripprefix.prefixes=/api"
-
   traefik:
     command:
       #- "--log.level=DEBUG"

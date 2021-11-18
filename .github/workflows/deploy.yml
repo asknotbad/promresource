@@ -21,6 +21,8 @@ jobs:
       API_HOST: ${{ secrets.API_HOST }}
       API_PORT: ${{ secrets.API_PORT }}
       API_DATABASE_CLIENT: ${{ secrets.API_DATABASE_CLIENT }}
+      APP_HOST: ${{ secrets.APP_HOST }}
+      TRAEFIK_HOST: ${{ secrets.TRAEFIK_HOST }}
     runs-on: ubuntu-latest
 
     steps:
@@ -53,6 +55,5 @@ jobs:
             git reset --hard origin/main
             git pull
             docker-compose -f docker-compose.yml -f docker-compose.prod.yml up --build -d
-            docker system prune -f
-            docker volume prune -f
+            docker system prune --volumes -f
             exit
