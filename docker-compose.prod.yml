@@ -1,20 +1,50 @@
 version: '3.8'
 
 services:
-  api:
-    environment:
-      # NODE_ENV: production
-      JWT_SECRET: ${JWT_SECRET}
-      DATABASE_CLIENT: ${API_DATABASE_CLIENT}
-      DATABASE_NAME: ${POSTGRES_DB}
-      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
-      DATABASE_HOST: postgres
-      DATABASE_PORT: 5432
-      DATABASE_USERNAME: ${POSTGRES_USER}
-      DATABASE_PASSWORD: ${POSTGRES_PASSWORD}
-      SENDGRID_API_KEY: ${SENDGRID_API_KEY}
-    # command: 'strapi start'
-
   web:
     build:
       dockerfile: Dockerfile
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.web.rule=Host(`${APP_HOST}`)"
+      - "traefik.http.routers.web.tls.certResolver=myresolver"
+      - "traefik.http.routers.web.tls=true"
+      - "traefik.http.routers.web.entrypoints=websecure"
+      - "traefik.http.routers.web.tls.certresolver=myresolver"
+  api:
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.api.rule=Host(`${APP_HOST}`) && PathPrefix(`/api`, `/uploads`, `/admin`, `/content-manager`, `/i18n`, `/content-type-builder`, `/upload`, `/users-permissions`, `/email`, `/assets`) || Host(`${API_HOST}`)"
+      - "traefik.http.routers.api.middlewares=api-stripprefix"
+      - "traefik.http.middlewares.api-stripprefix.stripprefix.prefixes=/api"
+      - "traefik.http.routers.api.entrypoints=websecure"
+      - "traefik.http.routers.api.tls.certresolver=myresolver"
+  traefik:
+    command:
+      - "--providers.docker=true"
+      - "--api.dashboard=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
+      - "--entrypoints.web.http.redirections.entryPoint.scheme=https"
+      - "--entrypoints.web.http.redirections.entrypoint.permanent=true"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
+      # - "--certificatesresolvers.myresolver.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
+      - "--certificatesresolvers.myresolver.acme.email=${LE_ACME_EMAIL}"
+      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.traefik.entrypoints=websecure"
+      - "traefik.http.routers.traefik.tls.certresolver=myresolver"
+      - "traefik.http.routers.traefik.rule=Host(`${TRAEFIK_HOST}`)"
+      - "traefik.http.routers.traefik.service=api@internal"
+      - "traefik.http.routers.traefik.middlewares=auth"
+      - "traefik.http.middlewares.auth.basicauth.users=${TRAEFIK_USER}:${TRAEFIK_PASSWORD}"
+    ports:
+      - 80:80
+      - 443:443
+      - 8080:8080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik-service/letsencrypt:/letsencrypt

@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   postgres:
-    image: postgres:alpine
+    image: postgres:13-alpine
     container_name: promresource-postgres-service
     restart: always
     volumes:
@@ -62,23 +62,9 @@ services:
       FCM_API_KEY: ${FCM_API_KEY}
       SENDGRID_API_KEY: ${SENDGRID_API_KEY}
 
-  reverse-proxy:
-    image: asknotbad/nginx-reverse-proxy:alpine
-    container_name: promresource-reverse-proxy-service
+  traefik:
+    image: traefik:v2.5
+    container_name: promresource-traefik-service
     restart: always
-    volumes:
-      - ./reverse-proxy-service/nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./reverse-proxy-service/nginx/conf.d:/etc/nginx/conf.d
-      - ./reverse-proxy-service/nginx/sites-available:/etc/nginx/sites-available
-      - ./reverse-proxy-service/nginx/sites-enabled:/etc/nginx/sites-enabled
-      - ./reverse-proxy-service/log:/var/log/nginx
     depends_on:
       - web
-    ports:
-      - 80:80
-    environment:
-      APP_HOST: ${APP_HOST}
-      WEB_SERVICE_HOST: web
-      WEB_SERVICE_PORT: ${WEB_SERVICE_PORT}
-      API_HOST: api
-      API_PORT: ${API_PORT}
