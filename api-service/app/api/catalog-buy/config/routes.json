@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/catalog-buys",
+      "handler": "catalog-buy.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/catalog-buys/count",
+      "handler": "catalog-buy.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/catalog-buys/:id",
+      "handler": "catalog-buy.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/catalog-buys",
+      "handler": "catalog-buy.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/catalog-buys/:id",
+      "handler": "catalog-buy.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/catalog-buys/:id",
+      "handler": "catalog-buy.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
