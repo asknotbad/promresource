@@ -1,5 +1,77 @@
+<script context="module">
+  export async function load({ page, fetch, session, context }) {
+    let apiUrl;
+
+    if (page.host !== undefined) {
+      apiUrl = '/api';
+    } else {
+      apiUrl = `http://${session.env.API_HOST}:${session.env.API_PORT}`;
+    };
+
+		const realizationHeroDataRes = await fetch(`${apiUrl}/realization-hero-data`);
+		const realizationHeroData = await realizationHeroDataRes.json();
+
+    const catalogDataRes = await fetch(`${apiUrl}/catalog?type=sell&isActive=true&_sort=order:ASC`);
+		const catalogData = await catalogDataRes.json();
+
+    const realizationCatalogDataRes = await fetch(`${apiUrl}/realization-catalog-data`);
+		const realizationCatalogData = await realizationCatalogDataRes.json();
+
+    const realizationTextDataRes = await fetch(`${apiUrl}/realization-text-data`);
+		const realizationTextData = await realizationTextDataRes.json();
+
+    const trustDataRes = await fetch(`${apiUrl}/trust-data`);
+		const trustData = await trustDataRes.json();
+
+    const orderRequestDataRes = await fetch(`${apiUrl}/order-request-data`);
+		const orderRequestData = await orderRequestDataRes.json();
+
+    const factoryDataRes = await fetch(`${apiUrl}/factory-data`);
+		const factoryData = await factoryDataRes.json();
+
+    const deliveryDataRes = await fetch(`${apiUrl}/delivery-data`);
+		const deliveryData = await deliveryDataRes.json();
+
+    const laboratoryDataRes = await fetch(`${apiUrl}/laboratory-data`);
+		const laboratoryData = await laboratoryDataRes.json();
+
+    const getSaleDataRes = await fetch(`${apiUrl}/get-sale-data`);
+		const getSaleData = await getSaleDataRes.json();
+
+    const excellenceDataRes = await fetch(`${apiUrl}/excellence-data`);
+		const excellenceData = await excellenceDataRes.json();
+
+    const realizationCompanyDataRes = await fetch(`${apiUrl}/realization-company-data`);
+		const realizationCompanyData = await realizationCompanyDataRes.json();
+
+    const companyStatsDataRes = await fetch(`${apiUrl}/company-stats-data`);
+		const companyStatsData = await companyStatsDataRes.json();
+
+    const askQuetionDataRes = await fetch(`${apiUrl}/ask-quetion-data`);
+		const askQuetionData = await askQuetionDataRes.json();
+
+    return {
+      props: {
+        realizationHeroData,
+        catalogData,
+        realizationCatalogData,
+        realizationTextData,
+        trustData,
+        orderRequestData,
+        factoryData,
+        deliveryData,
+        laboratoryData,
+        getSaleData,
+        excellenceData,
+        realizationCompanyData,
+        companyStatsData,
+        askQuetionData,
+      }
+    }
+  };
+</script>
+
 <script>
-  import { onMount } from 'svelte';
   import RealizationHero from '$lib/RealizationHero/index.svelte';
   import RealizationCatalog from '$lib/RealizationCatalog/index.svelte';
   import RealizationText from '$lib/RealizationText/index.svelte';
@@ -14,64 +86,20 @@
   import CompanyStats from '$lib/CompanyStats/index.svelte';
   import AskQuetion from '$lib/AskQuetion/index.svelte';
 
-  let realizationHeroData;
-  let catalogData;
-  let realizationCatalogData;
-  let realizationTextData;
-  let trustData;
-  let orderRequestData;
-  let factoryData;
-  let deliveryData;
-  let laboratoryData;
-  let getSaleData;
-  let excellenceData;
-  let realizationCompanyData;
-  let companyStatsData;
-  let askQuetionData;
-
-  onMount(async () => {
-		const realizationHeroDataRes = await fetch(`/api/realization-hero-data`);
-		realizationHeroData = await realizationHeroDataRes.json();
-
-    const catalogDataRes = await fetch(`/api/catalog?type=sell&isActive=true&_sort=order:ASC`);
-		catalogData = await catalogDataRes.json();
-
-    const realizationCatalogDataRes = await fetch(`/api/realization-catalog-data`);
-		realizationCatalogData = await realizationCatalogDataRes.json();
-
-    const realizationTextDataRes = await fetch(`/api/realization-text-data`);
-		realizationTextData = await realizationTextDataRes.json();
-
-    const trustDataRes = await fetch(`/api/trust-data`);
-		trustData = await trustDataRes.json();
-
-    const orderRequestDataRes = await fetch(`/api/order-request-data`);
-		orderRequestData = await orderRequestDataRes.json();
-
-    const factoryDataRes = await fetch(`/api/factory-data`);
-		factoryData = await factoryDataRes.json();
-
-    const deliveryDataRes = await fetch(`/api/delivery-data`);
-		deliveryData = await deliveryDataRes.json();
-
-    const laboratoryDataRes = await fetch(`/api/laboratory-data`);
-		laboratoryData = await laboratoryDataRes.json();
-
-    const getSaleDataRes = await fetch(`/api/get-sale-data`);
-		getSaleData = await getSaleDataRes.json();
-
-    const excellenceDataRes = await fetch(`/api/excellence-data`);
-		excellenceData = await excellenceDataRes.json();
-
-    const realizationCompanyDataRes = await fetch(`/api/realization-company-data`);
-		realizationCompanyData = await realizationCompanyDataRes.json();
-
-    const companyStatsDataRes = await fetch(`/api/company-stats-data`);
-		companyStatsData = await companyStatsDataRes.json();
-
-    const askQuetionDataRes = await fetch(`/api/ask-quetion-data`);
-		askQuetionData = await askQuetionDataRes.json();
-	});
+  export let realizationHeroData;
+  export let catalogData;
+  export let realizationCatalogData;
+  export let realizationTextData;
+  export let trustData;
+  export let orderRequestData;
+  export let factoryData;
+  export let deliveryData;
+  export let laboratoryData;
+  export let getSaleData;
+  export let excellenceData;
+  export let realizationCompanyData;
+  export let companyStatsData;
+  export let askQuetionData;
 </script>
 
 <svelte:head>

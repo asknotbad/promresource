@@ -1,18 +1,34 @@
+<script context="module">
+  export async function load({ page, fetch, session, context }) {
+    let apiUrl;
+
+    if (page.host !== undefined) {
+      apiUrl = '/api';
+    } else {
+      apiUrl = `http://${session.env.API_HOST}:${session.env.API_PORT}`;
+    };
+
+    const catalogDataRes = await fetch(`${apiUrl}/catalog?type=sell&isActive=true&_sort=order:ASC`);
+		const catalogData = await catalogDataRes.json();
+
+    const realizationCatalogTextDataRes = await fetch(`${apiUrl}/realization-catalog-text-data`);
+		const realizationCatalogTextData = await realizationCatalogTextDataRes.json();
+
+    return {
+      props: {
+        catalogData,
+        realizationCatalogTextData,
+      }
+    }
+  };
+</script>
+
 <script>
-  import { onMount } from 'svelte';
   import RealizationCatalogText from '$lib/RealizationCatalogText/index.svelte';
   import CatalogItems from '$lib/CatalogItems/index.svelte';
 
-  let catalogData;
-  let realizationCatalogTextData;
-
-  onMount(async () => {
-    const catalogDataRes = await fetch(`/api/catalog?type=sell&isActive=true&_sort=order:ASC`);
-		catalogData = await catalogDataRes.json();
-
-    const realizationCatalogTextDataRes = await fetch(`/api/realization-catalog-text-data`);
-		realizationCatalogTextData = await realizationCatalogTextDataRes.json();
-	});
+  export let catalogData;
+  export let realizationCatalogTextData;
 </script>
 
 <svelte:head>

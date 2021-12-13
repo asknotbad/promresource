@@ -1,6 +1,11 @@
 /** @type {import('@sveltejs/kit').ServerFetch} */
+import dotenv from 'dotenv';
+dotenv.config();
 import cookie from 'cookie';
 import { v4 as uuid } from '@lukeed/uuid';
+
+const API_HOST = process.env["API_HOST"];
+const API_PORT = process.env["API_PORT"];
 
 export const handle = async ({ request, resolve }) => {
 	const cookies = cookie.parse(request.headers.cookie || '');
@@ -20,4 +25,13 @@ export const handle = async ({ request, resolve }) => {
 	}
 
 	return response;
+};
+
+export function getSession({ locals }) {
+	return {
+    env: {
+      API_HOST,
+      API_PORT,
+    },
+	};
 };
