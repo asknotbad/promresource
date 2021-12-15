@@ -2,8 +2,12 @@
   import Button from '$lib/Button/index.svelte';
   import { activeModal, modalData } from '$lib/stores';
 
+  export let catalogBuyData;
+  export let catalogSellData;
+  export let catalogServicesData;
   export let item;
 
+  console.log('item:', item);
   function toggleModal(modalName) {
     if ($activeModal === modalName) {
       activeModal.set(null);

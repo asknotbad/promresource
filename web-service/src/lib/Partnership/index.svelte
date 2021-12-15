@@ -1,6 +1,9 @@
 <script>
   import PartnershipItemCard from './PartnershipItemCard.svelte';
   export let noPadding = false;
+  export let catalogBuyData;
+  export let catalogSellData;
+  export let catalogServicesData;
   export let partnershipData;
 </script>
 
@@ -11,7 +14,7 @@
         {partnershipData.header}
       </h2>
       {#each partnershipData.items as item}
-        <PartnershipItemCard bind:item />
+        <PartnershipItemCard bind:item bind:catalogBuyData bind:catalogSellData bind:catalogServicesData />
       {/each}
     </div>
   </section>
