@@ -12,6 +12,14 @@
     "announce": {
       "type": "richtext"
     },
+    "catalogItemsType": {
+      "type": "enumeration",
+      "enum": [
+        "buy",
+        "sell",
+        "services"
+      ]
+    },
     "link": {
       "type": "component",
       "repeatable": false,
