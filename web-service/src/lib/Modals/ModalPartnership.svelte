@@ -1,4 +1,5 @@
 <script>
+  import snarkdown from 'snarkdown';
   import Button from '$lib/Button/index.svelte';
   import { activeModal, modalData } from '$lib/stores';
 
@@ -15,42 +16,36 @@
     activeModal.set(null);
     modalData.set(null);
   };
+
+  console.log('$modalData:', $modalData);
 </script>
 
 {#if $modalData && Array.isArray($modalData)}
   <div class="wrapper">
     {#each $modalData as item}
-      {#if item.isActive === true}
-        <article>
-          {#if item.cover && item.cover.file}
-            <img src={item.cover.file.url} alt={item.cover.alt} class="cover">
+      <article>
+        {#if item.photo && item.photo.url}
+          <img src={item.photo.url} alt={item.photo.alternativeText} class="cover">
+        {/if}
+        <h3>
+          {#if item.name}
+            {item.name}
           {/if}
-          <h3>
-            {#if item.header}
-              {item.header}
-            {/if}
-          </h3>
-          <div class="announce">
-            {#if item.announce}
-              {@html item.announce}
-            {/if}
+        </h3>
+        {#if item.notes}
+          <div class="notes">
+            {@html snarkdown(item.notes)}
           </div>
-          {#if item.link && item.link.isActive === true}
-            {#if item.link.url && item.link.url !== ''}
-              <a class="link" href={item.link.url}  on:click={closeModal}>
-                {item.link.text} <img class="link-icon" src={item.link.icon.url} alt="">
-              </a>
-            {:else if item.link.action && item.link.action === 'openModal'}
-              <button class="link" on:click|preventDefault={() => toggleModal('partnership', item.items)} >
-                {item.link.text} <img class="link-icon" src={item.link.icon.url} alt="">
-              </button>
-            {/if}
+        {/if}
+        <div class="announce">
+          {#if item.description}
+            {@html snarkdown(item.description)}
           {/if}
-          {#if item.button && item.button.isActive === true}
-            <Button bind:button={item.button} bind:dataForModal={item} />
-          {/if}
-        </article>
-      {/if}
+        </div>
+        {#if item.button && item.button.isActive === true}
+          <Button bind:button={item.button} bind:dataForModal={item} />
+        {/if}
+      </article>
     {/each}
   </div>
 {/if}
