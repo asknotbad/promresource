@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "Валюты",
+  "collectionName": "currencies",
   "info": {
-    "name": "currency"
+    "name": "Валюты"
   },
   "options": {
     "increments": true,
