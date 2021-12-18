@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "news_items",
+  "collectionName": "measurements",
   "info": {
-    "name": "Новости"
+    "name": "Единицы измерения"
   },
   "options": {
     "increments": true,
@@ -15,7 +15,7 @@
     }
   },
   "attributes": {
-    "header": {
+    "name": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -23,31 +23,29 @@
       },
       "type": "string"
     },
-    "cover": {
-      "type": "component",
-      "repeatable": false,
+    "shortName": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "component": "components.img"
+      "type": "string"
     },
-    "announce": {
+    "value": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
-      "type": "richtext"
+      "type": "string"
     },
-    "content": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "richtext"
+    "catalogBuyItems": {
+      "via": "measurement",
+      "collection": "catalog-buy"
+    },
+    "catalogSellItems": {
+      "via": "measurement",
+      "collection": "catalog-sell"
     }
   }
 }

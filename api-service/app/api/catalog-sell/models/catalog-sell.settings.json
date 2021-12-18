@@ -1,9 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "catalog",
+  "collectionName": "catalog_sells",
   "info": {
-    "name": "Каталог | Общие данные",
-    "description": ""
+    "name": "Каталог | Продажа продукции"
   },
   "options": {
     "increments": true,
@@ -16,26 +15,13 @@
     }
   },
   "attributes": {
-    "header": {
+    "name": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
       "type": "string"
-    },
-    "type": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "enumeration",
-      "enum": [
-        "buy",
-        "sell",
-        "service"
-      ]
     },
     "description": {
       "pluginOptions": {
@@ -44,6 +30,38 @@
         }
       },
       "type": "richtext"
+    },
+    "measurement": {
+      "model": "measurement",
+      "via": "catalogSellItems"
+    },
+    "price": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "integer",
+      "default": 0,
+      "min": 0
+    },
+    "currency": {
+      "model": "currency",
+      "via": "catalogSellItems"
+    },
+    "photo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "order": {
       "pluginOptions": {
@@ -54,46 +72,7 @@
       "type": "integer",
       "default": 0
     },
-    "isActive": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "boolean",
-      "default": false
-    },
-    "photo": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "components.img"
-    },
-    "prices": {
-      "type": "component",
-      "repeatable": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "components.catalog-data-item-price"
-    },
     "button": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "components.button"
-    },
-    "buttonCatalog": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
