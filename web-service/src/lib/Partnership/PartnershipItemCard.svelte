@@ -7,13 +7,29 @@
   export let catalogServicesData;
   export let item;
 
-  console.log('item:', item);
+  let catalogData;
+
+  switch (item.catalogItemsType) {
+    case 'buy':
+      catalogData = catalogBuyData;
+      break;
+    case 'sell':
+      catalogData = catalogSellData;
+      break;
+    case 'services':
+      catalogData = catalogServicesData;
+      break;
+    default:
+      catalogData = [];
+      break;
+  };
+
   function toggleModal(modalName) {
     if ($activeModal === modalName) {
       activeModal.set(null);
       modalData.set(null);
     } else {
-      modalData.set(item.items);
+      modalData.set(catalogData);
       activeModal.set(modalName);
     };
   };
