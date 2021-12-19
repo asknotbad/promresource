@@ -2,7 +2,8 @@
   "kind": "singleType",
   "collectionName": "partnership_data",
   "info": {
-    "name": "partnershipData"
+    "name": "partnershipData",
+    "description": ""
   },
   "options": {
     "increments": true,
