@@ -1,20 +1,36 @@
+<script context="module">
+  export async function load({ page, fetch, session, context }) {
+    let apiUrl;
+
+    if (page.host !== undefined) {
+      apiUrl = '/api';
+    } else {
+      apiUrl = `http://${session.env.API_HOST}:${session.env.API_PORT}`;
+    };
+
+    const headerDataRes = await fetch(`${apiUrl}/header-data`);
+    const headerData = await headerDataRes.json();
+
+    const footerDataRes = await fetch(`${apiUrl}/footer-data`);
+    const footerData = await footerDataRes.json();
+
+    return {
+      props: {
+        headerData,
+        footerData,
+      }
+    }
+  };
+</script>
+
 <script>
-  import { onMount } from 'svelte';
   import Header from '$lib/Header/index.svelte';
   import Footer from '$lib/Footer/index.svelte';
 	import Modals from '$lib/Modals/index.svelte';
 	import '../app.css';
 
-  let headerData;
-  let footerData;
-
-  onMount(async () => {
-		const headerDataRes = await fetch(`/api/header-data`);
-		headerData = await headerDataRes.json();
-
-    const footerDataRes = await fetch(`/api/footer-data`);
-		footerData = await footerDataRes.json();
-	});
+  export let headerData;
+  export let footerData;
 </script>
 
 {#if headerData}

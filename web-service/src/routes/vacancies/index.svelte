@@ -1,5 +1,45 @@
+<script context="module">
+  export async function load({ page, fetch, session, context }) {
+    let apiUrl;
+
+    if (page.host !== undefined) {
+      apiUrl = '/api';
+    } else {
+      apiUrl = `http://${session.env.API_HOST}:${session.env.API_PORT}`;
+    };
+
+		const vacanciesHeroDataRes = await fetch(`${apiUrl}/vacancies-hero-data`);
+		const vacanciesHeroData = await vacanciesHeroDataRes.json();
+
+		const vacanciesCareDataRes = await fetch(`${apiUrl}/vacancies-care-data`);
+		const vacanciesCareData = await vacanciesCareDataRes.json();
+
+		const vacanciesPhotosDataRes = await fetch(`${apiUrl}/vacancies-photos-data`);
+		const vacanciesPhotosData = await vacanciesPhotosDataRes.json();
+
+		const organizationOfWorkDataRes = await fetch(`${apiUrl}/organization-of-work-data`);
+		const organizationOfWorkData = await organizationOfWorkDataRes.json();
+
+    const vacanciesDataRes = await fetch(`${apiUrl}/vacancies-data`);
+		const vacanciesData = await vacanciesDataRes.json();
+
+    const vacanciesSubscribeDataRes = await fetch(`${apiUrl}/vacancies-subscribe-data`);
+		const vacanciesSubscribeData = await vacanciesSubscribeDataRes.json();
+
+    return {
+      props: {
+        vacanciesHeroData,
+        vacanciesCareData,
+        vacanciesPhotosData,
+        organizationOfWorkData,
+        vacanciesData,
+        vacanciesSubscribeData,
+      }
+    }
+  };
+</script>
+
 <script>
-  import { onMount } from 'svelte';
   import VacanciesHero from '$lib/VacanciesHero/index.svelte';
   import VacanciesCare from '$lib/VacanciesCare/index.svelte';
   import VacanciesPhotos from '$lib/VacanciesPhotos/index.svelte';
@@ -7,32 +47,12 @@
   import Vacancies from '$lib/Vacancies/index.svelte';
   import VacanciesSubscribe from '$lib/VacanciesSubscribe/index.svelte';
 
-  let vacanciesHeroData;
-  let vacanciesCareData;
-  let vacanciesPhotosData;
-  let organizationOfWorkData;
-  let vacanciesData;
-  let vacanciesSubscribeData;
-
-  onMount(async () => {
-		const vacanciesHeroDataRes = await fetch(`/api/vacancies-hero-data`);
-		vacanciesHeroData = await vacanciesHeroDataRes.json();
-
-		const vacanciesCareDataRes = await fetch(`/api/vacancies-care-data`);
-		vacanciesCareData = await vacanciesCareDataRes.json();
-
-		const vacanciesPhotosDataRes = await fetch(`/api/vacancies-photos-data`);
-		vacanciesPhotosData = await vacanciesPhotosDataRes.json();
-
-		const organizationOfWorkDataRes = await fetch(`/api/organization-of-work-data`);
-		organizationOfWorkData = await organizationOfWorkDataRes.json();
-
-    const vacanciesDataRes = await fetch(`/api/vacancies-data`);
-		vacanciesData = await vacanciesDataRes.json();
-
-    const vacanciesSubscribeDataRes = await fetch(`/api/vacancies-subscribe-data`);
-		vacanciesSubscribeData = await vacanciesSubscribeDataRes.json();
-	});
+  export let vacanciesHeroData;
+  export let vacanciesCareData;
+  export let vacanciesPhotosData;
+  export let organizationOfWorkData;
+  export let vacanciesData;
+  export let vacanciesSubscribeData;
 </script>
 
 <svelte:head>

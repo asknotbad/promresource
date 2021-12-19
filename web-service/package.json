@@ -12,6 +12,7 @@
   "devDependencies": {
     "@sveltejs/adapter-node": "^1.0.0-next.39",
     "@sveltejs/kit": "next",
+    "snarkdown": "^2.0.0",
     "svelte": "^3.34.0",
     "tiny-slider": "^2.9.3"
   },
@@ -19,6 +20,7 @@
   "dependencies": {
     "@fontsource/fira-mono": "^4.2.2",
     "@lukeed/uuid": "^2.0.0",
-    "cookie": "^0.4.1"
+    "cookie": "^0.4.1",
+    "dotenv": "^10.0.0"
   }
 }
