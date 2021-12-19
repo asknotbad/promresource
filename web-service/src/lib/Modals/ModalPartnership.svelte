@@ -80,28 +80,6 @@
     font-size: 14px;
     line-height: 18px;
   }
-  .link {
-    min-width: none;
-    width: auto;
-    display: grid;
-    grid-template-columns: min-content 32px;
-    gap: 8px;
-    align-items: center;
-    color: #E52B32;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 19px;
-    white-space: nowrap;
-    border: none;
-    background: none;
-    margin: 0 auto 0 0;
-    padding: 0;
-  }
-  .link-icon {
-    width: 100%;
-    object-fit: contain;
-    object-position: left center;
-  }
 
   @media (min-width: 576px) {
     .cover {
