@@ -20,6 +20,15 @@
     const partnershipDataRes = await fetch(`${apiUrl}/partnership-data`);
 		const partnershipData = await partnershipDataRes.json();
 
+    const catalogBuyDataRes = await fetch(`${apiUrl}/catalog-buy?_sort=order:ASC`);
+		const catalogBuyData = await catalogBuyDataRes.json();
+
+    const catalogSellDataRes = await fetch(`${apiUrl}/catalog-sell?_sort=order:ASC`);
+		const catalogSellData = await catalogSellDataRes.json();
+
+    const catalogServicesDataRes = await fetch(`${apiUrl}/catalog-services?_sort=order:ASC`);
+		const catalogServicesData = await catalogServicesDataRes.json();
+
     const organisationStructureDataRes = await fetch(`${apiUrl}/organisation-structure-data`);
 		const organisationStructureData = await organisationStructureDataRes.json();
 
@@ -37,6 +46,9 @@
         heroData,
         aboutCompanyData,
         advantagesData,
+        catalogBuyData,
+        catalogSellData,
+        catalogServicesData,
         partnershipData,
         organisationStructureData,
         parthnersOfferData,
@@ -59,6 +71,9 @@
   export let heroData;
   export let aboutCompanyData;
   export let advantagesData;
+  export let catalogBuyData;
+  export let catalogSellData;
+  export let catalogServicesData;
   export let partnershipData;
   export let organisationStructureData;
   export let parthnersOfferData;
@@ -83,7 +98,7 @@
 {/if}
 
 {#if partnershipData}
-  <Partnership bind:partnershipData />
+  <Partnership bind:partnershipData bind:catalogBuyData bind:catalogSellData bind:catalogServicesData />
 {/if}
 
 {#if organisationStructureData}

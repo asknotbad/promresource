@@ -2,7 +2,7 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/catalog-buys",
+      "path": "/catalog-buy",
       "handler": "catalog-buy.find",
       "config": {
         "policies": []
@@ -10,7 +10,7 @@
     },
     {
       "method": "GET",
-      "path": "/catalog-buys/count",
+      "path": "/catalog-buy/count",
       "handler": "catalog-buy.count",
       "config": {
         "policies": []
@@ -18,7 +18,7 @@
     },
     {
       "method": "GET",
-      "path": "/catalog-buys/:id",
+      "path": "/catalog-buy/:id",
       "handler": "catalog-buy.findOne",
       "config": {
         "policies": []
@@ -26,7 +26,7 @@
     },
     {
       "method": "POST",
-      "path": "/catalog-buys",
+      "path": "/catalog-buy",
       "handler": "catalog-buy.create",
       "config": {
         "policies": []
@@ -34,7 +34,7 @@
     },
     {
       "method": "PUT",
-      "path": "/catalog-buys/:id",
+      "path": "/catalog-buy/:id",
       "handler": "catalog-buy.update",
       "config": {
         "policies": []
@@ -42,7 +42,7 @@
     },
     {
       "method": "DELETE",
-      "path": "/catalog-buys/:id",
+      "path": "/catalog-buy/:id",
       "handler": "catalog-buy.delete",
       "config": {
         "policies": []
