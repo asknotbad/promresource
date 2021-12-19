@@ -14,7 +14,9 @@
         {partnershipData.header}
       </h2>
       {#each partnershipData.items as item}
-        <PartnershipItemCard bind:item bind:catalogBuyData bind:catalogSellData bind:catalogServicesData />
+        {#if item.isActive === true}
+          <PartnershipItemCard bind:item bind:catalogBuyData bind:catalogSellData bind:catalogServicesData />
+        {/if}
       {/each}
     </div>
   </section>

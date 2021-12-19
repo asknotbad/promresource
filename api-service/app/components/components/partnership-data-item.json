@@ -35,11 +35,6 @@
       "repeatable": false,
       "component": "components.img"
     },
-    "items": {
-      "type": "component",
-      "repeatable": true,
-      "component": "components.partnership-data-subitem"
-    },
     "order": {
       "type": "integer",
       "default": 0
