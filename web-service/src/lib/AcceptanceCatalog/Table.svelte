@@ -7,26 +7,12 @@
 
 {#if items && items.length > 0}
   <table cellspacing=0 cellpadding=0>
-    <thead>
-      <tr>
-        <th>
-          Вид металлолома
-        </th>
-        <th>
-          Стоимость
-        </th>
-        <th>
-          % засора
-        </th>
-        <th>
-          Примечания
-        </th>
-      </tr>
-    </thead>
     {#each items as item}
       <tr>
         <td class="name">
-          {item.name}
+          <h3>
+            {item.name}
+          </h3>
         </td>
         <td class="price">
           От {numSpace(item.price)} {item.currency.symbol} ({item.measurement.name.toLowerCase()})
@@ -50,34 +36,34 @@
     grid-template-columns: 1fr;
     row-gap: 30px;
   }
-  thead {
-    display: none;
-  }
   tr {
-    border: 1px solid #000;
+    border: 1px solid #363433;
     display: grid;
     grid-template-columns: 1fr;
     column-gap: 30px;
     row-gap: 15px;
     padding: 15px;
   }
-  .name {
+  h3 {
+    color: #424242;
     font-size: 18px;
+    line-height: 21px;
     font-weight: 500;
   }
   .price {
-    color: #E62B32;
-    font-size: 24px;
+    font-size: 16px;
+    line-height: 19px;
+    color: #2C14B2;
     font-weight: 700;
   }
   .percentage {
-    font-size: 14px;
     font-weight: 500;
   }
   .description {
     display: grid;
     grid-template-columns: 1fr;
-    font-size: 14px;
-    row-gap: 14px;
+    font-size: 16px;
+    line-height: 20px;
+    row-gap: 20px;
   }
 </style>
