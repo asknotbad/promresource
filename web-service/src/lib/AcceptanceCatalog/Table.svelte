@@ -66,4 +66,46 @@
     line-height: 20px;
     row-gap: 20px;
   }
+
+  @media (min-width: 768px) {
+    tr {
+      grid-template-columns: 2fr 1fr;
+    }
+    .description {
+      grid-column: span 2;
+    }
+  }
+
+  @media (min-width: 992px) {
+    tr {
+      grid-template-columns: 2fr 1fr 1fr;
+    }
+    .description {
+      grid-column: span 3;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    table {
+      row-gap: 15px;
+      display: table;
+    }
+    tr {
+      display: table-row;
+    }
+    td {
+      padding: 15px;
+      vertical-align: top;
+    }
+    .name {
+      width: 35%;
+    }
+    .price {
+      white-space: nowrap;
+    }
+    .percentage {
+      white-space: nowrap;
+    }
+  }
+
 </style>
