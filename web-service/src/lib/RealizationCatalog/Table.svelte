@@ -17,11 +17,6 @@
         <td class="price">
           От {numSpace(item.price)} {item.currency.symbol} ({item.measurement.name.toLowerCase()})
         </td>
-        <td class="percentage">
-          {#if item.cloggingPercentage && item.cloggingPercentage !== ''}
-            <span class="span">% засора:</span> {item.cloggingPercentage}
-          {/if}
-        </td>
         <td class="description">
           {@html snarkdown(item.description)}
         </td>
@@ -58,9 +53,6 @@
     color: #2C14B2;
     font-weight: 700;
   }
-  .percentage {
-    font-weight: 500;
-  }
   .description {
     display: grid;
     grid-template-columns: 1fr;
@@ -70,24 +62,6 @@
   }
 
   @media (min-width: 768px) {
-    tr {
-      grid-template-columns: 2fr 1fr;
-    }
-    .description {
-      grid-column: span 2;
-    }
-  }
-
-  @media (min-width: 992px) {
-    tr {
-      grid-template-columns: 2fr 1fr 1fr;
-    }
-    .description {
-      grid-column: span 3;
-    }
-  }
-
-  @media (min-width: 1200px) {
     table {
       row-gap: 15px;
       display: table;
@@ -103,9 +77,6 @@
       width: 35%;
     }
     .price {
-      white-space: nowrap;
-    }
-    .percentage {
       white-space: nowrap;
     }
   }

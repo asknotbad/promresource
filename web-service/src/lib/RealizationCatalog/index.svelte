@@ -1,21 +1,17 @@
 <script>
-  import ItemCard from './ItemCard.svelte';
+  import Table from './Table.svelte';
 
-  export let catalogData;
+  export let items;
   export let realizationCatalogData;
 </script>
 
-{#if catalogData && realizationCatalogData}
+{#if items && realizationCatalogData}
   <section>
     <div class="container">
       <h2>
         {realizationCatalogData.header}
       </h2>
-      <div class="cards">
-        {#each catalogData as item}
-          <ItemCard bind:item />
-        {/each}
-      </div>
+      <Table bind:items />
     </div>
   </section>
 {/if}
@@ -27,11 +23,6 @@
   h2 {
     margin-bottom: 30px;
   }
-  .cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
 
   @media (min-width: 768px) {
     section {
@@ -39,9 +30,6 @@
     }
     h2 {
       margin-bottom: 40px;
-    }
-    .cards {
-      gap: 30px;
     }
   }
 

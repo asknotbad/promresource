@@ -11,8 +11,8 @@
 		const realizationHeroDataRes = await fetch(`${apiUrl}/realization-hero-data`);
 		const realizationHeroData = await realizationHeroDataRes.json();
 
-    const catalogDataRes = await fetch(`${apiUrl}/catalog?type=sell&isActive=true&_sort=order:ASC`);
-		const catalogData = await catalogDataRes.json();
+    const catalogSellDataRes = await fetch(`${apiUrl}/catalog-sell?_sort=order:ASC`);
+		const catalogSellData = await catalogSellDataRes.json();
 
     const realizationCatalogDataRes = await fetch(`${apiUrl}/realization-catalog-data`);
 		const realizationCatalogData = await realizationCatalogDataRes.json();
@@ -53,7 +53,7 @@
     return {
       props: {
         realizationHeroData,
-        catalogData,
+        catalogSellData,
         realizationCatalogData,
         realizationTextData,
         trustData,
@@ -87,7 +87,7 @@
   import AskQuetion from '$lib/AskQuetion/index.svelte';
 
   export let realizationHeroData;
-  export let catalogData;
+  export let catalogSellData;
   export let realizationCatalogData;
   export let realizationTextData;
   export let trustData;
@@ -111,7 +111,7 @@
 {/if}
 
 {#if realizationCatalogData}
-  <RealizationCatalog bind:realizationCatalogData bind:catalogData />
+  <RealizationCatalog bind:realizationCatalogData bind:items={catalogSellData} />
 {/if}
 
 {#if realizationTextData}
