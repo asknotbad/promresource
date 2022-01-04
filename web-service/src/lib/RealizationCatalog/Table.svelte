@@ -18,7 +18,9 @@
           От {numSpace(item.price)} {item.currency.symbol} ({item.measurement.name.toLowerCase()})
         </td>
         <td class="description">
-          {@html snarkdown(item.description)}
+          {#if item.description}
+            {@html snarkdown(item.description)}
+          {/if}
         </td>
       </tr>
     {/each}

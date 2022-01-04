@@ -23,7 +23,9 @@
           {/if}
         </td>
         <td class="description">
-          {@html snarkdown(item.description)}
+          {#if item.description}
+            {@html snarkdown(item.description)}
+          {/if}
         </td>
       </tr>
     {/each}
