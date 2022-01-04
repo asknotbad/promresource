@@ -1,5 +1,5 @@
 <script context="module">
-  export async function load({ page, fetch, session, context }) {
+  export async function load({ page, fetch, session }) {
     let apiUrl;
 
     if (page.host !== undefined) {
@@ -11,8 +11,8 @@
 		const acceptanceHeroDataRes = await fetch(`${apiUrl}/acceptance-hero-data`);
 		const acceptanceHeroData = await acceptanceHeroDataRes.json();
 
-    const catalogDataRes = await fetch(`${apiUrl}/catalog?type=buy&isActive=true&_sort=order:ASC&_limit=6`);
-		const catalogData = await catalogDataRes.json();
+    const catalogBuyDataRes = await fetch(`${apiUrl}/catalog-buy?_sort=order:ASC`);
+		const catalogBuyData = await catalogBuyDataRes.json();
 
     const acceptanceCatalogDataRes = await fetch(`${apiUrl}/acceptance-catalog-data`);
 		const acceptanceCatalogData = await acceptanceCatalogDataRes.json();
@@ -44,7 +44,7 @@
     return {
       props: {
         acceptanceHeroData,
-        catalogData,
+        catalogBuyData,
         acceptanceCatalogData,
         acceptanceTextData,
         certificatesData,
@@ -53,7 +53,8 @@
         philosophyVideoData,
         faqData,
         partnersReviewsData,
-        getPriceData      },
+        getPriceData
+      },
     }
   };
 </script>
@@ -71,7 +72,7 @@
   import GetPrice from '$lib/GetPrice/index.svelte';
 
   export let acceptanceHeroData;
-  export let catalogData;
+  export let catalogBuyData;
   export let acceptanceCatalogData;
   export let acceptanceTextData;
   export let certificatesData;
@@ -91,8 +92,8 @@
   <AcceptanceHero bind:acceptanceHeroData />
 {/if}
 
-{#if catalogData && acceptanceCatalogData}
-  <AcceptanceCatalog bind:acceptanceCatalogData bind:catalogData />
+{#if catalogBuyData && acceptanceCatalogData}
+  <AcceptanceCatalog bind:acceptanceCatalogData bind:items={catalogBuyData} />
 {/if}
 
 {#if acceptanceTextData}

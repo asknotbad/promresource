@@ -1,41 +1,12 @@
 <script>
   import Button from '$lib/Button/index.svelte';
-  import Carousel from './Carousel.svelte';
-  import ItemCard from './ItemCard.svelte';
-  import './tiny-slider.css';
+  import Table from './Table.svelte';
 
-  export let catalogData;
+  export let items;
   export let acceptanceCatalogData;
-
-  let innerWidth = null;
-  let isCarousel = false
-  let items = 6;
-
-  $: items = (() => {
-    if (innerWidth >= 1200) {
-      isCarousel = false;
-      return  5;
-    } else if (innerWidth < 1200 && innerWidth >= 992) {
-      isCarousel = false;
-      return  4;
-    } else if (innerWidth < 992 && innerWidth >= 768) {
-      isCarousel = false;
-      return  6;
-    } else if (innerWidth < 768 && innerWidth >= 576) {
-      isCarousel = false;
-      return  4;
-    } else if (innerWidth < 576) {
-      isCarousel = true;
-      return 6;
-    };
-    return 1;
-  })();
-
 </script>
 
-<svelte:window bind:innerWidth />
-
-{#if catalogData && acceptanceCatalogData}
+{#if items && acceptanceCatalogData}
   <section class="acceptance-catalog">
     <div class="container">
       <h2>
@@ -44,17 +15,7 @@
       <div class="content">
         {@html acceptanceCatalogData.content}
       </div>
-      {#if isCarousel === true && catalogData.length > 0}
-        <Carousel bind:items={catalogData} />
-      {:else}
-        <div class="list">
-          {#each catalogData as item, i}
-            {#if i < items}
-              <ItemCard bind:item />
-            {/if}
-          {/each}
-        </div>
-      {/if}
+      <Table bind:items />
       <div class="button">
         <Button bind:button={acceptanceCatalogData.button} />
       </div>
@@ -79,11 +40,6 @@
     grid-template-columns: 1fr;
     gap: 22px;
   }
-  .list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-  }
   .button > :global(*) {
     max-width: 379px;
     margin-right: auto;
@@ -95,9 +51,6 @@
     }
     .container {
       gap: 40px;
-    }
-    .list {
-      grid-template-columns: 1fr 1fr 1fr;
     }
     .content {
       font-size: 20px;
@@ -113,18 +66,8 @@
     h2 {
       max-width: 744px;;
     }
-    .list {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
     .button {
       margin-top: 20px;
     }
   }
-
-  @media (min-width: 1200px) {
-    .list {
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    }
-  }
-
 </style>
