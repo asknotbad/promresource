@@ -7,10 +7,9 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.web.rule=Host(`${APP_HOST}`)"
-      - "traefik.http.routers.web.tls.certResolver=myresolver"
+      - "traefik.http.routers.web.tls.certresolver=myresolver"
       - "traefik.http.routers.web.tls=true"
       - "traefik.http.routers.web.entrypoints=websecure"
-      - "traefik.http.routers.web.tls.certresolver=myresolver"
   api:
     labels:
       - "traefik.enable=true"

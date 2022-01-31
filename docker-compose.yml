@@ -63,7 +63,7 @@ services:
       SENDGRID_API_KEY: ${SENDGRID_API_KEY}
 
   traefik:
-    image: traefik:v2.5
+    image: traefik:v2.6
     container_name: promresource-traefik-service
     restart: always
     depends_on:
